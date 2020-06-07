@@ -46,12 +46,39 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
 
+```{r libraries, include=FALSE}
 library(tidyverse)
 library(kableExtra)
 library(bookdown)
 library(lubridate)
 ```
+
+
+```{r data-read, include=FALSE}
+data = read.csv("data/wdi_data.csv")
+data = data[1:33,]
+
+names(data)[5:54] = c(1970:2019)
+names(data)[3] = c("Series")
+
+data_value = data %>%
+  select('1970':'2019')
+
+data_value = data.frame(lapply(data_value, as.character), stringsAsFactors =FALSE)
+data_value = data.frame(lapply(data_value, as.numeric))
+
+data = data.frame(Series = data$Series, data_value)
+names(data)[2:51] = c(1970:2019)
+
+data_long = data %>%
+  pivot_longer(`1970`:`2019`, names_to = "Year") %>%
+  mutate(Year = as.factor(Year))
+
+#use data_long for analysis.
+```
+
 
 \section*{Introduction}
 

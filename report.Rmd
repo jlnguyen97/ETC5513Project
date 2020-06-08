@@ -86,7 +86,64 @@ data_long = data %>%
 
 \section*{}
 
-\section*{}
+\section*{Electricity generation distribution}
+
+```{r}
+data_electric = data_long %>%
+  filter(Series %in% c("Renewable electricity output (% of total electricity output)",
+                       "Fossil fuel energy consumption (% of total)",
+                       "Energy imports, net (% of energy use)",
+                       "Fossil fuel energy consumption (% of total)",
+                       "Renewable electricity output (% of total electricity output)",
+                       "Electricity production from oil, gas and coal sources (% of total)"))
+```
+
+```{r}
+data_electric %>% 
+  filter(Series %in% c("Fossil fuel energy consumption (% of total)")) %>%
+  drop_na() %>%
+  ggplot(aes(x=Year, y=value, colour=Series)) + 
+  geom_line(aes(group=1)) + 
+  theme(axis.text.x = element_text(angle = 90))
+
+data_electric %>% 
+  filter(Series %in% c("Energy imports, net (% of energy use)")) %>%
+  drop_na() %>%
+  ggplot(aes(x=Year, y=value, colour=Series)) + 
+  geom_line(aes(group=1)) + 
+  theme(axis.text.x = element_text(angle = 90))
+
+data_electric %>% 
+  filter(Series %in% c("Renewable electricity output (% of total electricity output)")) %>%
+  drop_na() %>%
+  ggplot(aes(x=Year, y=value, colour=Series)) + 
+  geom_line(aes(group=1)) + 
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+** Graph of the energy production compare.
+** Primary focus on the renewables.
+
+** Table of rate of change, plot this rate of change
+** Use average of rate of change to see if they are able to get to that level predicted.
+
+https://iea-pvps.org/wp-content/uploads/2020/05/IEA-PVPS-AR-2019-1.pdf
+
+In 2019, Israel reached a level ~ 7% of total energy production from renewables.
+70% of total was natural gas, I am guessing that the rest was from coal.
+
+Changing attitudes - target 17% by 2030, interim 10% by 2020.
+
+Renewable energy is produced by solar fields. 95% of the above 7% was solar energy (renewable sources).
+
+Another point about changing attitudes, plan was initated in 2016.
+
+Israeli network is island * no electrical grid power.
+
+Abundant natural gas in israel, after 2000 (first commercial discovery of gas in israel), became self-sufficient/net exporter of gas.
+
+very focussed to change. https://www.export.gov/apex/article2?id=Israel-En
+
 
 \section*{}
 

@@ -19,10 +19,10 @@ author:
   email: XXX
   correspondingauthor: true
   qualifications:  XXX
-- familyname: XXX
-  othernames: XXX
+- familyname: Tirodkar
+  othernames: Siddhant
   address: Monash University
-  email: XXX
+  email: stir0003@student.monash.edu
   correspondingauthor: true
   qualifications:  XXX
 department: Econometrics and Business Statistics \newline add names &\newline add names
@@ -90,7 +90,7 @@ data_long = data %>%
 
 \section*{}
 
-\section*{}
+\section*{Labour Force Analysis}
 
 \section*{Model}
 

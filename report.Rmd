@@ -86,7 +86,33 @@ data_long = data %>%
 
 \section*{}
 
-\section*{Electricity generation distribution}
+\section*{Renewable energy}
+
+Israel has seen significant changes in the distribution of genders in the labour force. Though many direct effects can be explored, this section looks at changes in attitude by analysing Israel's move to more renewable sources of energy. There may be a link between the a transition to change in political thinking in priority. This may also be attributed to a general change in attitude, and could provide a reasonable proxy for our model.
+
+For this section of the report, we will be looking at World Bank Sustainable for All data. This data set comprises of electricity data between 1990 and 2015. 
+```{r}
+data_sea = read.csv("data/SEA_data.csv")
+names(data_sea)=c("Country Name", "Country Code", "Year", "Year Code",
+                  "Renewable electricity share of total electricity output (%)",
+                  "Renewable energy consumption (TJ)",
+                  "Total final energy consumption (TFEC) (TJ)",
+                  "Renewable electricity output (GWh)",
+                  "Renewable energy share of TFEC (%)")
+data_sea = data_sea[1:26,]
+
+data_sea_long = data_sea %>%
+  pivot_longer(`Renewable electricity share of total electricity output (%)`:`Renewable energy share of TFEC (%)`,names_to = "Series")
+```
+
+```{r}
+data_sea_long %>% 
+  filter(Series == "Renewable electricity share of total electricity output (%)") %>%
+  ggplot(aes(x = Year, y = value, colour = Series)) + 
+  geom_line(aes(group = 1))
+```
+
+
 
 ```{r}
 data_electric = data_long %>%
@@ -95,7 +121,8 @@ data_electric = data_long %>%
                        "Energy imports, net (% of energy use)",
                        "Fossil fuel energy consumption (% of total)",
                        "Renewable electricity output (% of total electricity output)",
-                       "Electricity production from oil, gas and coal sources (% of total)"))
+                       "Electricity production from oil, gas and coal sources (% of total)",
+                       "Electricity production from renewable sources, excluding hydroelectric (% of total)"))
 ```
 
 ```{r}
@@ -114,11 +141,12 @@ data_electric %>%
   theme(axis.text.x = element_text(angle = 90))
 
 data_electric %>% 
-  filter(Series %in% c("Renewable electricity output (% of total electricity output)")) %>%
+  filter(Series %in% c("Electricity production from renewable sources, excluding hydroelectric (% of total)")) %>%
   drop_na() %>%
   ggplot(aes(x=Year, y=value, colour=Series)) + 
   geom_line(aes(group=1)) + 
-  theme(axis.text.x = element_text(angle = 90))
+  theme(axis.text.x = element_text(angle = 90)) + 
+  ylab("Percentage of total electricity output (%)")
 ```
 
 ** Graph of the energy production compare.

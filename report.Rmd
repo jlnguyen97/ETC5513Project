@@ -90,6 +90,8 @@ data_long = data %>%
 
 \section*{Male and Female Mortality Rates}
 
+This section will be analysing the impact that female and male mortality rates have on the ratio of females to males in the labor force.
+
 \section*{}
 
 \section*{Model}

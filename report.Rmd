@@ -94,16 +94,11 @@ library(simputation)
 
 data_wide <- data_long %>% 
   pivot_wider(names_from = Series,
-              values_from = value) %>% 
-  rename(female_to_male_labor_force_participation_rate_ratio = `Ratio of female to male labor force participation rate (%) (national estimate)`)
-  
+              values_from = value)
 
-data_wide_shadow <- bind_shadow(data_wide)
-
-data_wide_imp <- data_wide_shadow %>% 
+data_wide_imp <- data_wide %>% 
   as.data.frame() %>% 
-  impute_lm(formula = female_to_male_labor_force_participation_rate_ratio ~ as.numeric(Year)) %>% 
-  add_label_shadow()
+  impute_lm(formula = `Ratio of female to male labor force participation rate (%) (national estimate)` ~ as.numeric(Year)) %>% 
 
 data_long_imp <- data_wide_imp %>%
   select(-ends_with("NA")) %>% 

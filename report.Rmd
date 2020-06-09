@@ -13,12 +13,12 @@ author:
   email: jlngu6@student.monash.edu
   correspondingauthor: true
   qualifications:  XXX
-- familyname: XXX
-  othernames: XXX
+- familyname: Lyubic
+  othernames: Samuel
   address: Monash University
-  email: XXX
+  email: slyu0007@student.monash.edu
   correspondingauthor: true
-  qualifications:  XXX
+  qualifications:  Masters
 - familyname: XXX
   othernames: XXX
   address: Monash University
@@ -88,7 +88,7 @@ data_long = data %>%
 
 \section*{}
 
-\section*{}
+\section*{Male and Female Mortality Rates}
 
 \section*{}
 

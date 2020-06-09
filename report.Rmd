@@ -86,7 +86,45 @@ data_long = data %>%
 
 \section*{}
 
-\section*{}
+\section*{Education Expenditures}
+
+```{r imputing-data}
+library(naniar)
+library(simputation)
+
+data_wide <- data_long %>% 
+  pivot_wider(names_from = Series,
+              values_from = value) %>% 
+  rename(female_to_male_labor_force_participation_rate_ratio = `Ratio of female to male labor force participation rate (%) (national estimate)`)
+  
+
+data_wide_shadow <- bind_shadow(data_wide)
+
+data_wide_imp <- data_wide_shadow %>% 
+  as.data.frame() %>% 
+  impute_lm(formula = female_to_male_labor_force_participation_rate_ratio ~ as.numeric(Year)) %>% 
+  add_label_shadow()
+
+data_long_imp <- data_wide_imp %>%
+  select(-ends_with("NA")) %>% 
+  pivot_longer(cols = -Year,
+               names_to = "Series",
+               values_to = "values")
+```
+
+
+```{r education}
+data_education <- data_long %>% 
+  filter(Series %in% (c("Ratio of female to male labor force participation rate (%) (national estimate)",
+                        "Adjusted savings: education expenditure (current US$)",
+                        "Government expenditure on education, total (% of GDP)",
+                        "Adjusted savings: education expenditure (% of GNI)")))
+
+data_education %>% filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>% 
+  ggplot(aes(x = Year,
+             y = value)) +
+  geom_col()
+```
 
 \section*{}
 

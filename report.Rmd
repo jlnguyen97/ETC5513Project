@@ -103,13 +103,6 @@ data_education$Year <- as.numeric(data_education$Year)
 
 data_education <- data_education %>% mutate(decade = floor(Year/10)*10)
 
-data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
-  filter(Year != 2019) %>% 
-  ggplot(aes(x = Year,
-             y = value)) +
-  geom_col() +
-  theme(axis.text.x = element_text(angle = 90),
-        axis.title = element_blank())
 ```
 
 ```{r ratio-plot-decade, fig.cap="Ratio of female to male labor force participation rate (%) (national estimate) by decades"}
@@ -143,6 +136,18 @@ data_education %>% filter(Series %in% (c("Adjusted savings: education expenditur
   geom_smooth(method = "lm") +
   theme(aspect.ratio = 1)
 
+```
+
+\subsection*{Education in Israel}
+
+```{r total-edu-spending, fig.cap="Total Education Expenditure (US$) in Israel by decades"}
+data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
+  #summarising education expenditure by decades
+  group_by(decade) %>%
+  summarise(avg_spending = mean(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = decade,
+             y = avg_spending)) +
+  geom_col()
 ```
 
 \section*{}

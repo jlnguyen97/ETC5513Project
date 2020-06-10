@@ -53,6 +53,7 @@ library(tidyverse)
 library(kableExtra)
 library(bookdown)
 library(lubridate)
+library(gridExtra)
 ```
 
 
@@ -109,9 +110,10 @@ mortality_birth_rate_wider <- mortality_long %>%
   slice(17:47)
 ```
 
-```{r plot-mortality-birth-rates}
+!!!MAYBE GET RID OF!!!
+```{r plot-mortality-birth-rates, eval = FALSE}
 figure_mortality_birth_rate <- mortality_birth_rate_long %>%
-  filter(!Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  #filter(!Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>% #maybe don't include as not a relative number
   ggplot(aes(x = Year,
          y = log1p(value),
          group = Series,
@@ -127,6 +129,58 @@ figure_mortality_birth_rate <- mortality_birth_rate_long %>%
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 figure_mortality_birth_rate
 ```
+
+```{r figure-female-and-male-mortality-and-birth-rate-and-labor-force-ratio}
+figure_female_male_mortality <- mortality_birth_rate_long %>%
+  filter(Series %in% c("Mortality rate, adult, female (per 1,000 female adults)", 
+                       "Mortality rate, adult, male (per 1,000 male adults)")) %>%
+  ggplot(aes(x = Year,
+             y = value,
+             group = Series,
+             color = Series)) +
+  geom_line() +
+  geom_point() +
+  theme(legend.position = "right") +
+  theme_bw() +
+  labs(title = "Mortality rate",
+       y = "Mortality rate per 1000 people",
+       x = "Year") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
+
+figure_birth_rate <- mortality_birth_rate_long %>%
+  filter(Series == "Birth rate, crude (per 1,000 people)") %>%
+  ggplot(aes(x = Year,
+             y = value,
+             group = Series,
+             color = Series)) +
+  geom_line() +
+  geom_point() +
+  theme(legend.position = "right") +
+  theme_bw() +
+  labs(title = "Birth rate",
+       x = "Year") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+figure_labor_force_ratio <- mortality_birth_rate_long %>%
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  ggplot(aes(x = Year,
+             y = value,
+             group = Series,
+             color = Series)) +
+  geom_line() +
+  geom_point() +
+  theme(legend.position = "right") +
+  theme_bw() +
+  labs(title = "Labor force ratio",
+       x = "Year") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
+  
+```
+
+```{r combining-the-variable-figures, fig.cap = "Each figure visualises the chosen variables"}
+figure_combined_birth_ratio_mortality <- grid.arrange(figure_labor_force_ratio, figure_birth_rate, figure_female_male_mortality, ncol = 3)
+```
+
 
 ```{r summary-mortality-variables}
 summary_mortality_variables <- mortality__birth_rate_wider %>%
@@ -153,6 +207,79 @@ pct_change_mortality_variables <- mortality_birth_rate_long %>%
                 latex_options = "hold_position") 
 pct_change_mortality_variables    
 ```
+
+```{r percent-change-year-on-end-function}
+pct_change_function <- function(v){
+  mortality_birth_rate_long %>%
+    filter(Series == v) %>%
+    ungroup() %>%
+    mutate(pct_change = round((((value/lag(value)) - 1)*100), 2))
+}
+```
+
+```{r percent-change-year-on-end-variables}
+pct_change_male_mortality <- pct_change_function("Mortality rate, adult, male (per 1,000 male adults)")
+pct_change_female_mortality <- pct_change_function("Mortality rate, adult, female (per 1,000 female adults)")
+pct_change_labor_force_ratio <- pct_change_function("Ratio of female to male labor force participation rate (%) (national estimate)")
+pct_change_birth_rate <- pct_change_function("Birth rate, crude (per 1,000 people)")
+
+pct_change_combined <- rbind(pct_change_male_mortality, pct_change_female_mortality, pct_change_birth_rate, pct_change_labor_force_ratio) %>%
+  replace_na(list(pct_change = 0))
+  
+```
+
+```{r plot-percent-change-variables}
+figure_percent_change_variables <- pct_change_combined %>%
+  ggplot(aes(x = Year,
+             y = pct_change,
+             group = Series,
+             color = Series)) +
+  geom_line() +
+  geom_point() +
+  facet_wrap(~Series) +
+  theme(legend.position = "right") +
+  theme_bw() 
+
+figure_percent_change_variables
+```
+
+```{r percent-change-against-labor-force-function}
+function_plot_pct_change_against_labor_force_ratio <- function(x){
+  pct_change_combined %>%
+  filter(Series %in% c("Ratio of female to male labor force participation rate (%) (national estimate)",
+                       x)) %>%
+    ggplot(aes(x = Year,
+             y = pct_change,
+             group = Series,
+             color = Series)) +
+    geom_line() +
+    geom_point() +
+    geom_smooth(method = lm) +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+    theme(legend.position = "bottom")
+}
+```
+
+
+```{r figure-pct-change-variables-against-labor-ratio-pct-change}
+figure_pct_change_female_mortality_rate_labor_force <- function_plot_pct_change_against_labor_force_ratio("Mortality rate, adult, female (per 1,000 female adults)")
+figure_pct_change_male_mortality_rate_labor_force <- function_plot_pct_change_against_labor_force_ratio("Mortality rate, adult, male (per 1,000 male adults)")
+figure_pct_change_birth_rate_mortality_rate_labor_force <- function_plot_pct_change_against_labor_force_ratio("Birth rate, crude (per 1,000 people)")
+```
+
+```{r plot-the-percent-change-against-each-other}
+pct_change_variables_wider <- pct_change_combined %>%
+  select(-value) %>%
+  group_by(Year) %>%
+  pivot_wider(names_from = Series,
+              values_from = pct_change) %>%
+  rename(Male_mortality_rate = "Mortality rate, adult, male (per 1,000 male adults)",
+         Female_mortality_rate = "Mortality rate, adult, female (per 1,000 female adults)",
+         Birth_rate = "Birth rate, crude (per 1,000 people)",
+         Labor_force_rate = "Ratio of female to male labor force participation rate (%) (national estimate)")
+```
+
+
 
 \section*{}
 

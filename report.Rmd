@@ -166,7 +166,7 @@ plot_3 <- israel_labour %>% dplyr::filter(Series %in% c("Labor force participati
 plot_3
 ```
 
-Figure \@ref(fig:graph3) compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20% in the past 30 years. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were. 
+Figure \@ref(fig:graph3) compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the female population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20% in the past 30 years. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were. 
 
 # Female labour force v/s female-male participation rate
 ```{r graph4}

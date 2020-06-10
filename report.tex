@@ -424,7 +424,7 @@ Table \ref{tab:showcase} exhibits the variables that have been used in this sect
 \StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Year, }\DataTypeTok{y =}\NormalTok{ value, }\DataTypeTok{color =}\NormalTok{ Series))}\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_line}\NormalTok{()}\OperatorTok{+}
 \StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{)}\OperatorTok{+}
-\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Total Female Labour force(%)"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Total Labour force(%)"}\NormalTok{)}\OperatorTok{+}
 \StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position=}\StringTok{"bottom"}\NormalTok{)}
   
 
@@ -489,6 +489,9 @@ Figure \ref{fig:graph2} shows the slow but gradual increase in the percentage of
 
 Figure \ref{fig:graph3} compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20\% in the past 30 years. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were.
 
+\hypertarget{female-labour-force-vs-female-male-participation-rate}{%
+\section{Female labour force v/s female-male participation rate}\label{female-labour-force-vs-female-male-participation-rate}}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{plot_}\DecValTok{4}\NormalTok{ <-}\StringTok{ }\NormalTok{israel_labour }\OperatorTok{%>%}\StringTok{ }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{filter}\NormalTok{(Series }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Ratio of female to male labor force participation rate (%) (national estimate)"}\NormalTok{)) }\OperatorTok{%>%}
@@ -516,7 +519,7 @@ Figure \ref{fig:graph3} compares the female v/s male labour force participation 
 \caption{\label{fig:graph5}Comparing female labour force with female-male participation rate}
 \end{figure}
 
-Figure \ref{fig:graph5} conc
+Figure \ref{fig:graph5} verifies that the percentage of females in the total labour force is positively correlated with the female to male labour force participation rate as both show a positive trend over time and have increased significantly since 1991 to 2019.
 
 \section*{Model}
 

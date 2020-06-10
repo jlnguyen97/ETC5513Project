@@ -407,7 +407,7 @@ This section of the report will focus on analysing various aspects of the Israel
 \end{tabular}
 \end{table}
 
-Table \ref{tab:showcase} exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females is the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
+Table \ref{tab:showcase} exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females and female labour force participation are the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -464,6 +464,59 @@ Figure \ref{fig:graph1} depicts the gentle rise in the female labour force which
 \end{figure}
 
 Figure \ref{fig:graph2} shows the slow but gradual increase in the percentage of self-employed females in the female labour workforce. The female labour workforce comprises of self-employed women and wage and salaried women. The percentage of self-employed women in Israel has increased from 5.9 to 9.2 in 3 decades. The gradual change can be attributed to strong family orientation present in the Israeli culture and the fact that a working mother has to always give priorities to family responsibilities. But the main contributing factor to the increase was achievement motivations and economic necessities more than educational attainment or previous entrepreneurial experience.
+
+\hypertarget{female-vs-male-labour-force-participation}{%
+\section{Female v/s Male labour force participation}\label{female-vs-male-labour-force-participation}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot_}\DecValTok{3}\NormalTok{ <-}\StringTok{ }\NormalTok{israel_labour }\OperatorTok{%>%}\StringTok{ }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{filter}\NormalTok{(Series }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)"}\NormalTok{,}\StringTok{"Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{Year,}\DataTypeTok{y=}\NormalTok{value, }\DataTypeTok{color =}\NormalTok{ Series))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Labour force participation rate"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position=}\StringTok{"bottom"}\NormalTok{)}
+
+\NormalTok{plot_}\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{report_files/figure-latex/graph3-1.pdf}
+\caption{\label{fig:graph3}Female v/s Male labour force participation}
+\end{figure}
+
+Figure \ref{fig:graph3} compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20\% in the past 30 years. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot_}\DecValTok{4}\NormalTok{ <-}\StringTok{ }\NormalTok{israel_labour }\OperatorTok{%>%}\StringTok{ }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{filter}\NormalTok{(Series }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Ratio of female to male labor force participation rate (%) (national estimate)"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{Year,}\DataTypeTok{y=}\NormalTok{value, }\DataTypeTok{color =}\NormalTok{ Series))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Female to male Partcipation rate(% of total)"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position=}\StringTok{"bottom"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{grid.arrange}\NormalTok{(plot_}\DecValTok{1}\NormalTok{,plot_}\DecValTok{4}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 1 row(s) containing missing values (geom_path).
+\end{verbatim}
+
+\begin{figure}
+\centering
+\includegraphics{report_files/figure-latex/graph5-1.pdf}
+\caption{\label{fig:graph5}Comparing female labour force with female-male participation rate}
+\end{figure}
+
+Figure \ref{fig:graph5} conc
 
 \section*{Model}
 

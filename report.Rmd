@@ -142,7 +142,7 @@ summary_mortality_variables <- mortality__birth_rate_wider %>%
 summary_mortality_variables
 ```
 
-```{r percent-change-over-the-observed-time-period}
+```{r percent-change-over-the-observed-time-period, fig.cap = "Figure showing the percentage chance in each of the chosen variables"}
 pct_change_mortality_variables <- mortality_birth_rate_long %>%
   filter(Year %in% c("1986", "2016")) %>% 
   pivot_wider(names_from = Year,
@@ -150,8 +150,8 @@ pct_change_mortality_variables <- mortality_birth_rate_long %>%
   mutate(percent_change_1986_to_2016 = ((`2016`-`1986`)/`1986`)*100) %>%
   kable(caption = "The total percentage change from 1986 to 2016, per each variable") %>%
   kable_styling(bootstrap_options = c("hover", "striped"),
-                latex_options = "hold_position")
-pct_change_mortality_variables  
+                latex_options = "hold_position") 
+pct_change_mortality_variables   
 ```
 
 \section*{}

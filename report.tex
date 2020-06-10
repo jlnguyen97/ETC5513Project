@@ -72,6 +72,15 @@
 \usepackage{longtable,booktabs}
 % Fix footnotes in tables (requires footnote package)
 \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
 }{% else
@@ -398,7 +407,38 @@ This section of the report will focus on analysing various aspects of the Israel
 \end{tabular}
 \end{table}
 
-Table \ref{tab:showcase} exhibits the variables that have been used in this section of the report and displays the first 5 rows.
+Table \ref{tab:showcase} exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females is the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{israel_labour}\OperatorTok{$}\NormalTok{Year <-}\StringTok{  }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{as.character}\NormalTok{(israel_labour}\OperatorTok{$}\NormalTok{Year))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{overview}{%
+\section{Overview}\label{overview}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot_}\DecValTok{1}\NormalTok{ <-}\StringTok{ }\NormalTok{israel_labour }\OperatorTok{%>%}\StringTok{ }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{filter}\NormalTok{(Series }\OperatorTok{==}\StringTok{ "Labor force, female (% of total labor force)"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Year, }\DataTypeTok{y =}\NormalTok{ value, }\DataTypeTok{color =}\NormalTok{ Series))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Year"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Total Female Labour force(%)"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position=}\StringTok{"bottom"}\NormalTok{)}
+  
+
+\NormalTok{plot_}\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{report_files/figure-latex/graph1-1.pdf}
+\caption{\label{fig:graph1}\% Female labour force out of total labour force}
+\end{figure}
+
+Figure \ref{fig:graph1} depicts athe gradual rise in the female labour force which was around 40\% of the total labour force in 1990 to around 47\% around 2020. One of the main reasons behind the surge in female participation is due to the educational attainment of women in Israel. Also, in 2006 and 2007 numerous ammendments were made to women employment law to protect the rights of women at workplace and provide equal employment oppurtunities which has proved to be pivotal in increasing female participation in the labour force. \href{https://mfa.gov.il/MFA/AboutIsrael/State/Law/Pages/Ensuring-equal-rights-for-women-in-Israel.aspx}{Source}
 
 \section*{Model}
 

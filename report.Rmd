@@ -112,6 +112,29 @@ israel_display <- israel_labour %>% pivot_wider(names_from = Series, values_from
 ```
 
 Table \@ref(tab:showcase) exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females is the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
+
+```{r change}
+israel_labour$Year <-  as.numeric(as.character(israel_labour$Year))
+
+```
+
+# Overview
+```{r graph1,fig.cap="% Female labour force out of total labour force"}
+
+plot_1 <- israel_labour %>% dplyr::filter(Series == "Labor force, female (% of total labor force)") %>%
+  ggplot(aes(x = Year, y = value, color = Series))+
+  geom_line()+
+  xlab("Year")+
+  ylab("Total Female Labour force(%)")+
+  theme(legend.position="bottom")
+  
+
+plot_1
+```
+
+Figure \@ref(fig:graph1) depicts athe gradual rise in the female labour force which was around 40% of the total labour force in 1990 to around 47% around 2020. One of the main reasons behind the surge in female participation is due to the educational attainment of women in Israel. Also, in 2006 and 2007 numerous ammendments were made to women employment law to protect the rights of women at workplace and provide equal employment oppurtunities which has proved to be pivotal in increasing female participation in the labour force. [Source](https://mfa.gov.il/MFA/AboutIsrael/State/Law/Pages/Ensuring-equal-rights-for-women-in-Israel.aspx)
+
+
 \section*{Model}
 
 \section*{Conclusion}

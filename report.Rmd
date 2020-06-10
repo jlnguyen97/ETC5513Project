@@ -92,9 +92,26 @@ data_long = data %>%
 
 This section will be analysing the impact that female and male mortality rates have on the ratio of females to males in the labor force.
 
-```{r read-in-data}
-wdi <- read_csv(here::here("data", "wdi_data.csv"))
-wdi_meta <- read_csv(here::here("data", "wdi_meta.csv"))
+```{r create-object-with-required-variables}
+mortality <- data_long %>%
+  filter(Series %in% c("Ratio of female to male labor force participation rate (%) (national estimate)", "Mortality rate, adult, female (per 1,000 female adults)", "Mortality rate, adult, male (per 1,000 male adults)")) %>%
+  pivot_wider(names_from = Series,
+              values_from = value) %>%
+  slice(17:47) %>%   #PROBABLY GOING TO IMPUTE
+  rename(Male_mortality_rate = "Mortality rate, adult, male (per 1,000 male adults)",
+         Female_mortality_rate = "Mortality rate, adult, female (per 1,000 female adults)",
+         Ratio_of_female_to_male_labor_force = "Ratio of female to male labor force participation rate (%) (national estimate)")
+```
+
+```{r summary-mortality-variables}
+mortality %>%
+  select(-Year, -Ratio_of_female_to_male_labor_force) %>%
+  summary() %>%
+  kable(caption = "Summary of the male and female mortality rate variables",
+        col.names = c("Mortality rate, adult, male (per 1,000 male adults)",
+                      "Mortality rate, adult, female (per 1,000 female adults)")) %>%
+  kable_styling(bootstrap_options = c("hover", "striped"),
+                latex_options = "hold_position")
 ```
 
 \section*{}

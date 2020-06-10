@@ -58,7 +58,7 @@ library(lubridate)
 
 ```{r data-read, include=FALSE}
 data = read.csv("data/wdi_data.csv")
-data = data[1:35,]
+data = data[1:36,]
 
 names(data)[5:54] = c(1970:2019)
 names(data)[3] = c("Series")
@@ -92,38 +92,66 @@ data_long = data %>%
 
 This section will be analysing the impact that female and male mortality rates have on the ratio of females to males in the labor force.
 
-```{r create-object-with-required-variables}
-mortality <- data_long %>%
-  filter(Series %in% c("Ratio of female to male labor force participation rate (%) (national estimate)", "Mortality rate, adult, female (per 1,000 female adults)", "Mortality rate, adult, male (per 1,000 male adults)")) %>%
+```{r create-long-wide-objects-with-required-variables}
+mortality_birth_rate_long <- data_long %>%
+  filter(Series %in% c("Ratio of female to male labor force participation rate (%) (national estimate)", "Mortality rate, adult, female (per 1,000 female adults)", "Mortality rate, adult, male (per 1,000 male adults)", "Birth rate, crude (per 1,000 people)")) %>%
+  arrange(Year) %>%
+  slice(65:188)
+    
+  
+mortality_birth_rate_wider <- mortality_long %>%
   pivot_wider(names_from = Series,
-              values_from = value) %>%
-  slice(17:47) %>%   #PROBABLY GOING TO IMPUTE
+              values_from = value) %>%    
   rename(Male_mortality_rate = "Mortality rate, adult, male (per 1,000 male adults)",
          Female_mortality_rate = "Mortality rate, adult, female (per 1,000 female adults)",
-         Ratio_of_female_to_male_labor_force = "Ratio of female to male labor force participation rate (%) (national estimate)")
+         Ratio_of_female_to_male_labor_force = "Ratio of female to male labor force participation rate (%) (national estimate)",
+         Birth_rate_crude = "Birth rate, crude (per 1,000 people)") %>%
+  slice(17:47)
+```
+
+```{r plot-mortality-birth-rates}
+figure_mortality_birth_rate <- mortality_birth_rate_long %>%
+  filter(!Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  ggplot(aes(x = Year,
+         y = log1p(value),
+         group = Series,
+         color = Series)) +
+  geom_line() +
+  geom_point() +
+  theme(legend.position = "right") +
+  theme_bw() +
+  labs(title = "Figure visualising the male and female mortality 
+                rates and birth rate",
+       y = "Log of the rate per 1000 people",
+       x = "Year") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+figure_mortality_birth_rate
 ```
 
 ```{r summary-mortality-variables}
-summary_mortality_variables <- mortality %>%
+summary_mortality_variables <- mortality__birth_rate_wider %>%
   select(-Year, -Ratio_of_female_to_male_labor_force) %>%
   summary() %>%
   kable(caption = "Summary of the male and female mortality rate variables",
         col.names = c("Mortality rate, adult, male (per 1,000 male adults)",
-                      "Mortality rate, adult, female (per 1,000 female adults)")) %>%
+                      "Mortality rate, adult, female (per 1,000 female adults)",
+                      "Birth rate, crude (per 1,000 people)"
+                      )) %>%
   kable_styling(bootstrap_options = c("hover", "striped"),
                 latex_options = "hold_position")
+summary_mortality_variables
 ```
 
 ```{r percent-change-over-the-observed-time-period}
-pct_change_mortality_variables <- mortality %>%
+pct_change_mortality_variables <- mortality_birth_rate_long %>%
   filter(Year %in% c("1986", "2016")) %>% 
-  pivot_longer(c("Male_mortality_rate":"Ratio_of_female_to_male_labor_force"),
-               names_to = "Variable",
-               values_to = "Value") %>%
   pivot_wider(names_from = Year,
-              values_from = Value) %>%
-  mutate(percent_change_1986_to_2016 = ((`2016`-`1986`)/`1986`)*100)
-  
+              values_from = value) %>%
+  mutate(percent_change_1986_to_2016 = ((`2016`-`1986`)/`1986`)*100) %>%
+  kable(caption = "The total percentage change from 1986 to 2016, per each variable") %>%
+  kable_styling(bootstrap_options = c("hover", "striped"),
+                latex_options = "hold_position")
+pct_change_mortality_variables  
 ```
 
 \section*{}

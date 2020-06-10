@@ -127,6 +127,7 @@ In this section, the report is going to examine the state of education in Israel
 
 ```{r read-edu-pop}
 library(janitor)
+library(simputation)
 
 read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% clean_names() %>% 
   rename(location = i_location)
@@ -148,21 +149,41 @@ data_edu_pop <- read_edu_pop %>%
     subject == "UPPSRY_WOMEN" ~ "upper_secondary_women",
     TRUE ~ as.character(subject)
   ))
+
+#wrangling read_edu_spending dataset
+data_edu_spending <- read_edu_spending %>%
+  filter(location == "ISR",
+         measure == "USD_STUDENT") %>%
+  select(time, subject, value) %>% 
+  mutate(subject = case_when(
+    subject == "SRY" ~ "secondary",
+    subject == "TRY" ~ "tertiary",
+    subject == "PRY_NTRY" ~ "primary_to_post_secondary_non_tertiary",
+    subject == "EARLYCHILDEDU" ~ "early_childhood_education",
+    subject == "PRY" ~ "primary",
+    TRUE ~ as.character(subject)
+  )) %>% 
+  filter(time >= 2008)
+
+#impute missing data in data_edu_spending
+data_edu_spending_wide <- data_edu_spending %>% 
+  pivot_wider(names_from = subject,
+              values_from = value) %>% 
+  select(-secondary) %>% 
+  filter(time != 2016)
+
+data_edu_spending_wide_imp <- data_edu_spending_wide %>% 
+  as.data.frame() %>% 
+  impute_lm(formula = primary_to_post_secondary_non_tertiary ~ time) %>% 
+  impute_lm(formula = early_childhood_education ~ time)
+
+data_edu_spending_long_imp <- data_edu_spending_wide_imp %>% 
+  pivot_longer(cols = -time,
+               names_to = "subject",
+               values_to = "value")
 ```
 
-```{r edu-pop, fig.cap= "Adult Education Level of 25-64 Year-olds in Israel"}
-data_edu_pop %>% filter(subject %in% c("below_upper_secondary",
-                                       "tertiary",
-                                       "upper_secondary")) %>% 
-  ggplot(aes(x = time,
-             y = value,
-             color = subject)) +
-  geom_point() +
-  geom_line() +
-  labs(x = "Year", y = "% of 25-64 year-olds")
-```
-
-```{r total-edu-spending, fig.cap="Total Education Expenditure (US$) in Israel by decades"}
+```{r total-edu-spending, fig.cap="Yearly Average Education Expenditure (US$) in Israel by Decades"}
 data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
   #summarising education expenditure by decades
   group_by(decade) %>%
@@ -171,6 +192,42 @@ data_education %>% filter(Series == "Adjusted savings: education expenditure (cu
              y = avg_spending)) +
   geom_col()
 ```
+
+The education spending spent by the Israeli government is shown in figure \@ref(fig:total-edu-spending).
+
+The yearly average of funds invested by the government increases approximately double the size almost every decade.
+
+It started with yearly average of 834 million US dollars in 1970s, and it reached 15 billion US dollars in 2010s.
+
+Figure \@ref(fig:data-edu-spend) reflects how the Israeli government invested the education spending from 2008 to 2015.
+
+The figure shows that the government spent the majority of the funds on tertiary educations.
+
+```{r data-edu-spend, fig.cap="Education Spending in Israel"}
+data_edu_spending_long_imp %>% 
+  ggplot(aes(x = time,
+             y = value,
+             color = subject)) +
+  geom_point() +
+  geom_line() +
+  theme(legend.position = "bottom") +
+  labs(x = "Year", y = "Spending (US$)")
+```
+
+
+
+```{r edu-pop-female, fig.cap= "Female Adult Education Level of 25-64 Year-olds in Israel"}
+data_edu_pop %>% filter(subject %in% c("tertiary_women",
+                                       "upper_secondary_women")) %>% 
+  ggplot(aes(x = time,
+             y = value,
+             color = subject)) +
+  geom_point() +
+  geom_line() +
+  labs(x = "Year", y = "% of 25-64 year-olds")
+```
+
+
 
 \subsection*{Education and Female Participation in Labour Force}
 

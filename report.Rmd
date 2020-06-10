@@ -53,6 +53,7 @@ library(tidyverse)
 library(kableExtra)
 library(bookdown)
 library(lubridate)
+library(knitr)
 ```
 
 
@@ -100,6 +101,17 @@ israel_labour <- data_long %>% dplyr::filter(Series %in% c("Labor force, female 
                                         Year %in% c(1991:2019))
 
 ```
+
+```{r showcase}
+israel_display <- israel_labour %>% pivot_wider(names_from = Series, values_from = value)
+
+  kable(head(israel_display), caption = "Variables Summary") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", full_width = F)) %>%
+    row_spec(0, angle = -90)
+
+```
+
+Table \@ref(tab:showcase) exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females is the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
 \section*{Model}
 
 \section*{Conclusion}

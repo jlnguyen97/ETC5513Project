@@ -45,7 +45,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r libraries, include=FALSE}
@@ -86,27 +86,9 @@ data_long = data %>%
 
 \section*{}
 
-\section*{Education Expenditures}
+\section*{}
 
-```{r imputing-data}
-library(naniar)
-library(simputation)
-
-data_wide <- data_long %>% 
-  pivot_wider(names_from = Series,
-              values_from = value)
-
-data_wide_imp <- data_wide %>% 
-  as.data.frame() %>% 
-  impute_lm(formula = `Ratio of female to male labor force participation rate (%) (national estimate)` ~ as.numeric(Year)) %>% 
-
-data_long_imp <- data_wide_imp %>%
-  select(-ends_with("NA")) %>% 
-  pivot_longer(cols = -Year,
-               names_to = "Series",
-               values_to = "values")
-```
-
+\section*{Education}
 
 ```{r education-expenditure}
 data_education <- data_long %>% 
@@ -115,12 +97,11 @@ data_education <- data_long %>%
                         "Government expenditure on education, total (% of GDP)",
                         "Adjusted savings: education expenditure (% of GNI)")))
 
-data_education %>% filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>% 
-  ggplot(aes(x = Year,
-             y = value)) +
-  geom_col() +
-  theme(axis.text.x = element_text(angle = 90),
-        axis.title = element_blank())
+#adding decades information to the dataframe
+data_education$Year <- as.character(data_education$Year)
+data_education$Year <- as.numeric(data_education$Year)
+
+data_education <- data_education %>% mutate(decade = floor(Year/10)*10)
 
 data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
   filter(Year != 2019) %>% 
@@ -131,8 +112,25 @@ data_education %>% filter(Series == "Adjusted savings: education expenditure (cu
         axis.title = element_blank())
 ```
 
+```{r ratio-plot-decade, fig.cap="Ratio of female to male labor force participation rate (%) (national estimate) by decades"}
+
+data_education %>% filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  group_by(decade) %>% 
+  summarise(average = mean(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = decade,
+             y = average)) +
+  geom_col()
+```
+
+In the past 50 years, women's participation in the work force has increased steadily [@stier2000women].
+
+The same trend can also be found in Israel - figure \@ref(fig:ratio-plot-decade) shows that the ratio of female to male labour force participate rate in Israel increases from approximately 50% in the 1970s to 85% in 2010s on average.
+
+It is believed that gender inequality in education is a major contributing factor in gender inequalities in adulthood, especially in the labour market [@marks2008accounting].
+
+In this section, the report is going to examine the association between education and the increase of women's employment in Israel.
+
 ```{r labor-edu-scatterplot, fig.cap = "Scatter Plot between Ratio of Female to Male Labour Force Participation Rate and Education Expenditure"}
-library(plotly)
 
 data_education %>% filter(Series %in% (c("Adjusted savings: education expenditure (current US$)",
                                         "Ratio of female to male labor force participation rate (%) (national estimate)"))) %>%
@@ -145,10 +143,7 @@ data_education %>% filter(Series %in% (c("Adjusted savings: education expenditur
   geom_smooth(method = "lm") +
   theme(aspect.ratio = 1)
 
-ggplotly()
 ```
-
-\section*{}
 
 \section*{}
 

@@ -123,6 +123,62 @@ It is believed that gender inequality in education is a major contributing facto
 
 In this section, the report is going to examine the association between education and the increase of women's employment in Israel.
 
+
+
+\subsection*{Education in Israel}
+
+```{r read-edu-pop}
+library(here)
+library(janitor)
+
+read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% clean_names() %>% 
+  rename(location = i_location)
+read_edu_spending <- read.csv("data/edu_spending.csv") %>% clean_names()%>% 
+  rename(location = i_location)
+read_pop_tert <- read.csv("data/pop_tert_edu.csv") %>% clean_names()%>% 
+  rename(location = i_location)
+
+#wrangling read_edu_pop dataset
+data_edu_pop <- read_edu_pop %>% 
+  filter(location == "ISR") %>% 
+  mutate(subject = case_when(
+    subject == "BUPPSRY" ~ "below_upper_secondary",
+    subject == "TRY" ~ "tertiary",
+    subject == "UPPSRY" ~ "upper_secondary",
+    subject == "TRY_MEN" ~ "tertiary_men",
+    subject == "TRY_WOMEN" ~ "tertiary_women",
+    subject == "UPPSRY_MEN" ~ "upper_secondary_men",
+    subject == "UPPSRY_WOMEN" ~ "upper_secondary_women",
+    TRUE ~ as.character(subject)
+  ))
+```
+
+```{r total-edu-spending, fig.cap="Total Education Expenditure (US$) in Israel by decades"}
+data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
+  #summarising education expenditure by decades
+  group_by(decade) %>%
+  summarise(avg_spending = mean(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = decade,
+             y = avg_spending)) +
+  geom_col()
+```
+
+\subsection*{Education and Female Participation in Labour Force}
+
+OECD 2016:
+* Tertiary education has a strong impact in the labour market
+
+* Tertiary-educated adults in Israel have a relatively high employment rate (86%), which reaches its peak of 92%
+among those who attained a doctoral or equivalent degree.
+
+* Most of those enrolled in tertiary programmes in the academic year 2013/14 attend private institutions (83%),
+the third highest private enrolment rate of all OECD countries. Most are enrolled in government-dependent
+private institutions (66%); 17% are enrolled in independent private institutions. 
+
+
+
+We also note the synergetic interaction between higher education and increased labor force participation: A major reason for this rise is that employment opportunities increase with higher education and that these offer potentially higher financial remuneration, increasing the incentives to enter the labor market. Furthermore, the higher wages that accompany higher education levels make it increasingly possible to afford the costs of domestic help and childcare, thus making entry into the work force more economically feasible and attractive.
+
 ```{r labor-edu-scatterplot, fig.cap = "Scatter Plot between Ratio of Female to Male Labour Force Participation Rate and Education Expenditure"}
 
 data_education %>% filter(Series %in% (c("Adjusted savings: education expenditure (current US$)",
@@ -136,18 +192,6 @@ data_education %>% filter(Series %in% (c("Adjusted savings: education expenditur
   geom_smooth(method = "lm") +
   theme(aspect.ratio = 1)
 
-```
-
-\subsection*{Education in Israel}
-
-```{r total-edu-spending, fig.cap="Total Education Expenditure (US$) in Israel by decades"}
-data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
-  #summarising education expenditure by decades
-  group_by(decade) %>%
-  summarise(avg_spending = mean(value, na.rm = TRUE)) %>% 
-  ggplot(aes(x = decade,
-             y = avg_spending)) +
-  geom_col()
 ```
 
 \section*{}

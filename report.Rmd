@@ -92,6 +92,11 @@ data_long = data %>%
 
 This section will be analysing the impact that female and male mortality rates have on the ratio of females to males in the labor force.
 
+```{r read-in-data}
+wdi <- read_csv(here::here("data", "wdi_data.csv"))
+wdi_meta <- read_csv(here::here("data", "wdi_meta.csv"))
+```
+
 \section*{}
 
 \section*{Model}

@@ -88,7 +88,7 @@ data_long = data %>%
 
 \section*{}
 
-\section*{Male and Female Mortality Rates}
+\section*{Male and Female Mortality Rates and Birth Rate}
 
 This section will be analysing the impact that female and male mortality rates have on the ratio of females to males in the labor force.
 
@@ -151,7 +151,7 @@ pct_change_mortality_variables <- mortality_birth_rate_long %>%
   kable(caption = "The total percentage change from 1986 to 2016, per each variable") %>%
   kable_styling(bootstrap_options = c("hover", "striped"),
                 latex_options = "hold_position") 
-pct_change_mortality_variables   
+pct_change_mortality_variables    
 ```
 
 \section*{}

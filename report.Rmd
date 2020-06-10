@@ -121,14 +121,11 @@ The same trend can also be found in Israel - figure \@ref(fig:ratio-plot-decade)
 
 It is believed that gender inequality in education is a major contributing factor in gender inequalities in adulthood, especially in the labour market [@marks2008accounting].
 
-In this section, the report is going to examine the association between education and the increase of women's employment in Israel.
-
-
+In this section, the report is going to examine the state of education in Israel and whether there is an association between education and the increase of women's employment in Israel.
 
 \subsection*{Education in Israel}
 
 ```{r read-edu-pop}
-library(here)
 library(janitor)
 
 read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% clean_names() %>% 
@@ -151,6 +148,18 @@ data_edu_pop <- read_edu_pop %>%
     subject == "UPPSRY_WOMEN" ~ "upper_secondary_women",
     TRUE ~ as.character(subject)
   ))
+```
+
+```{r edu-pop, fig.cap= "Adult Education Level of 25-64 Year-olds in Israel"}
+data_edu_pop %>% filter(subject %in% c("below_upper_secondary",
+                                       "tertiary",
+                                       "upper_secondary")) %>% 
+  ggplot(aes(x = time,
+             y = value,
+             color = subject)) +
+  geom_point() +
+  geom_line() +
+  labs(x = "Year", y = "% of 25-64 year-olds")
 ```
 
 ```{r total-edu-spending, fig.cap="Total Education Expenditure (US$) in Israel by decades"}

@@ -254,7 +254,7 @@ function_plot_pct_change_against_labor_force_ratio <- function(x){
              color = Series)) +
     geom_line() +
     geom_point() +
-    geom_smooth(method = lm) +
+    geom_smooth(method = lm, se = FALSE) +
     theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
     theme(legend.position = "bottom")
 }

@@ -111,7 +111,7 @@ israel_display <- israel_labour %>% pivot_wider(names_from = Series, values_from
 
 ```
 
-Table \@ref(tab:showcase) exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females is the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
+Table \@ref(tab:showcase) exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females and female labour force participation are the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
 
 ```{r change}
 israel_labour$Year <-  as.numeric(as.character(israel_labour$Year))
@@ -166,8 +166,6 @@ plot_3
 ```
 
 Figure \@ref(fig:graph3) compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20% in the past 30 years. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were. 
-
-
 
 
 \section*{Model}

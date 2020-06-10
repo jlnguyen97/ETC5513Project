@@ -53,6 +53,9 @@ library(tidyverse)
 library(kableExtra)
 library(bookdown)
 library(lubridate)
+library(imputeTS)
+library(gridExtra)
+library(grid)
 ```
 
 
@@ -86,12 +89,12 @@ data_long = data %>%
 
 \section*{}
 
-\section*{Renewable energy}
+\section*{Analysing energy consumption and renewable sources}
 
 Israel has seen significant changes in the distribution of genders in the labour force. Though many direct effects can be explored, this section looks at changes in attitude by analysing Israel's move to more renewable sources of energy. There may be a link between the a transition to change in political thinking in priority. This may also be attributed to a general change in attitude, and could provide a reasonable proxy for our model.
 
-For this section of the report, we will be looking at World Bank Sustainable for All data. This data set comprises of electricity data between 1990 and 2015. 
-```{r}
+For this section of the report, we will be looking at World Bank Sustainable for All data (@TheWorldBank2018). This data set comprises of electricity data between 1990 and 2015. 
+```{r include=FALSE}
 data_sea = read.csv("data/SEA_data.csv")
 names(data_sea)=c("Country Name", "Country Code", "Year", "Year Code",
                   "Renewable electricity share of total electricity output (%)",
@@ -102,76 +105,117 @@ names(data_sea)=c("Country Name", "Country Code", "Year", "Year Code",
 data_sea = data_sea[1:26,]
 
 data_sea_long = data_sea %>%
-  pivot_longer(`Renewable electricity share of total electricity output (%)`:`Renewable energy share of TFEC (%)`,names_to = "Series")
+  pivot_longer(`Renewable electricity share of total electricity output (%)`:`Renewable energy share of TFEC (%)`,names_to = "Series") %>%
+  mutate(value = as.character(value)) %>%
+  mutate(value = as.numeric(value))
 ```
 
-```{r}
-data_sea_long %>% 
+```{r compare-renewable-ftm, fig.cap="Comparing female to male ratio to renewable electricity output share", echo=FALSE}
+p1 = data_sea_long %>% 
   filter(Series == "Renewable electricity share of total electricity output (%)") %>%
-  ggplot(aes(x = Year, y = value, colour = Series)) + 
-  geom_line(aes(group = 1))
+  ggplot(aes(x = Year, y = value)) + 
+  geom_line(aes(group = 1)) + 
+    theme(axis.text.x = element_text(angle = 90),
+        axis.title.x = element_blank()) + 
+  ylab("Renewable electricity ratio (%)") 
+
+p2 = data_long %>%
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)",
+         Year %in% c(1990:2015)) %>%
+  mutate(Year = as.character(Year)) %>%
+  mutate(Year = as.numeric(Year)) %>%
+  ggplot(aes(x = Year, y=value)) + 
+  geom_line(aes(group=1)) + 
+  theme(axis.text.x = element_text(angle = 90),
+        axis.title.x = element_blank()) + 
+  ylab("Female to male labor force (%)")
+
+grid.arrange(p1,p2, ncol=2,
+             top=textGrob("Comparing female to male (%) and Renewable electricity share output (%)",gp=gpar(fontsize=10,font=1)),
+             bottom=textGrob("Year",gp=gpar(fontsize=10,font=1)))
 ```
 
+Comparing the ratio of female to male labor force participation rates to renewable electricity share in Figure \@ref(fig:compare-renewable-ftm), we note a more consistent growth of the ratio over time, whereas the renewable electricity ratio stays consistent until 2007, after which we observe a sharp increase. To understand this increase, we must delve more into the renewables future plan for Israel. Established in 2016 were steps to reach a target of 17% Renewable Energy production by 2030, with interim targets of 10% and 13% by 2020/2023 respectively (@IEA2019). Unfortunately, the data set used for this analysis does not have data past 2015, and as a result, we cannot identify the effect which the announcement could have made.
+
+Looking at the change in electricity share in Figure \@ref(fig:renewable-compare):
+
+```{r renewable-compare, fig.cap="Looking at Renewable electricity share, and difference change", echo=FALSE}
+data_sea_long_1 = data_sea_long %>%
+  filter(Series == "Renewable electricity share of total electricity output (%)")
+
+data_sea_long_1 = cbind(data_sea_long_1, difference = c(NA, diff(data_sea_long_1$value))) %>%
+  drop_na()
 
 
-```{r}
-data_electric = data_long %>%
-  filter(Series %in% c("Renewable electricity output (% of total electricity output)",
-                       "Fossil fuel energy consumption (% of total)",
-                       "Energy imports, net (% of energy use)",
-                       "Fossil fuel energy consumption (% of total)",
-                       "Renewable electricity output (% of total electricity output)",
-                       "Electricity production from oil, gas and coal sources (% of total)",
-                       "Electricity production from renewable sources, excluding hydroelectric (% of total)"))
+p3 = data_sea_long %>% 
+  filter(Series == "Renewable electricity share of total electricity output (%)") %>%
+  ggplot(aes(x = Year, y = value)) + 
+  geom_line(aes(group = 1)) + 
+    theme(axis.text.x = element_text(angle = 90),
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank()) + 
+  ylab("Renewable electricity share of total electricity output (%)")
+
+
+p4 = data_sea_long_1 %>% 
+  drop_na() %>%
+  ggplot(aes(x=Year, y=difference)) +
+  geom_line(aes(group=1)) + ylab("Difference change (%)")
+
+grid.arrange(p3,p4, top=textGrob("Renewable electricity share of total electricity output (%)",gp=gpar(fontsize=15,font=1)))
 ```
 
-```{r}
-data_electric %>% 
-  filter(Series %in% c("Fossil fuel energy consumption (% of total)")) %>%
-  drop_na() %>%
-  ggplot(aes(x=Year, y=value, colour=Series)) + 
-  geom_line(aes(group=1)) + 
-  theme(axis.text.x = element_text(angle = 90))
+We can see that the difference seems to centre around zero prior to 2007, as was noted previously, however no clear perfect correlation can be seen when comparing the differences in Figure \@ref(fig:renewable-compare) and Figure \@ref(fig:compare-renewable-ftm). 
 
-data_electric %>% 
-  filter(Series %in% c("Energy imports, net (% of energy use)")) %>%
-  drop_na() %>%
-  ggplot(aes(x=Year, y=value, colour=Series)) + 
-  geom_line(aes(group=1)) + 
-  theme(axis.text.x = element_text(angle = 90))
 
-data_electric %>% 
-  filter(Series %in% c("Electricity production from renewable sources, excluding hydroelectric (% of total)")) %>%
-  drop_na() %>%
-  ggplot(aes(x=Year, y=value, colour=Series)) + 
-  geom_line(aes(group=1)) + 
-  theme(axis.text.x = element_text(angle = 90)) + 
-  ylab("Percentage of total electricity output (%)")
+
+```{r table-setup, include=FALSE}
+mean_difference = mean(data_sea_long_1[["difference"]])
+
+table_forecast = data.frame(Year = data_sea_long_1$Year, 
+                            Value = data_sea_long_1$value)
+
+val = c(table_forecast$Value[25] + seq(1:5)*mean_difference)
+
+fc = data.frame(Year = c(2016:2020), 
+                Value = val)
+
+table_forecast = rbind(table_forecast, fc)
+
+names(table_forecast)[2] = c("Renewable electricity share of total electricity output (%)")
 ```
 
-** Graph of the energy production compare.
-** Primary focus on the renewables.
+\pagebreak
 
-** Table of rate of change, plot this rate of change
-** Use average of rate of change to see if they are able to get to that level predicted.
+```{r fcrenew, echo=FALSE}
+kable(tail(table_forecast,5), booktabs = TRUE,
+      caption = "Forecast of renewable electricity share") %>%
+  kable_styling(full_width = FALSE, "striped", position = "center", font_size = 10)
+```
 
-https://iea-pvps.org/wp-content/uploads/2020/05/IEA-PVPS-AR-2019-1.pdf
+Table \@ref(tab:fcrenew) shows a forecast of the renewable electricity share of total electricity output in the next five years. This was conducted using a mean forecasting method. If current policies were followed, the target set in 2016 may not be met.
 
-In 2019, Israel reached a level ~ 7% of total energy production from renewables.
-70% of total was natural gas, I am guessing that the rest was from coal.
+Perhaps, renewable energy is not exactly suitable in representing some change in attitude, Burke (@Burke2018) and Sung (@Sung2018)  finds that renewable transition for the energy industry has been promoted by governments and markets, whereas traditional energy companies tend to hamper this progress. they also find that the general public do not have directly influence the transition, but indirectly affects it through the markets and governments. It may be suitable for the ratio of renewable energy output to proxy the strength of effect that the government/market has, and by extension, how the public affects decision making in the government.
 
-Changing attitudes - target 17% by 2030, interim 10% by 2020.
+Let's look at total energy consumed in relation to the female to male labour force ratio: 
 
-Renewable energy is produced by solar fields. 95% of the above 7% was solar energy (renewable sources).
+```{r energy-ftm, fig.cap = "Comparing total energy consumption and female to male ratio.", echo=FALSE}
+p5 = data_sea_long %>% 
+  filter(Series %in% c("Total final energy consumption (TFEC) (TJ)")) %>%
+  ggplot(aes(x = Year, y = value)) + 
+  geom_line() + 
+    theme(axis.text.x = element_text(angle = 90),
+          axis.title.x = element_blank()) +
+  ylab("Total final energy consumption (TFEC) (TJ)")
 
-Another point about changing attitudes, plan was initated in 2016.
+grid.arrange(p5,p2, ncol=2,
+             top=textGrob("Comparing total energy consumed (TJ) and female to male (%)",gp=gpar(fontsize=10,font=1)),
+             bottom=textGrob("Year",gp=gpar(fontsize=10,font=1)))
+```
 
-Israeli network is island * no electrical grid power.
+We can see a similar trend between series in Figure \@ref(fig:energy-ftm). We could use total energy consumption as a way to proxy general changes in attitudes. Andrae (@Andrae2015) discusses the general increase in electricity usage due to evolving communication technologies, including consumer devices. Here we note a significant increase in energy consumption over time, most likely attributable to an increased reliance on technology, including information technology. With a access to wider information, it is reasonable to expect some sort of changing attiude. 
 
-Abundant natural gas in israel, after 2000 (first commercial discovery of gas in israel), became self-sufficient/net exporter of gas.
-
-very focussed to change. https://www.export.gov/apex/article2?id=Israel-En
-
+To conclude this section, we can use renewable electricity output ratio to directly model some government/market influence, and indirectly people. It may also be more reasonable to use total energy consumption to model changing attitudes.
 
 \section*{Male and Female Mortality Rates}
 

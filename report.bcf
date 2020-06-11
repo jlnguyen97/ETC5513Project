@@ -2183,36 +2183,47 @@
     <bcf:datasource type="file" datatype="bibtex">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">TheWorldBank2020</bcf:citekey>
-    <bcf:citekey order="2">TheWorldBank2020</bcf:citekey>
-    <bcf:citekey order="3">stier2000women</bcf:citekey>
-    <bcf:citekey order="4">marks2008accounting</bcf:citekey>
-    <bcf:citekey order="5">oecd2016</bcf:citekey>
-    <bcf:citekey order="6">Stier2013</bcf:citekey>
-    <bcf:citekey order="7">pm2014</bcf:citekey>
-    <bcf:citekey order="8">Stier2013</bcf:citekey>
-    <bcf:citekey order="9">pm2014</bcf:citekey>
-    <bcf:citekey order="10">TheWorldBank2018</bcf:citekey>
-    <bcf:citekey order="11">TheWorldBank2018</bcf:citekey>
-    <bcf:citekey order="12">IEA2019</bcf:citekey>
-    <bcf:citekey order="13">IEA2019</bcf:citekey>
-    <bcf:citekey order="14">Burke2018</bcf:citekey>
-    <bcf:citekey order="15">Burke2018</bcf:citekey>
-    <bcf:citekey order="16">Sung2018</bcf:citekey>
-    <bcf:citekey order="17">Sung2018</bcf:citekey>
-    <bcf:citekey order="18">Andrae2015</bcf:citekey>
-    <bcf:citekey order="19">Andrae2015</bcf:citekey>
-    <bcf:citekey order="20">GenderRoles</bcf:citekey>
-    <bcf:citekey order="21">GenderRoles</bcf:citekey>
-    <bcf:citekey order="22">Woodhead</bcf:citekey>
-    <bcf:citekey order="23">Woodhead</bcf:citekey>
-    <bcf:citekey order="24">ServiceIDF</bcf:citekey>
-    <bcf:citekey order="25">ServiceIDF</bcf:citekey>
-    <bcf:citekey order="26">Levy2006</bcf:citekey>
-    <bcf:citekey order="27">Levy2006</bcf:citekey>
-    <bcf:citekey order="28">israelministryofforeignaffairs2013</bcf:citekey>
-    <bcf:citekey order="29">lerner1997israeli</bcf:citekey>
-    <bcf:citekey order="30">lerner1997israeli</bcf:citekey>
+<<<<<<< HEAD
+    <bcf:citekey order="1">Woodhead</bcf:citekey>
+    <bcf:citekey order="2">Woodhead</bcf:citekey>
+    <bcf:citekey order="3">VoicuM2009</bcf:citekey>
+    <bcf:citekey order="4">VoicuM2009</bcf:citekey>
+    <bcf:citekey order="5">TheWorldBank2020</bcf:citekey>
+    <bcf:citekey order="6">TheWorldBank2020</bcf:citekey>
+    <bcf:citekey order="7">stier2000women</bcf:citekey>
+    <bcf:citekey order="8">marks2008accounting</bcf:citekey>
+    <bcf:citekey order="9">oecd2016</bcf:citekey>
+    <bcf:citekey order="10">Stier2013</bcf:citekey>
+    <bcf:citekey order="11">pm2014</bcf:citekey>
+    <bcf:citekey order="12">Stier2013</bcf:citekey>
+    <bcf:citekey order="13">pm2014</bcf:citekey>
+    <bcf:citekey order="14">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="15">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="16">IEA2019</bcf:citekey>
+    <bcf:citekey order="17">IEA2019</bcf:citekey>
+    <bcf:citekey order="18">Burke2018</bcf:citekey>
+    <bcf:citekey order="19">Burke2018</bcf:citekey>
+    <bcf:citekey order="20">Sung2018</bcf:citekey>
+    <bcf:citekey order="21">Sung2018</bcf:citekey>
+    <bcf:citekey order="22">Andrae2015</bcf:citekey>
+    <bcf:citekey order="23">Andrae2015</bcf:citekey>
+    <bcf:citekey order="24">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="25">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="26">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="27">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="28">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="29">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="30">DickeAL2019</bcf:citekey>
+    <bcf:citekey order="31">DickeAL2019</bcf:citekey>
+    <bcf:citekey order="32">Woodhead</bcf:citekey>
+    <bcf:citekey order="33">Woodhead</bcf:citekey>
+    <bcf:citekey order="34">GittlemenSI2020</bcf:citekey>
+    <bcf:citekey order="35">GittlemenSI2020</bcf:citekey>
+    <bcf:citekey order="36">Levy2006</bcf:citekey>
+    <bcf:citekey order="37">Levy2006</bcf:citekey>
+    <bcf:citekey order="38">israelministryofforeignaffairs2013</bcf:citekey>
+    <bcf:citekey order="39">lerner1997israeli</bcf:citekey>
+    <bcf:citekey order="40">lerner1997israeli</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
@@ -2254,3 +2265,32 @@
                 labelalphanametemplatename="global">
   </bcf:datalist>
 </bcf:controlfile>
+=======
+    <bcf:citekey order="1">TheWorldBank2020</bcf:citekey>
+    <bcf:citekey order="3">Woodhead</bcf:citekey>
+    <bcf:citekey order="5">VoicuM2009</bcf:citekey>
+    <bcf:citekey order="7">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="9">stier2000women</bcf:citekey>
+    <bcf:citekey order="10">marks2008accounting</bcf:citekey>
+    <bcf:citekey order="11">edulevel</bcf:citekey>
+    <bcf:citekey order="12">eduspend</bcf:citekey>
+    <bcf:citekey order="13">oecd2016</bcf:citekey>
+    <bcf:citekey order="14">Stier2013</bcf:citekey>
+    <bcf:citekey order="15">pm2014</bcf:citekey>
+    <bcf:citekey order="16">Stier2013</bcf:citekey>
+    <bcf:citekey order="17">pm2014</bcf:citekey>
+    <bcf:citekey order="18">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="20">IEA2019</bcf:citekey>
+    <bcf:citekey order="22">Burke2018</bcf:citekey>
+    <bcf:citekey order="24">Sung2018</bcf:citekey>
+    <bcf:citekey order="26">Andrae2015</bcf:citekey>
+    <bcf:citekey order="28">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="30">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="32">TheWorldBank2018</bcf:citekey>
+    <bcf:citekey order="34">DickeAL2019</bcf:citekey>
+    <bcf:citekey order="36">Woodhead</bcf:citekey>
+    <bcf:citekey order="38">GittlemenSI2020</bcf:citekey>
+    <bcf:citekey order="40">Levy2006</bcf:citekey>
+    <bcf:citekey order="42">israelministryofforeignaffairs2013</bcf:citekey>
+    <bcf:citekey order="43">lerner1997israeli</bcf:citekey>
+>>>>>>> 9024b81922d0500415b2610fbd1024857e6d728b

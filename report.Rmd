@@ -141,10 +141,11 @@ In addition to the World Bank dataset, this section also uses dataset from OECD 
 
 ```{r read-edu-pop}
 
-read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% 
-  rename(location = `ï..LOCATION`)
-read_edu_spending <- read.csv("data/edu_spending.csv") %>%
-  rename(location = `ï..LOCATION`)
+read_edu_pop <- read.csv("data/adult_edu_pop.csv")
+names(read_edu_pop)[1] = "location"
+read_edu_spending <- read.csv("data/edu_spending.csv")
+names(read_edu_spending)[1] = "location"
+
 
 #wrangling read_edu_pop dataset
 data_edu_pop <- read_edu_pop %>% 

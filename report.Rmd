@@ -18,11 +18,11 @@ author:
   address: Monash University
   email: slyu0007@student.monash.edu
   correspondingauthor: true
-  qualifications:  Masters
-- familyname: XXX
-  othernames: XXX
+  qualifications:  XXX
+- familyname: Tirodkar
+  othernames: Siddhant
   address: Monash University
-  email: XXX
+  email: stir0003@student.monash.edu
   correspondingauthor: true
   qualifications:  XXX
 department: Econometrics and Business Statistics \newline add names &\newline add names
@@ -53,6 +53,8 @@ library(tidyverse)
 library(kableExtra)
 library(bookdown)
 library(lubridate)
+library(knitr)
+library(gridExtra)
 ```
 
 
@@ -90,7 +92,110 @@ data_long = data %>%
 
 \section*{Male and Female Mortality Rates}
 
-\section*{}
+\section*{Labour Force Analysis}
+
+# Overview
+
+This section of the report will focus on analysing various aspects of the Israeli labour force with respect to the research question that we have chosen which is "How have the views towards gender stereotypes changed over time in Israel?". The Israeli labour force has come a long way from being male dominated to being almost equally divided between men and women. The transition of the Israeli labour force shall be explored through the years 1991-2019 in this section of the report.
+```{r labour-data}
+israel_labour <- data_long %>% dplyr::filter(Series %in% c("Labor force, female (% of total labor force)",
+                                                      "Ratio of female to male labor force participation rate (%) (national estimate)", "Self-employed, female (% of female employment) (modeled ILO estimate)" , "Wage and salaried workers, female (% of female employment) (modeled ILO estimate)",
+                                                      "Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)","Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)"),
+                                        Year %in% c(1991:2019))
+
+```
+
+```{r showcase}
+israel_display <- israel_labour %>% pivot_wider(names_from = Series, values_from = value)
+
+  kable(head(israel_display), caption = "Variables Summary") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                latex_options = "hold_position") %>%
+    column_spec(1, width = "2em") %>%
+    column_spec(2, width = "5em") %>%
+    column_spec(3, width = "5em") %>%
+    column_spec(4, width = "5em") %>%
+    column_spec(5, width = "5em") %>%
+    column_spec(6, width = "5em") %>%
+    column_spec(7, width = "5em")
+    
+  
+
+```
+
+Table \@ref(tab:showcase) exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females and female labour force participation are the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
+
+```{r change}
+israel_labour$Year <-  as.numeric(as.character(israel_labour$Year))
+
+```
+
+```{r graph1,fig.cap="% Female labour force out of total labour force"}
+
+plot_1 <- israel_labour %>% dplyr::filter(Series == "Labor force, female (% of total labor force)") %>%
+  ggplot(aes(x = Year, y = value, color = Series))+
+  geom_line()+
+  xlab("Year")+
+  ylab("Total Labour force(%)")+
+  theme(legend.position="bottom")
+  
+
+plot_1
+```
+
+Figure \@ref(fig:graph1) depicts the gentle rise in the female labour force which was around 40% of the total labour force in 1990 to around 47% around 2020. One of the main reasons behind the surge in female participation is due to the educational attainment of women in Israel. Also, in 2006 and 2007 numerous amendments were made to women employment law to protect the rights of women at workplace and provide equal employment opportunities which has proved to be pivotal in increasing female participation in the labour force. [Source](https://mfa.gov.il/MFA/AboutIsrael/State/Law/Pages/Ensuring-equal-rights-for-women-in-Israel.aspx)
+
+# Self-employed v/s wage & salaried women
+
+```{r graph2,fig.cap="Self-employed v/s Wage & salaried female workers"}
+
+plot_2 <- israel_labour %>% dplyr::filter(Series %in% c("Self-employed, female (% of female employment) (modeled ILO estimate)" , "Wage and salaried workers, female (% of female employment) (modeled ILO estimate)")) %>% 
+  ggplot(aes(x = Year, y = value, fill = Series))+
+  geom_col()+
+  xlab("Year")+
+  ylab("Total female employment (%)")+
+  theme(legend.position="bottom")
+  
+
+plot_2
+```
+
+Figure \@ref(fig:graph2) shows the slow but gradual increase in the percentage of self-employed females in the female labour workforce. The female labour workforce comprises of self-employed women and wage and salaried women. The percentage of self-employed women in Israel has increased from 5.9 to 9.2 in 3 decades. The gradual change can be attributed to strong family orientation present in the Israeli culture and the fact that a working mother has to always give priorities to family responsibilities. But the main contributing factor to the increase was achievement motivations and economic necessities more than educational attainment or previous entrepreneurial experience. @lerner1997israeli
+
+# Female v/s Male labour force participation
+
+```{r graph3,fig.cap="Female v/s Male labour force participation"}
+
+plot_3 <- israel_labour %>% dplyr::filter(Series %in% c("Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)","Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)")) %>%
+  ggplot(aes(x=Year,y=value, color = Series))+
+  geom_line()+
+  xlab("Year")+
+  ylab("Labour force participation rate")+
+  theme(legend.position="bottom")
+
+plot_3
+```
+
+Figure \@ref(fig:graph3) compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the female population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20% in the past 30 years which authenticates that views towards gender stereotypes are changing over time in Israel. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were. 
+
+# Female labour force v/s female-male participation rate
+```{r graph4}
+plot_4 <- israel_labour %>% dplyr::filter(Series %in% c("Ratio of female to male labor force participation rate (%) (national estimate)")) %>%
+  ggplot(aes(x=Year,y=value, color = Series))+
+  geom_line()+
+  xlab("Year")+
+  ylab("Female to male Partcipation rate(% of total)")+
+  theme(legend.position="bottom")
+                                         
+```
+
+```{r graph5,fig.cap="Comparing female labour force with female-male participation rate"}
+
+grid.arrange(plot_1,plot_4, ncol=2)
+
+```
+
+Figure \@ref(fig:graph5) verifies that the percentage of females in the total labour force is positively correlated with the female to male labour force participation rate as both show a positive trend over time and have increased significantly since 1991 to 2019.
 
 \section*{Model}
 

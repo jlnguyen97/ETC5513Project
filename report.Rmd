@@ -6,13 +6,13 @@ author:
   address: Monash University
   email: jlngu6@student.monash.edu
   correspondingauthor: true
-  qualifications: B.Com
+  qualifications:  B.Com
 - familyname: Lyubic
   othernames: Samuel
   address: Monash University
   email: slyu0007@student.monash.edu
   correspondingauthor: true
-  qualifications: B.Com
+  qualifications:  B.Com
 - familyname: Tirodkar
   othernames: Siddhant
   address: Monash University
@@ -137,6 +137,8 @@ data_education <- data_education %>% mutate(decade = floor(Year/10)*10)
 
 In the past 50 years, women's participation in the work force has increased steadily [@stier2000women]. It is believed that gender inequality in education is a major contributing factor in gender inequalities in adulthood, especially in the labour market [@marks2008accounting]. In this section, the report is going to examine the state of education in Israel and whether there is an association between education and the increase of women's employment in Israel.
 
+In addition to the World Bank dataset, this section also uses dataset from OECD in relation to adult education level [@edulevel] and education spending [@eduspend].
+
 \subsection*{Education Spending in Israel}
 
 ```{r read-edu-pop}
@@ -221,6 +223,8 @@ data_edu_spending_long_imp %>%
 
 Figure \@ref(fig:data-edu-spend) reflects how the Israeli government invested the education spending from 2008 to 2015. The figure shows that the government spent the majority of the funds on tertiary educations. It is then followed by primary to post secondary (non-tertiary) and early childhood education respectively.
 
+\subsection*{Adult Education Level in Israel}
+
 ```{r edu-pop-female, fig.cap= "Female Adult Education Level in Israel"}
 data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
                                        "upper_secondary_women")) %>% 
@@ -232,7 +236,6 @@ data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
   theme(legend.position = "bottom") +
   labs(x = "Year", y = "% of 25-64 year-olds")
 ```
-\subsection*{Adult Education Level in Israel}
 
 The percentage of adult female education level in Israel is reflected in figure \@ref(fig:edu-pop-female). The figure shows that the percentage of women with tertiary education in Israel increases over the years. Conversely, the percentage of women with upper secondary education in Israel decreases over the years.
 
@@ -738,5 +741,4 @@ Interestingly noted is the weaker signficance of the variable `Self-employed, fe
 
 From the analysis conducted in this report it is evident that the view of gender stereotypes in Israel have improved to a more contemporary view to some degree, as explained by the individual variables that were analysed. However, to obtain more meaningful results, further research must be conducted. It is also important to note that only recently has gender equality been an issue that has been widely recognised and addressed. More data may be required to explore how different variables interact with equality and the continued dismantling of stereotypes in today's world.
 
-
-References
+\pagebreak

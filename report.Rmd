@@ -126,51 +126,51 @@ In this section, the report is going to examine the state of education in Israel
 \subsection*{Education in Israel}
 
 ```{r read-edu-pop}
-library(janitor)
 library(simputation)
 
-read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% clean_names() %>% 
-  rename(location = i_location)
-read_edu_spending <- read.csv("data/edu_spending.csv") %>% clean_names()%>% 
-  rename(location = i_location)
-read_pop_tert <- read.csv("data/pop_tert_edu.csv") %>% clean_names()%>% 
-  rename(location = i_location)
+read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% 
+  rename(location = `ï..LOCATION`)
+read_edu_spending <- read.csv("data/edu_spending.csv") %>%
+  rename(location = `ï..LOCATION`)
+read_pop_tert <- read.csv("data/pop_tert_edu.csv") %>% 
+  rename(location = `ï..LOCATION`)
 
 #wrangling read_edu_pop dataset
 data_edu_pop <- read_edu_pop %>% 
   filter(location == "ISR") %>% 
-  mutate(subject = case_when(
-    subject == "BUPPSRY" ~ "below_upper_secondary",
-    subject == "TRY" ~ "tertiary",
-    subject == "UPPSRY" ~ "upper_secondary",
-    subject == "TRY_MEN" ~ "tertiary_men",
-    subject == "TRY_WOMEN" ~ "tertiary_women",
-    subject == "UPPSRY_MEN" ~ "upper_secondary_men",
-    subject == "UPPSRY_WOMEN" ~ "upper_secondary_women",
-    TRUE ~ as.character(subject)
+  mutate(SUBJECT = case_when(
+    SUBJECT == "BUPPSRY" ~ "below_upper_secondary",
+    SUBJECT == "TRY" ~ "tertiary",
+    SUBJECT == "UPPSRY" ~ "upper_secondary",
+    SUBJECT == "TRY_MEN" ~ "tertiary_men",
+    SUBJECT == "TRY_WOMEN" ~ "tertiary_women",
+    SUBJECT == "UPPSRY_MEN" ~ "upper_secondary_men",
+    SUBJECT == "UPPSRY_WOMEN" ~ "upper_secondary_women",
+    TRUE ~ as.character(SUBJECT)
   ))
 
 #wrangling read_edu_spending dataset
 data_edu_spending <- read_edu_spending %>%
   filter(location == "ISR",
-         measure == "USD_STUDENT") %>%
-  select(time, subject, value) %>% 
-  mutate(subject = case_when(
-    subject == "SRY" ~ "secondary",
-    subject == "TRY" ~ "tertiary",
-    subject == "PRY_NTRY" ~ "primary_to_post_secondary_non_tertiary",
-    subject == "EARLYCHILDEDU" ~ "early_childhood_education",
-    subject == "PRY" ~ "primary",
-    TRUE ~ as.character(subject)
+         MEASURE == "USD_STUDENT") %>%
+  select(TIME, SUBJECT, Value) %>% 
+  mutate(SUBJECT = case_when(
+    SUBJECT == "SRY" ~ "secondary",
+    SUBJECT == "TRY" ~ "tertiary",
+    SUBJECT == "PRY_NTRY" ~ "primary_to_post_secondary_non_tertiary",
+    SUBJECT == "EARLYCHILDEDU" ~ "early_childhood_education",
+    SUBJECT == "PRY" ~ "primary",
+    TRUE ~ as.character(SUBJECT)
   )) %>% 
-  filter(time >= 2008)
+  filter(TIME >= 2008)
 
 #impute missing data in data_edu_spending
 data_edu_spending_wide <- data_edu_spending %>% 
-  pivot_wider(names_from = subject,
-              values_from = value) %>% 
+  pivot_wider(names_from = SUBJECT,
+              values_from = Value) %>% 
   select(-secondary) %>% 
-  filter(time != 2016)
+  filter(TIME != 2016) %>% 
+  rename(time = TIME)
 
 data_edu_spending_wide_imp <- data_edu_spending_wide %>% 
   as.data.frame() %>% 
@@ -217,13 +217,14 @@ data_edu_spending_long_imp %>%
 
 
 ```{r edu-pop-female, fig.cap= "Female Adult Education Level of 25-64 Year-olds in Israel"}
-data_edu_pop %>% filter(subject %in% c("tertiary_women",
+data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
                                        "upper_secondary_women")) %>% 
-  ggplot(aes(x = time,
-             y = value,
-             color = subject)) +
+  ggplot(aes(x = TIME,
+             y = Value,
+             color = SUBJECT)) +
   geom_point() +
   geom_line() +
+  theme(legend.position = "bottom") +
   labs(x = "Year", y = "% of 25-64 year-olds")
 ```
 
@@ -255,7 +256,7 @@ data_education %>% filter(Series %in% (c("Adjusted savings: education expenditur
              y = `Ratio of female to male labor force participation rate (%) (national estimate)`,
              label = Year)) +
   geom_point() +
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "lm", se = FALSE) +
   theme(aspect.ratio = 1)
 
 ```

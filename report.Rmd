@@ -84,6 +84,15 @@ data_long = data %>%
 
 \section*{Introduction}
 
+Gender inequality is an issue that is recognised globally. A large factor in the inequality that exists stems from the traditional stereotypes that have surrounded each gender across history, with males being considered as the leaders and providers and females the caretakers with a role of domesticity (@Woodhead). These stereotypes are further perpetuated through the presence of religion as the traditional views for male and female roles are embedded in their history and literature, as such many religions fight back against secularisation and the evolving contemporary views (@VoicuM2009) which is often has a direct relation with pushing back against the advancements of women in society and the deconstruction of the gender stereotypes that exist for the roles of males and females. Israeli law rules that discrimination related to gender in workplaces and wages, yet when observing actual ratios of females to males in the labour force, the number of female to male workers is not equal. As such, this report aims to establish possible reasons as to how views towards gender stereotypes have changed over time. To do this, we have selected variables to investigate and establish some relationship with changes in gender stereotypes with the use of the ratio of female to male labor force particiaption rate as our proxy for the change in the gender stereotype views. 
+
+## Data source
+
+The data used has been retrieved from the World Development Indicators dataset from the World Bank @#CITE# and the OECD @#CITE#. Each section will explore the respective variable, and a linear regression model has been developed to determine the impact of each investigated variable.
+
+*Variables*
+
+
 \section*{Motivation}
 
 \section*{Education}
@@ -366,8 +375,9 @@ To conclude this section, we can use renewable electricity output ratio to direc
 
 \section*{Male and Female Mortality Rates and Birth Rate}
 
-With Israel as our chosen country, this section will be analyzing the relationship between our repose variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators: _Birth rate, crude (per 1,000 people)_, _Mortality rate, adult, female (per 1,000 female adults)_ and _Mortality rate, adult, male (per 1,000 male adults)_ to assess their impact on the change of the female to male labor force ratio to ultimately address the change in how the gender stereotype is viewed in Israel. 
-Across history, the traditional stereotype on gender roles has been one that depicts males roles as the provider and women as the caretaker and child bearer resulting in the notion that a woman's role is at home which has led to less occupational opportunities and aspirations @GenderRoles. These stereotypes are further perpetuated through religion, as seen by the two most present religion in Israel - Judaism and Islam where the traditional identity for involves leadership for men and domesticity for females @Woodhead in all facets of life from work, private, public and in the army @ServiceIDF. However, it does seem as though this traditional view is being confronted and dismantled over time with more religious and non religious Israeli woman taking up education and being accepted in a range of occupational opportunities and army duties @Levy2006, as such birth rate and male and female mortality rates are prime variables to potentially explain the change in the labor force ratio thus indicating the potential change in how gender stereotypes are viewed. 
+With Israel as our chosen country, this section will be analyzing the relationship between our response variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators: _Birth rate, crude (per 1,000 people)_, _Mortality rate, adult, female (per 1,000 female adults)_ and _Mortality rate, adult, male (per 1,000 male adults)_ to assess their impact on the change of the female to male labor force ratio to ultimately assess the potential change in how the gender stereotype is percieved in Israel. 
+
+Across history, the traditional stereotype on gender roles has been one that depicts males roles as the provider and women as the caretaker and child bearer resulting in the notion that a woman's role is at home which has led to less occupational opportunities and aspirations @DickeAL2019. These stereotypes are further perpetuated through religion, as seen by the two most present religion in Israel - Judaism and Islam where the traditional identity for involves leadership for men and domesticity for females @Woodhead in all facets of life from work, private, public and in the army (@GittlemenSI2020). However, it does seem as though this traditional view is being confronted and dismantled over time with more religious and non religious Israeli woman taking up education and being accepted in a range of occupational opportunities and army duties @Levy2006, as such birth rate and male and female mortality rates are prime variables to potentially explain the change in the labor force ratio thus indicating the potential change in how gender stereotypes are viewed. 
 
 The variables for this section are isolated into their own data set in both long and wide form.
 ```{r create-long-wide-objects-with-required-variables}

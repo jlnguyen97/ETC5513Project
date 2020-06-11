@@ -109,10 +109,10 @@
     },
     "broom": {
       "Package": "broom",
-      "Version": "0.5.2",
+      "Version": "0.5.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "065e275fddb15dc398c02dccba7c2922"
+      "Hash": "754fdb4d17d4ae871343ff2909728ca3"
     },
     "callr": {
       "Package": "callr",
@@ -267,6 +267,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "2aefa994e8df5da17dc09afd80f924d5"
+    },
+    "gower": {
+      "Package": "gower",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1e7e711f2f87cc3a326f7f406815d019"
     },
     "gridExtra": {
       "Package": "gridExtra",
@@ -604,6 +611,13 @@
       "Repository": "CRAN",
       "Hash": "9d1c61d476c448350c482d6664e1b28b"
     },
+    "rpart": {
+      "Package": "rpart",
+      "Version": "4.1-15",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "9787c1fcb680e655d062e7611cadf78e"
+    },
     "rprojroot": {
       "Package": "rprojroot",
       "Version": "1.3-2",
@@ -638,6 +652,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "5ed4ef04d145af4c2bf651d94ba3d7fe"
+    },
+    "simputation": {
+      "Package": "simputation",
+      "Version": "0.2.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f40ed2b3c0ca4765ffd9ad61a4282d27"
     },
     "stinepack": {
       "Package": "stinepack",

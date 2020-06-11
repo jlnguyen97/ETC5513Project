@@ -22,6 +22,6 @@ Mortality and birth rates - Samuel Lyubic
 
 Labour force analysis - Siddhant Tirodkar
 
-
+To use renv, please use ETC5513Project.Rproj to access the report.
 
 

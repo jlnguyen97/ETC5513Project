@@ -12,7 +12,7 @@ author:
   address: Monash University
   email: slyu0007@student.monash.edu
   correspondingauthor: true
-  qualifications:  XXX
+  qualifications:  B.Com
 - familyname: Tirodkar
   othernames: Siddhant
   address: Monash University

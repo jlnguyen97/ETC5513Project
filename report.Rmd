@@ -15,13 +15,16 @@ author:
   qualifications:  XXX
 - familyname: Tirodkar
   othernames: Siddhant
+  address: Monash University
+  correspondingauthor: true
+  qualifications:  XXX
 - familyname: Effendy
   othernames: Jimmy
   address: Monash University
   email: jeff0001@student.monash.edu
   correspondingauthor: true
   qualifications:  B.Com
-department: Econometrics and Business Statistics \newline add names &\newline add names
+department: Econometrics and Business Statistics
 organization: Monash University
 bibliography: references.bib
 biblio-style: authoryear-comp
@@ -52,6 +55,7 @@ library(knitr)
 library(gridExtra)
 library(grid)
 library(simputation)
+library(broom)
 ```
 
 
@@ -80,6 +84,10 @@ data_long = data %>%
 
 
 \section*{Introduction}
+Gender inequality is an issue that is recognised globally. *Something to describe the discrimination*. Israeli law rules that discrimination related to gender in workplaces and wages, yet when observing actual ratios of females to males in the labour force, the number of female to male workers is not equal. *add something about gender stereotypes in religion*. 
+
+This report aims to establish possible reasons as to how views towards gender stereotypes have changed over time. To do this, we have selected variables to investigate and establish some relationship with changes in gender stereotypes. The data used has been retrieved from the World Development Indicators dataset from the World Bank @TheWorldBank2020. Each section will explore the respective variable, and a linear regression model has been developed to determine impact of each investigated variable.
+
 
 Gender inequality is an issue that is recognised globally. A large factor in the inequality that exists stems from the traditional stereotypes that have surrounded each gender across history, with males being considered as the leaders and providers and females the caretakers with a role of domesticity (@Woodhead). These stereotypes are further perpetuated through the presence of religion as the traditional views for male and female roles are embedded in their history and literature, as such many religions fight back against secularisation and the evolving contemporary views (@VoicuM2009) which is often has a direct relation with pushing back against the advancements of women in society and the deconstruction of the gender stereotypes that exist for the roles of males and females. Israeli law rules that discrimination related to gender in workplaces and wages, yet when observing actual ratios of females to males in the labour force, the number of female to male workers is not equal. As such, this report aims to establish possible reasons as to how views towards gender stereotypes have changed over time. To do this, we have selected variables to investigate and establish some relationship with changes in gender stereotypes with the use of the ratio of female to male labor force particiaption rate as our proxy for the change in the gender stereotype views, with each section exploring the respective variable in depth to ultimately produce a linear regression model to understand the relationship that may exist to assess the chagne in the view of gender stereotypes.
 
@@ -113,9 +121,6 @@ _Reponse variable_
     - Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)
 
 
-
-\section*{Motivation}
-
 \section*{Education}
 
 ```{r education-expenditure}
@@ -142,8 +147,6 @@ In the past 50 years, women's participation in the work force has increased stea
 read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% 
   rename(location = `ï..LOCATION`)
 read_edu_spending <- read.csv("data/edu_spending.csv") %>%
-  rename(location = `ï..LOCATION`)
-read_pop_tert <- read.csv("data/pop_tert_edu.csv") %>% 
   rename(location = `ï..LOCATION`)
 
 #wrangling read_edu_pop dataset
@@ -367,7 +370,8 @@ names(table_forecast)[2] = c("Renewable electricity share of total electricity o
 ```{r fcrenew, echo=FALSE}
 kable(tail(table_forecast,5), booktabs = TRUE,
       caption = "Forecast of renewable electricity share") %>%
-  kable_styling(full_width = FALSE, "striped", position = "center", font_size = 10)
+  kable_styling(full_width = FALSE, "striped", position = "center", font_size = 10,
+                latex_options = "hold_position")
 ```
 
 Table \@ref(tab:fcrenew) shows a forecast of the renewable electricity share of total electricity output in the next five years. This was conducted using a mean forecasting method. If current policies were followed, the target set in 2016 may not be met.
@@ -609,7 +613,7 @@ israel_display <- israel_labour %>% pivot_wider(names_from = Series, values_from
 
 ```
 
-Table \@ref(tab:showcase) exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females and female labour force participation are the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
+Table \@ref(tab:showcase) exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females is the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
 
 ```{r change}
 israel_labour$Year <-  as.numeric(as.character(israel_labour$Year))
@@ -685,6 +689,56 @@ Figure \@ref(fig:graph5) verifies that the percentage of females in the total la
 
 \section*{Model}
 
+A linear regression model was developed to explore the impact of the variables we have researched in the previous sections on our target variable `Ratio of female to male labor force participation rate (%) (national estimate)`. The variables chosen were:
+\begin{itemize}
+  \item Birth rate, crude (per 1,000 people)
+  \item Self-employed, female (% of female employment) (modeled ILO estimate)
+  \item Adjusted savings: education expenditure (current US$)
+  \item Total final energy consumption (TFEC) (TJ)
+\end{itemize}
+
+To match the series, and avoid imputing missing values, we have selected a time range between 1991 and 2015 to conduct our regression.
+
+A summary of the model has detailed in Table \@ref(tab:model-summary)
+
+```{r model-dataclean, include=FALSE}
+data_model = data_long %>% 
+  filter(Series %in% c("Birth rate, crude (per 1,000 people)",
+                                                "Self-employed, female (% of female employment) (modeled ILO estimate)",
+                                                "Adjusted savings: education expenditure (current US$)",
+                                                "Ratio of female to male labor force participation rate (%) (national estimate)")) %>%
+  mutate(Year = as.character(Year)) %>%
+  mutate(Year = as.numeric(Year))
+
+data_sea_model = data_sea_long %>%
+  filter(Series %in% c("Total final energy consumption (TFEC) (TJ)")) %>% 
+  select(Series, Year, value)
+
+data_model = rbind(data_model,data_sea_model)
+
+data_model = data_model %>%
+  filter(Year %in% c(1991:2015)) %>%
+  spread(Series,value)
+  
+model = lm(`Ratio of female to male labor force participation rate (%) (national estimate)` ~
+                   `Birth rate, crude (per 1,000 people)` + `Adjusted savings: education expenditure (current US$)` +
+                    `Self-employed, female (% of female employment) (modeled ILO estimate)`  + `Total final energy consumption (TFEC) (TJ)`, data_model)
+```
+
+```{r model-summary, echo=FALSE}
+kable(tidy(model), booktabs = TRUE,
+      caption = "Linear regression summary") %>%
+  kable_styling(full_width = FALSE, "striped", position = "center", font_size = 10,
+                latex_options = "hold_position")
+```
+
+From this result, we find that `Total final energy consumption (TFEC) (TJ)` is statistically significant at all levels. One possible reason is the relationship between electricity usage and changing attitudes. As previously discussed, one cause of greater energy usage is the increasing use of communications and information technology. With wider access to a different range of opinions, newer generations are less likely to share the same values with previous generation, hence justifying the change in attitude.
+
+Interestingly noted is the weaker signficance of the variable `Self-employed, female (% of female employment) (modeled ILO estimate)`. As noted previously, there is a strong correlation between this and the target variable. One reason this may be the case is that family orientation is emphasised in Israeli culure. Working mothers prioritise family repsonsibilities hence are less inclined to self-employ themselves.
+
 \section*{Conclusion}
 
-references
+To conclude our report, we can observe the gender stereotype lessening to some degree. The individual variables which we have selected can explain why this is the case to a certain degree, however to obtain meaningful results, further research must be conducted. It is also important to note that only recently has gender equality been an issue so widely recognised. More data may be required to explore how different variables interact with equality in today's world.
+
+
+References

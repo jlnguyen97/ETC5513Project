@@ -1,16 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.5.21)  11 JUN 2020 19:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.21)  11 JUN 2020 21:54
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**report.tex
-(./report.tex
+**./report.tex
+(report.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-05-15>
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cl
-s
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\articl
+e.cls"
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size11.clo
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size11
+.clo"
 File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
@@ -24,8 +23,9 @@ File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
-) (c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.st
-y
+)
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\lmodern.
+sty"
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -60,12 +60,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssym
-b.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\am
+ssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfon
-ts.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\am
+sfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
@@ -74,29 +74,29 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+math.sty"
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+text.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.
-sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+gen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen135
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.
-sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+bsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen136
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.
-sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\ams
+opn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count175
@@ -137,20 +137,20 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifx
+etex.sty"
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ift
+ex.sty"
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluate
-x.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifl
+uatex.sty"
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fixltx2e.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fixltx
+2e.sty"
 Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
 Applying: [2015/01/01] Old fixltx2e package on input line 46.
 
@@ -160,35 +160,36 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 
 Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.st
-y
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fonten
+c.sty"
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 2.
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd
+"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inpute
+nc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks21
 \inpenc@posthook=\toks22
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/upquote/upquote
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/upquote\upq
+uote.sty"
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textco
+mp.sty"
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/micro
-type.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+icrotype.sty"
 Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\ke
+yval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
 )
@@ -199,8 +200,8 @@ LaTeX Info: Redefining \textls on input line 790.
 LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
 \MT@listname@count=\count188
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/micro
-type-pdftex.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+icrotype-pdftex.def"
 File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 914.
@@ -209,82 +210,82 @@ LaTeX Info: Redefining \lslig on input line 914.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/micro
-type.cfg
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+icrotype.cfg"
 File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperr
-ef.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hy
+perref.sty"
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcm
-ds.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\l
+txcmds.sty"
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdftexcmds/pdft
-excmds.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\
+pdftexcmds.sty"
 Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/inf
-warerr.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr
+\infwarerr.sty"
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvs
-etkeys.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys
+\kvsetkeys.sty"
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/
-kvdefinekeys.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinek
+eys\kvdefinekeys.sty"
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdf
-escape.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdfescape
+\pdfescape.sty"
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hycolor\hyc
+olor.sty"
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/let
-ltxmacro.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/letltxmacro
+\letltxmacro.sty"
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/auxhook\aux
+hook.sty"
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvopt
-ions.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\k
+voptions.sty"
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
 \@linkdim=\dimen145
 \Hy@linkcounter=\count189
 \Hy@pagecounter=\count190
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc
-.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd
+1enc.def"
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intca
-lc.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/intcalc\i
+ntcalc.sty"
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etex
-cmds.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/etexcmds\
+etexcmds.sty"
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count191
 Package hyperref Info: Option `unicode' set `true' on input line 4338.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.
-def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pu
+enc.def"
 File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -297,19 +298,20 @@ Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
 \c@Hy@tempcnt=\count192
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty
+"
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
 \XeTeXLinkMargin=\dimen146
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bitset\bi
+tset.sty"
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bi
-gintcalc.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bigintcal
+c\bigintcalc.sty"
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -326,8 +328,8 @@ Package hyperref Info: PDF/A mode OFF on input line 6377.
 LaTeX Info: Redefining \ref on input line 6417.
 LaTeX Info: Redefining \pageref on input line 6421.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/atbegshi/atbe
-gshi.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/atbegshi\
+atbegshi.sty"
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
 \Hy@abspage=\count194
@@ -336,24 +338,24 @@ Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdfte
-x.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hp
+dftex.def"
 File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/atveryend/atver
-yend.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/atveryend\a
+tveryend.sty"
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
 )
 \Fld@listcount=\count197
 \c@bookmark@seq@number=\count198
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/
-rerunfilecheck.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/rerunfilech
+eck\rerunfilecheck.sty"
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter
-/uniquecounter.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/uniquecou
+nter\uniquecounter.sty"
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -363,12 +365,12 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 26.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geomet
-ry.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\ge
+ometry.sty"
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.
-sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifv
+tex.sty"
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count199
@@ -383,26 +385,29 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen155
 \Gm@layoutvoffset=\dimen156
 \Gm@dimlist=\toks25
-)
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblat
-ex.sty
+
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\ge
+ometry.cfg"))
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\bi
+blatex.sty"
 Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolb
-ox.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\et
+oolbox.sty"
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count268
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/logreq/logreq.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logr
+eq.sty"
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count269
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/logreq/logreq.d
-ef
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logr
+eq.def"
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen
+.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@tabx@nest=\count270
@@ -456,15 +461,15 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip61
 \blx@bcfin=\read2
 \blx@bcfout=\write3
-\blx@langwohyphens=\language5
+\blx@langwohyphens=\language82
 \c@mincomprange=\count311
 \c@maxcomprange=\count312
 \c@mincompwidth=\count313
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm
-.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\bl
+x-dm.def"
 File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
@@ -556,15 +561,15 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-co
-mpat.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\bl
+x-compat.def"
 File: blx-compat.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblat
-ex.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\bi
+blatex.def"
 File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 \c@textcitecount=\count382
 \c@textcitetotal=\count383
@@ -583,20 +588,20 @@ File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'authoryear-comp'...
 Package biblatex Info: ... file 'authoryear-comp.bbx' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/au
-thoryear-comp.bbx
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bb
+x\authoryear-comp.bbx"
 File: authoryear-comp.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/au
-thoryear.bbx
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bb
+x\authoryear.bbx"
 File: authoryear.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/st
-andard.bbx
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bb
+x\standard.bbx"
 File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count391
 \c@bbx:relatedtotal=\count392
@@ -604,8 +609,8 @@ File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load citation style 'authoryear-comp'...
 Package biblatex Info: ... file 'authoryear-comp.cbx' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/cbx/au
-thoryear-comp.cbx
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/cb
+x\authoryear-comp.cbx"
 File: authoryear-comp.cbx 2019/12/01 v3.14 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -623,186 +628,164 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblat
-ex.cfg
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\bi
+blatex.cfg"
 File: biblatex.cfg 
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/color.
-sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/co
-lor.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
-
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pd
-ftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyv
-rb.sty
-Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count393
-\FV@InFile=\read3
-\FV@TabBox=\box47
-\c@FancyVerbLine=\count394
-\FV@StepNumber=\count395
-\FV@OutFile=\write4
-)
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.s
-ty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip76
-\fb@frw=\dimen157
-\fb@frh=\dimen158
-\FrameRule=\dimen159
-\FrameSep=\dimen160
-)
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longt
+able.sty"
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip77
-\LTright=\skip78
-\LTpre=\skip79
-\LTpost=\skip80
-\LTchunksize=\count396
-\LTcapwidth=\dimen161
-\LT@head=\box48
-\LT@firsthead=\box49
-\LT@foot=\box50
-\LT@lastfoot=\box51
-\LT@cols=\count397
-\LT@rows=\count398
-\c@LT@tables=\count399
-\c@LT@chunks=\count400
+\LTleft=\skip76
+\LTright=\skip77
+\LTpre=\skip78
+\LTpost=\skip79
+\LTchunksize=\count393
+\LTcapwidth=\dimen157
+\LT@head=\box47
+\LT@firsthead=\box48
+\LT@foot=\box49
+\LT@lastfoot=\box50
+\LT@cols=\count394
+\LT@rows=\count395
+\c@LT@tables=\count396
+\c@LT@chunks=\count397
 \LT@p@ftn=\toks26
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/bookta
-bs.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\bo
+oktabs.sty"
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen162
-\lightrulewidth=\dimen163
-\cmidrulewidth=\dimen164
-\belowrulesep=\dimen165
-\belowbottomsep=\dimen166
-\aboverulesep=\dimen167
-\abovetopsep=\dimen168
-\cmidrulesep=\dimen169
-\cmidrulekern=\dimen170
-\defaultaddspace=\dimen171
-\@cmidla=\count401
-\@cmidlb=\count402
-\@aboverulesep=\dimen172
-\@belowrulesep=\dimen173
-\@thisruleclass=\count403
-\@lastruleclass=\count404
-\@thisrulewidth=\dimen174
+\heavyrulewidth=\dimen158
+\lightrulewidth=\dimen159
+\cmidrulewidth=\dimen160
+\belowrulesep=\dimen161
+\belowbottomsep=\dimen162
+\aboverulesep=\dimen163
+\abovetopsep=\dimen164
+\cmidrulesep=\dimen165
+\cmidrulekern=\dimen166
+\defaultaddspace=\dimen167
+\@cmidla=\count398
+\@cmidlb=\count399
+\@aboverulesep=\dimen168
+\@belowrulesep=\dimen169
+\@thisruleclass=\count400
+\@lastruleclass=\count401
+\@thisrulewidth=\dimen170
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footno
-te.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mdwtools\fo
+otnote.sty"
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box52
-\fn@width=\dimen175
+\fn@notes=\box51
+\fn@width=\dimen171
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphi
-cx.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\gr
+aphicx.sty"
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphi
-cs.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\gr
+aphics.sty"
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\tr
+ig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/gr
-aphics.cfg
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cf
+g\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
+
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-de
+f\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
 )
-\Gin@req@height=\dimen176
-\Gin@req@width=\dimen177
-)
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grffile/grffile
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grffile\grf
+file.sty"
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/parskip\par
+skip.sty"
+Package: parskip 2020-05-19 v2.0e non-zero parskip adjustments
+)
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\cap
+tion.sty"
 Package: caption 2020/05/10 v3.4j Customizing captions (AR)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption
-3.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\cap
+tion3.sty"
 Package: caption3 2020/05/10 v1.11 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen178
-\captionmargin@=\dimen179
-\captionwidth=\dimen180
-\caption@tempdima=\dimen181
-\caption@indent=\dimen182
-\caption@parindent=\dimen183
-\caption@hangindent=\dimen184
+\captionmargin=\dimen174
+\captionmargin@=\dimen175
+\captionwidth=\dimen176
+\caption@tempdima=\dimen177
+\caption@indent=\dimen178
+\caption@parindent=\dimen179
+\caption@hangindent=\dimen180
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count405
-\c@continuedfloat=\count406
+\c@caption@flags=\count402
+\c@continuedfloat=\count403
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcapti
-on.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\ltc
+aption.sty"
 Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
-)) (c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bera/bera.st
-y
+))
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bera\bera.s
+ty"
 Package: bera 2004/01/31 (WaS)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.st
-y
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fonten
+c.sty"
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bera/beraserif.
-sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bera\berase
+rif.sty"
 Package: beraserif 2004/01/30 (WaS)
 LaTeX Font Info:    Trying to load font information for T1+fve on input line 30
 .
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bera/t1fve.fd
+
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bera\t1fve.
+fd"
 File: t1fve.fd 2004/09/07 scalable font definitions for T1/fve.
 )
 LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 (Font)              scaled to size 9.85492pt on input line 30.
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bera/berasans.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bera\berasa
+ns.sty"
 Package: berasans 2004/01/30 (WaS)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bera/beramono.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bera\beramo
+no.sty"
 Package: beramono 2004/01/31 (WaS)
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/math
-design.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign\
+mathdesign.sty"
 Package: mathdesign 2013/08/29 v2.31 Math Design Project
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/mdbch.cfg)
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/mdbch.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\mdbch.cfg")
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\mdbch.sty"
 Package: mdbch 2013/08/29 v2.31 bitstream bitstream charter + mdbch (Math Desig
 n Project)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdfo
-nt.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign\
+mdfont.def"
 File: mdfont.def 2013/08/29 v2.31 (Math Design Project)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdsf
-font.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign\
+mdsffont.def"
 File: mdsffont.def 2013/08/29 v2.31 (Math Design Project)
 
 LaTeX Warning: Font shape declaration has incorrect series value `mc'.
@@ -885,8 +868,8 @@ LaTeX Warning: Font shape declaration has incorrect series value `mc'.
                Found on input line 322.
 
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdtt
-font.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign\
+mdttfont.def"
 File: mdttfont.def 2013/08/29 v2.31 (Math Design Project)
 )
 \symmdcal=\mathgroup6
@@ -946,25 +929,25 @@ LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
 (Font)                  OMS/mdbch/m/n --> OMS/mdbch/m/n on input line 167.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xke
+yval.sty"
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyv
-al.tex
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvut
-ils.tex
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\x
+keyval.tex"
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\x
+kvutils.tex"
 \XKV@toks=\toks27
 \XKV@tempa@toks=\toks28
 )
-\XKV@depth=\count407
+\XKV@depth=\count404
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Trying to load font information for T1+mdbch on input line 
 186.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/t1mdbch.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\t1mdbch.fd"
 File: t1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for T1/mdbch.
 )
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
@@ -986,34 +969,36 @@ LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
 LaTeX Info: Redefining \bold on input line 510.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 532.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 533.
-\rulethickness=\skip81
+\rulethickness=\skip80
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.st
-y
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fonten
+c.sty"
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 ))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontawesome/fon
-tawesome.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontawesome
+\fontawesome.sty"
 Package: fontawesome 2016/05/15 v4.6.3.1 font awesome icons
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontawesome/fon
-tawesomesymbols-generic.tex)
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontawesome/fon
-tawesomesymbols-pdftex.tex))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyh
-dr.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontawesome
+\fontawesomesymbols-generic.tex")
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontawesome
+\fontawesomesymbols-pdftex.tex"))
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fa
+ncyhdr.sty"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip82
-\f@nch@O@elh=\skip83
-\f@nch@O@erh=\skip84
-\f@nch@O@olh=\skip85
-\f@nch@O@orh=\skip86
-\f@nch@O@elf=\skip87
-\f@nch@O@erf=\skip88
-\f@nch@O@olf=\skip89
-\f@nch@O@orf=\skip90
-) (c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/bm.sty
+\f@nch@headwidth=\skip81
+\f@nch@O@elh=\skip82
+\f@nch@O@erh=\skip83
+\f@nch@O@olh=\skip84
+\f@nch@O@orh=\skip85
+\f@nch@O@elf=\skip86
+\f@nch@O@erf=\skip87
+\f@nch@O@olf=\skip88
+\f@nch@O@orf=\skip89
+)
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\bm.st
+y"
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup11
 \symboldletters=\mathgroup12
@@ -1022,29 +1007,28 @@ Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 209.
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/titlesec/titles
-ec.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titlesec\ti
+tlesec.sty"
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box53
-\beforetitleunit=\skip91
-\aftertitleunit=\skip92
-\ttl@plus=\dimen185
-\ttl@minus=\dimen186
+\ttl@box=\box52
+\beforetitleunit=\skip90
+\aftertitleunit=\skip91
+\ttl@plus=\dimen181
+\ttl@minus=\dimen182
 \ttl@toksa=\toks29
-\titlewidth=\dimen187
-\titlewidthlast=\dimen188
-\titlewidthfirst=\dimen189
+\titlewidth=\dimen183
+\titlewidthlast=\dimen184
+\titlewidthfirst=\dimen185
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.s
-ty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcol
+or.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/co
-lor.cfg
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cf
+g\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-LaTeX Info: Redefining \color on input line 709.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -1055,288 +1039,295 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 200.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 200.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 200.
+Package hyperref Info: Option `breaklinks' set `true' on input line 160.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 160.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 160.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 200.
+Package hyperref Info: Option `colorlinks' set `true' on input line 160.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathtools/matht
-ools.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\m
+athtools.sty"
 Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.
+sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count408
-\calc@Bcount=\count409
-\calc@Adimen=\dimen190
-\calc@Bdimen=\dimen191
-\calc@Askip=\skip93
-\calc@Bskip=\skip94
+\calc@Acount=\count405
+\calc@Bcount=\count406
+\calc@Adimen=\dimen186
+\calc@Bdimen=\dimen187
+\calc@Askip=\skip92
+\calc@Bskip=\skip93
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count410
-\calc@Cskip=\skip95
+\calc@Ccount=\count407
+\calc@Cskip=\skip94
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathtools/mhset
-up.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\m
+hsetup.sty"
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count411
-\l_MT_multwidth_dim=\dimen192
-\origjot=\skip96
-\l_MT_shortvdotswithinadjustabove_dim=\dimen193
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen194
-\l_MT_above_intertext_sep=\dimen195
-\l_MT_below_intertext_sep=\dimen196
-\l_MT_above_shortintertext_sep=\dimen197
-\l_MT_below_shortintertext_sep=\dimen198
-\xmathstrut@box=\box54
-\xmathstrut@dim=\dimen199
+\g_MT_multlinerow_int=\count408
+\l_MT_multwidth_dim=\dimen188
+\origjot=\skip95
+\l_MT_shortvdotswithinadjustabove_dim=\dimen189
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen190
+\l_MT_above_intertext_sep=\dimen191
+\l_MT_below_intertext_sep=\dimen192
+\l_MT_above_shortintertext_sep=\dimen193
+\l_MT_below_shortintertext_sep=\dimen194
+\xmathstrut@box=\box53
+\xmathstrut@dim=\dimen195
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/eukdate/eukdate
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eukdate\euk
+date.sty"
 Package: eukdate 2009/03/18 v1.04 UK format date (Hart's Rules) with weekday
-\c@euk@date=\count412
-\c@euk@month=\count413
-\c@euk@century=\count414
-\c@euk@year=\count415
+\c@euk@date=\count409
+\c@euk@month=\count410
+\c@euk@century=\count411
+\c@euk@year=\count412
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.s
-ty
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.
-sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xpatch\xpat
+ch.sty"
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\ex
+pl3.sty"
 Package: expl3 2020-05-15 L3 programming layer (loader) 
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3bac
-kend-pdfmode.def
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l
+3backend-pdfmode.def"
 File: l3backend-pdfmode.def 2020-05-05 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count416
-\l__pdf_internal_box=\box55
+\l__kernel_color_stack_int=\count413
+\l__pdf_internal_box=\box54
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xpar
-se/xparse.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/
+xparse\xparse.sty"
 Package: xparse 2020-05-15 L3 Experimental document command parser
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xpar
-se/xparse-generic.tex
-\l__xparse_current_arg_int=\count417
-\g__xparse_grabber_int=\count418
-\l__xparse_m_args_int=\count419
-\l__xparse_v_nesting_int=\count420
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/
+xparse\xparse-generic.tex"
+\l__xparse_current_arg_int=\count414
+\g__xparse_grabber_int=\count415
+\l__xparse_m_args_int=\count416
+\l__xparse_v_nesting_int=\count417
 )))
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/setspace/setspa
-ce.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\se
+tspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float
+.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count421
+\c@float@type=\count418
 \float@exts=\toks30
-\float@box=\box56
+\float@box=\box55
 \@float@everytoks=\toks31
-\@floatcapt=\box57
+\@floatcapt=\box56
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array
+.sty"
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen256
-\ar@mcellbox=\box58
-\extrarowheight=\dimen257
+\col@sep=\dimen196
+\ar@mcellbox=\box57
+\extrarowheight=\dimen197
 \NC@list=\toks32
-\extratabsurround=\skip97
-\backup@length=\skip98
-\ar@cellbox=\box59
+\extratabsurround=\skip96
+\backup@length=\skip97
+\ar@cellbox=\box58
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multir
-ow.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\mu
+ltirow.sty"
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip99
-\multirow@cntb=\count422
-\multirow@dima=\skip100
-\bigstrutjot=\dimen258
+\multirow@colwidth=\skip98
+\multirow@cntb=\count419
+\multirow@dima=\skip99
+\bigstrutjot=\dimen198
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig
-.sty
-\wrapoverhang=\dimen259
-\WF@size=\dimen260
-\c@WF@wrappedlines=\count423
-\WF@box=\box60
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wrapfig\wra
+pfig.sty"
+\wrapoverhang=\dimen199
+\WF@size=\dimen256
+\c@WF@wrappedlines=\count420
+\WF@box=\box59
 \WF@everypar=\toks33
 Package: wrapfig 2003/01/31  v 3.6
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colort
-bl.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colortbl\co
+lortbl.sty"
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 \everycr=\toks34
-\minrowclearance=\skip101
+\minrowclearance=\skip100
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdfls
-cape.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\p
+dflscape.sty"
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\ls
+cape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-) (c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+)
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tabu\tabu.s
+ty"
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwid
-th.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\va
+rwidth.sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box61
-\sift@deathcycles=\count424
-\@vwid@loff=\dimen261
-\@vwid@roff=\dimen262
+\@vwid@box=\box60
+\sift@deathcycles=\count421
+\@vwid@loff=\dimen257
+\@vwid@roff=\dimen258
 )
-\c@taburow=\count425
-\tabu@nbcols=\count426
-\tabu@cnt=\count427
-\tabu@Xcol=\count428
-\tabu@alloc=\count429
-\tabu@nested=\count430
-\tabu@target=\dimen263
-\tabu@spreadtarget=\dimen264
-\tabu@naturalX=\dimen265
-\tabucolX=\dimen266
-\tabu@Xsum=\dimen267
-\extrarowdepth=\dimen268
-\abovetabulinesep=\dimen269
-\belowtabulinesep=\dimen270
-\tabustrutrule=\dimen271
+\c@taburow=\count422
+\tabu@nbcols=\count423
+\tabu@cnt=\count424
+\tabu@Xcol=\count425
+\tabu@alloc=\count426
+\tabu@nested=\count427
+\tabu@target=\dimen259
+\tabu@spreadtarget=\dimen260
+\tabu@naturalX=\dimen261
+\tabucolX=\dimen262
+\tabu@Xsum=\dimen263
+\extrarowdepth=\dimen264
+\abovetabulinesep=\dimen265
+\belowtabulinesep=\dimen266
+\tabustrutrule=\dimen267
 \tabu@thebody=\toks35
 \tabu@footnotes=\toks36
-\tabu@box=\box62
-\tabu@arstrutbox=\box63
-\tabu@hleads=\box64
-\tabu@vleads=\box65
-\tabu@cellskip=\skip102
+\tabu@box=\box61
+\tabu@arstrutbox=\box62
+\tabu@hleads=\box63
+\tabu@vleads=\box64
+\tabu@cellskip=\skip101
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/
-threeparttable.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/threepartta
+ble\threeparttable.sty"
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box66
+\@tempboxb=\box65
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex
-/threeparttablex.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/threepartta
+blex\threeparttablex.sty"
 Package: threeparttablex 2013/07/23 v0.3 by daleif
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ
-.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/environ\env
+iron.sty"
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trim
-spaces.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/trimspaces\
+trimspaces.sty"
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip103
+\TPTL@width=\skip102
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box67
-\UL@hyphenbox=\box68
-\UL@skip=\skip104
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ulem\ulem.s
+ty"
+\UL@box=\box66
+\UL@hyphenbox=\box67
+\UL@skip=\skip103
 \UL@hook=\toks37
-\UL@height=\dimen272
-\UL@pe=\count431
-\UL@pixel=\dimen273
-\ULC@box=\box69
+\UL@height=\dimen268
+\UL@pe=\count428
+\UL@pixel=\dimen269
+\ULC@box=\box68
 Package: ulem 2019/11/18
-\ULdepth=\dimen274
+\ULdepth=\dimen270
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makece
-ll.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/makecell\ma
+kecell.sty"
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen275
-\c@nlinenum=\count432
+\rotheadsize=\dimen271
+\c@nlinenum=\count429
 \TeXr@lab=\toks38
 )
-\@quotelevel=\count433
-\@quotereset=\count434
-(./report.aux)
+\@quotelevel=\count430
+\@quotereset=\count431
+(report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 351.
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 351.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 311.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 311.
 LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 3
-51.
+11.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdac
-mr.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign\
+mdacmr.fd"
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 351.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 311.
 LaTeX Font Info:    Trying to load font information for MDB+cmr on input line 3
-51.
+11.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-mr.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign\
+mdbcmr.fd"
 File: mdbcmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 351.
-LaTeX Info: Redefining \microtypecontext on input line 351.
+LaTeX Font Info:    ... okay on input line 311.
+LaTeX Info: Redefining \microtypecontext on input line 311.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 351.
+LaTeX Info: Redefining \showhyphens on input line 311.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-bc
-h.cfg
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+t-bch.cfg"
 File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 
 )
-\AtBeginShipoutBox=\box70
-Package hyperref Info: Link coloring ON on input line 351.
+\AtBeginShipoutBox=\box69
+Package hyperref Info: Link coloring ON on input line 311.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/namere
-f.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\na
+meref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcou
-nt.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/refcount\re
+fcount.sty"
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestrin
-g/gettitlestring.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitles
+tring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count435
+\c@section@level=\count432
 )
-LaTeX Info: Redefining \ref on input line 351.
-LaTeX Info: Redefining \pageref on input line 351.
-LaTeX Info: Redefining \nameref on input line 351.
-(./report.out) (./report.out)
-\@outlinefile=\write5
-\openout5 = `report.out'.
+LaTeX Info: Redefining \ref on input line 311.
+LaTeX Info: Redefining \pageref on input line 311.
+LaTeX Info: Redefining \nameref on input line 311.
+(report.out) (report.out)
+\@outlinefile=\write4
+\openout4 = `report.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1377,8 +1368,8 @@ LaTeX Info: Redefining \nameref on input line 351.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/en
-glish.lbx
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/lb
+x\english.lbx"
 File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1388,21 +1379,31 @@ Package biblatex Info: Data encoding 'utf8' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
-(./report.bbl)
-Package biblatex Info: Reference section=0 on input line 351.
-Package biblatex Info: Reference segment=0 on input line 351.
+(report.bbl)
+Package biblatex Info: Reference section=0 on input line 311.
+Package biblatex Info: Reference segment=0 on input line 311.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/ep
-stopdf-base.sty
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii
+\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count433
+\scratchdimen=\dimen272
+\scratchbox=\box70
+\nofMPsegments=\count434
+\nofMParguments=\count435
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count436
+\MPscratchDim=\dimen273
+\MPnumerator=\count437
+\makeMPintoPDFobject=\count438
+\everyMPtoPDFconversion=\toks40
+)
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pk
+g\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/eps
-topdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
+)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: threeparttable package is loaded.
@@ -1410,516 +1411,555 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 Package mathdesign/mdbch Warning: Package 'amssymb' shouldn't be used in conjon
-ction with package mdbch, on input line 351.
+ction with package mdbch, on input line 311.
 
 
 Package mathdesign/mdbch Warning: Package 'amsfonts' shouldn't be used in conjo
-nction with package mdbch, on input line 351.
+nction with package mdbch, on input line 311.
 
-<logo.jpg, id=20, 4015.0pt x 6022.5pt>
+<logo.jpg, id=27, 4015.0pt x 6022.5pt>
 File: logo.jpg Graphic file (type jpg)
 <use logo.jpg>
-Package pdftex.def Info: logo.jpg  used on input line 352.
+Package pdftex.def Info: logo.jpg  used on input line 312.
 (pdftex.def)             Requested size: 170.68118pt x 256.02179pt.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 9.24173pt on input line 352.
+(Font)              scaled to size 9.24173pt on input line 312.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 10.12793pt on input line 352.
+(Font)              scaled to size 10.12793pt on input line 312.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 10.12793pt on input line 352.
+(Font)              scaled to size 10.12793pt on input line 312.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 8.43994pt on input line 352.
+(Font)              scaled to size 8.43994pt on input line 312.
 LaTeX Font Info:    Trying to load font information for OT1+mdbch on input line
- 352.
+ 312.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/ot1mdbch.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\ot1mdbch.fd"
 File: ot1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdbch.
 )
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Trying to load font information for OML+mdbch on input line
- 352.
+ 312.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/omlmdbch.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\omlmdbch.fd"
 File: omlmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdbch.
 )
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OML/mdbch/m/it/10'. Switching off
-(microtype)                protrusion for this font on input line 352.
+(microtype)                protrusion for this font on input line 312.
 
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Trying to load font information for OMS+mdbch on input line
- 352.
+ 312.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/omsmdbch.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\omsmdbch.fd"
 File: omsmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdbch.
 )
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OMS/mdbch/m/n/10'. Switching off
-(microtype)                protrusion for this font on input line 352.
+(microtype)                protrusion for this font on input line 312.
 
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Trying to load font information for OMX+mdbch on input line
- 352.
+ 312.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/omxmdbch.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\omxmdbch.fd"
 File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
 )
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 352
+(Font)              scaled to size 4.80003pt on input line 312.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 312
 .
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.f
-d
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\um
+sa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-ms
-a.cfg
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+t-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 352
+LaTeX Font Info:    Trying to load font information for U+msb on input line 312
 .
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.f
-d
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\um
+sb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-ms
-b.cfg
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\m
+t-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OML/mdbch/m/n/10'. Switching off
-(microtype)                protrusion for this font on input line 352.
+(microtype)                protrusion for this font on input line 312.
 
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Trying to load font information for MDA+mdbch on input line
- 352.
+ 312.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/mdamdbch.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\mdamdbch.fd"
 File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
 )
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Trying to load font information for MDB+mdbch on input line
- 352.
+ 312.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbc
-h/mdbmdbch.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\mdbmdbch.fd"
 File: mdbmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdbch.
 )
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 352.
+(Font)              scaled to size 9.60007pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 352.
+(Font)              scaled to size 6.72005pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 4.80003pt on input line 352.
+(Font)              scaled to size 4.80003pt on input line 312.
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 352.
+ut line 312.
 
-(c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontawesome/ufo
-ntawesometwo.fd
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontawesome
+\ufontawesometwo.fd"
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OML/mdbch/m/it/10.95'. Switching off
-(microtype)                protrusion for this font on input line 352.
+(microtype)                protrusion for this font on input line 312.
 
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OMS/mdbch/m/n/10.95'. Switching off
-(microtype)                protrusion for this font on input line 352.
+(microtype)                protrusion for this font on input line 312.
 
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OML/mdbch/m/n/10.95'. Switching off
-(microtype)                protrusion for this font on input line 352.
+(microtype)                protrusion for this font on input line 312.
 
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 352.
+(Font)              scaled to size 10.51207pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 352.
+(Font)              scaled to size 7.68005pt on input line 312.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 352.
+(Font)              scaled to size 5.76004pt on input line 312.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 23.88496pt on input line 352.
+(Font)              scaled to size 23.88496pt on input line 312.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 20.99857pt on input line 352.
+(Font)              scaled to size 20.99857pt on input line 312.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 20.99857pt on input line 352.
+(Font)              scaled to size 20.99857pt on input line 312.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 11.52008pt on input line 352.
+(Font)              scaled to size 11.52008pt on input line 312.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 12.1535pt on input line 352.
+(Font)              scaled to size 12.1535pt on input line 312.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 12.1535pt on input line 352.
+(Font)              scaled to size 12.1535pt on input line 312.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 352.
+(Font)              scaled to size 13.82408pt on input line 312.
 
-Overfull \hbox (172.68228pt too wide) detected at line 352
+Overfull \hbox (172.68228pt too wide) detected at line 312
 [] 
  []
 
 
-Overfull \hbox (56.23262pt too wide) detected at line 352
+Overfull \hbox (56.23262pt too wide) detected at line 312
  [] |  [] []
  []
 
 [1
 
-{c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pd
-ftex.map} <./logo.jpg>]
-
-Package xcolor Warning: Incompatible color definition on input line 371.
-
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.24173pt on input line 372.
-LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
-(Font)              scaled to size 9.24173pt on input line 373.
-
-Package xcolor Warning: Incompatible color definition on input line 378.
-
-
-Package xcolor Warning: Incompatible color definition on input line 378.
-
-
-Package xcolor Warning: Incompatible color definition on input line 380.
-
-
-Package xcolor Warning: Incompatible color definition on input line 395.
-
-
-Package xcolor Warning: Incompatible color definition on input line 395.
-
-
-Package xcolor Warning: Incompatible color definition on input line 395.
-
-[2]
-
-Package xcolor Warning: Incompatible color definition on input line 395.
-
-
-Package xcolor Warning: Incompatible color definition on input line 395.
-
-LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 399.
+{C:/Users/James Nguyen/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./lo
+go.jpg>]
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
-(Font)              scaled to size 10.51207pt on input line 399.
+(Font)              scaled to size 10.51207pt on input line 317.
+<report_files/figure-latex/total-edu-spending-1.pdf, id=39, 578.16pt x 361.35pt
+>
+File: report_files/figure-latex/total-edu-spending-1.pdf Graphic file (type pdf
+)
+<use report_files/figure-latex/total-edu-spending-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/total-edu-spending-1.pdf  us
+ed on input line 347.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
+(Font)              scaled to size 10.51207pt on input line 349.
+[2]
+<report_files/figure-latex/data-edu-spend-1.pdf, id=50, 578.16pt x 361.35pt>
+File: report_files/figure-latex/data-edu-spend-1.pdf Graphic file (type pdf)
+<use report_files/figure-latex/data-edu-spend-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/data-edu-spend-1.pdf  used o
+n input line 360.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[3 <./report_files/figure-latex/total-edu-spending-1.pdf>]
+<report_files/figure-latex/edu-pop-female-1.pdf, id=63, 578.16pt x 361.35pt>
+File: report_files/figure-latex/edu-pop-female-1.pdf Graphic file (type pdf)
+<use report_files/figure-latex/edu-pop-female-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/edu-pop-female-1.pdf  used o
+n input line 370.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 405--405
+LaTeX Warning: Reference `fig:edu-pop-female' on page 4 undefined on input line
+ 374.
+
+[4 <./report_files/figure-latex/data-edu-spend-1.pdf> <./report_files/figure-la
+tex/edu-pop-female-1.pdf>]
+<report_files/figure-latex/scatterplot-1.pdf, id=79, 578.16pt x 361.35pt>
+File: report_files/figure-latex/scatterplot-1.pdf Graphic file (type pdf)
+<use report_files/figure-latex/scatterplot-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/scatterplot-1.pdf  used on i
+nput line 383.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[5 <./report_files/figure-latex/scatterplot-1.pdf>]
+<report_files/figure-latex/compare-renewable-ftm-1.pdf, id=100, 578.16pt x 361.
+35pt>
+File: report_files/figure-latex/compare-renewable-ftm-1.pdf Graphic file (type 
+pdf)
+<use report_files/figure-latex/compare-renewable-ftm-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/compare-renewable-ftm-1.pdf 
+ used on input line 428.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[6 <./report_files/figure-latex/compare-renewable-ftm-1.pdf>]
+<report_files/figure-latex/renewable-compare-1.pdf, id=116, 578.16pt x 361.35pt
+>
+File: report_files/figure-latex/renewable-compare-1.pdf Graphic file (type pdf)
+
+<use report_files/figure-latex/renewable-compare-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/renewable-compare-1.pdf  use
+d on input line 450.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[7 <./report_files/figure-latex/renewable-compare-1.pdf>]
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 466.
+<report_files/figure-latex/energy-ftm-1.pdf, id=135, 578.16pt x 361.35pt>
+File: report_files/figure-latex/energy-ftm-1.pdf Graphic file (type pdf)
+<use report_files/figure-latex/energy-ftm-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/energy-ftm-1.pdf  used on in
+put line 501.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[8 <./report_files/figure-latex/energy-ftm-1.pdf>]
+LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
+(Font)              scaled to size 9.24173pt on input line 553.
+<report_files/figure-latex/combining-the-variable-figures-1.pdf, id=155, 722.7p
+t x 578.16pt>
+File: report_files/figure-latex/combining-the-variable-figures-1.pdf Graphic fi
+le (type pdf)
+<use report_files/figure-latex/combining-the-variable-figures-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/combining-the-variable-figur
+es-1.pdf  used on input line 557.
+(pdftex.def)             Requested size: 455.24826pt x 364.19861pt.
+[9]
+Overfull \hbox (185.69582pt too wide) in paragraph at lines 566--579
+ [][] 
+ []
+
+[10 <./report_files/figure-latex/combining-the-variable-figures-1.pdf>]
+Overfull \hbox (6.5728pt too wide) in paragraph at lines 615--622
+ [][] 
+ []
+
+<report_files/figure-latex/figure-correlation-female-mort-labor-force-1.pdf, id
+=177, 578.16pt x 361.35pt>
+File: report_files/figure-latex/figure-correlation-female-mort-labor-force-1.pd
+f Graphic file (type pdf)
+<use report_files/figure-latex/figure-correlation-female-mort-labor-force-1.pdf
+>
+Package pdftex.def Info: report_files/figure-latex/figure-correlation-female-mo
+rt-labor-force-1.pdf  used on input line 627.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[11]
+<report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf, id=1
+82, 578.16pt x 361.35pt>
+File: report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf 
+Graphic file (type pdf)
+<use report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf>
+Package pdftex.def Info: report_files/figure-latex/figure-correlation-male-mort
+-labor-force-1.pdf  used on input line 636.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[12 <./report_files/figure-latex/figure-correlation-female-mort-labor-force-1.p
+df>]
+<report_files/figure-latex/figure-correlation-birth-rate-labor-force-1.pdf, id=
+193, 578.16pt x 361.35pt>
+File: report_files/figure-latex/figure-correlation-birth-rate-labor-force-1.pdf
+ Graphic file (type pdf)
+<use report_files/figure-latex/figure-correlation-birth-rate-labor-force-1.pdf>
+
+Package pdftex.def Info: report_files/figure-latex/figure-correlation-birth-rat
+e-labor-force-1.pdf  used on input line 645.
+(pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[13 <./report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf
+>] [14 <./report_files/figure-latex/figure-correlation-birth-rate-labor-force-1
+.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 685--685
+|\T1/fvs/b/n/14.4 Labour Force Anal-y-sis|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+|[]\T1/fvs/b/n/14.4 Overview|
+ []
+
+
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 705--705
 []|\T1/mdbch/m/n/10.95 (-20) 1991|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 407--407
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 707--707
 []|\T1/mdbch/m/n/10.95 (-20) 1992|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 409--409
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 709--709
 []|\T1/mdbch/m/n/10.95 (-20) 1993|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 411--411
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 711--711
 []|\T1/mdbch/m/n/10.95 (-20) 1994|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 413--413
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 713--713
 []|\T1/mdbch/m/n/10.95 (-20) 1995|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 415--415
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 715--715
 []|\T1/mdbch/m/n/10.95 (-20) 1996|  
  []
 
-
-Package xcolor Warning: Incompatible color definition on input line 422.
-
-
-Package xcolor Warning: Incompatible color definition on input line 426.
-
-
-Package xcolor Warning: Incompatible color definition on input line 426.
-
-
-Package xcolor Warning: Incompatible color definition on input line 428.
-
-
-Package xcolor Warning: Incompatible color definition on input line 440.
-
-
-Package xcolor Warning: Incompatible color definition on input line 440.
-
-<report_files/figure-latex/graph1-1.pdf, id=38, 578.16pt x 361.35pt>
+<report_files/figure-latex/graph1-1.pdf, id=222, 578.16pt x 361.35pt>
 File: report_files/figure-latex/graph1-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/graph1-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/graph1-1.pdf  used on input 
-line 444.
+line 729.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[3]
-
-Package xcolor Warning: Incompatible color definition on input line 453.
-
-
-Package xcolor Warning: Incompatible color definition on input line 465.
-
-
-Package xcolor Warning: Incompatible color definition on input line 465.
-
-
-Underfull \vbox (badness 4391) detected at line 465
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 744--744
+|[]\T1/fvs/b/n/14.4 Self-employed v/s wage & salaried women|
  []
 
-
-Package xcolor Warning: Incompatible color definition on input line 465.
-
-[4 <./report_files/figure-latex/graph1-1.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 465.
-
-
-Package xcolor Warning: Incompatible color definition on input line 465.
-
-<report_files/figure-latex/graph2-1.pdf, id=59, 578.16pt x 361.35pt>
+<report_files/figure-latex/graph2-1.pdf, id=230, 578.16pt x 361.35pt>
 File: report_files/figure-latex/graph2-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/graph2-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/graph2-1.pdf  used on input 
-line 469.
+line 748.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[16 <./report_files/figure-latex/graph1-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 766--766
+|[]\T1/fvs/b/n/14.4 Female v/s Male labour force par-tic-i-pa-tion|
+ []
 
-LaTeX Warning: Citation 'lerner1997israeli' on page 5 undefined on input line 4
-73.
-
-
-Package xcolor Warning: Incompatible color definition on input line 478.
-
-
-Package xcolor Warning: Incompatible color definition on input line 489.
-
-
-Package xcolor Warning: Incompatible color definition on input line 489.
-
-
-Package xcolor Warning: Incompatible color definition on input line 489.
-
-[5 <./report_files/figure-latex/graph2-1.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 489.
-
-
-Package xcolor Warning: Incompatible color definition on input line 489.
-
-<report_files/figure-latex/graph3-1.pdf, id=73, 578.16pt x 361.35pt>
+<report_files/figure-latex/graph3-1.pdf, id=244, 578.16pt x 361.35pt>
 File: report_files/figure-latex/graph3-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/graph3-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/graph3-1.pdf  used on input 
-line 493.
+line 770.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[17 <./report_files/figure-latex/graph2-1.pdf>]
+Underfull \hbox (badness 5878) in paragraph at lines 786--786
+|[]\T1/fvs/b/n/14.4 Female labour force v/s female-male par-tic-i-pa-tion rate|
 
-Package xcolor Warning: Incompatible color definition on input line 502.
+ []
 
-[6 <./report_files/figure-latex/graph3-1.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 511.
-
-
-Package xcolor Warning: Incompatible color definition on input line 511.
-
-
-Package xcolor Warning: Incompatible color definition on input line 513.
-
-
-Package xcolor Warning: Incompatible color definition on input line 517.
-
-
-Package xcolor Warning: Incompatible color definition on input line 517.
-
-<report_files/figure-latex/graph5-1.pdf, id=87, 578.16pt x 361.35pt>
+<report_files/figure-latex/graph5-1.pdf, id=258, 578.16pt x 361.35pt>
 File: report_files/figure-latex/graph5-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/graph5-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/graph5-1.pdf  used on input 
-line 525.
+line 790.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[18 <./report_files/figure-latex/graph3-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 800--800
+|\T1/fvs/b/n/14.4 Model|
+ []
 
-LaTeX Warning: Empty bibliography on input line 535.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 537.
-[7 <./report_files/figure-latex/graph5-1.pdf>] [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 537.
-(./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 537.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 537.
+Underfull \hbox (badness 10000) in paragraph at lines 802--802
+|\T1/fvs/b/n/14.4 Conclusion|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 807--807
+|\T1/fvs/b/n/14.4 References|
+ []
+
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 9.24173pt on input line 806.
+[19 <./report_files/figure-latex/graph5-1.pdf>]
+
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 806.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 808.
+[20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 808.
+(report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 808.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 808.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: D77B4D6EC259220F5A9F557CCB059FD5;986.
+(rerunfilecheck)             Checksum: B14B5393F677E048699902C856CBFCC2;1418.
 
 LaTeX Warning: There were undefined references.
 
 
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                report
-(biblatex)                and rerun LaTeX afterwards.
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
 
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 537.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 808.
  ) 
 Here is how much of TeX's memory you used:
- 26739 strings out of 482399
- 444192 string characters out of 5945088
- 1110574 words of memory out of 5000000
- 41906 multiletter control sequences out of 15000+600000
- 629997 words of font info for 216 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 45i,14n,91p,942b,1130s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/tex
-nansi.enc}{c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips
-/base/8r.enc}{c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dv
-ips/fontawesome/fontawesometwo.enc}<c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/t
-exmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb><c:/Users/SIDDHANT/App
-Data/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/Use
-rs/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bch
-r8a.pfb><c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitst
-rea/charter/bchri8a.pfb><c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/f
-onts/type1/public/bera/fvmb8a.pfb><c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/te
-xmf-dist/fonts/type1/public/bera/fvmr8a.pfb><c:/Users/SIDDHANT/AppData/Roaming/
-TinyTeX/texmf-dist/fonts/type1/public/bera/fvsb8a.pfb><c:/Users/SIDDHANT/AppDat
-a/Roaming/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsr8a.pfb><c:/Users/SIDDH
-ANT/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-c
-hr8t.pfb><c:/Users/SIDDHANT/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/publ
-ic/mathdesign/mdbch/md-chri8t.pfb>
-Output written on report.pdf (8 pages, 7548707 bytes).
+ 26899 strings out of 480765
+ 451366 string characters out of 2890819
+ 1106751 words of memory out of 3000000
+ 42150 multiletter control sequences out of 15000+200000
+ 642041 words of font info for 295 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 45i,14n,91p,2366b,1852s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/James Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base
+/8r.enc}{C:/Users/James Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
+s/ly1/texnansi.enc}{C:/Users/James Nguyen/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/enc/dvips/fontawesome/fontawesometwo.enc}<C:/Users/James Nguyen/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Users/
+James Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/bitstrea/charter/bch
+b8a.pfb><C:/Users/James Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/bi
+tstrea/charter/bchr8a.pfb><C:/Users/James Nguyen/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/bitstrea/charter/bchri8a.pfb><C:/Users/James Nguyen/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb><C:/Users/James Nguyen/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/bera/fvsb8a.pfb><C:/Users/James Nguyen
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/bera/fvsr8a.pfb><C:/Users/James 
+Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/mathdesign/mdbch/md-chr8t.
+pfb><C:/Users/James Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/mathde
+sign/mdbch/md-chri8t.pfb>
+Output written on report.pdf (20 pages, 7672579 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 30778 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 339 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 36993 words of extra memory for PDF output out of 42996 (max. 10000000)
 

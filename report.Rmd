@@ -110,6 +110,7 @@ data_sea_long = data_sea %>%
   mutate(value = as.numeric(value))
 ```
 
+
 ```{r compare-renewable-ftm, fig.cap="Comparing female to male ratio to renewable electricity output share", echo=FALSE}
 p1 = data_sea_long %>% 
   filter(Series == "Renewable electricity share of total electricity output (%)") %>%

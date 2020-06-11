@@ -528,7 +528,7 @@ correlation_results_female_mort <- cor(percentage_results_wider$Pct_Female_morta
 correlation_results_birth_rate <- cor(percentage_results_wider$Pct_Birth_rate_per_1000_people, percentage_results_wider$Labor_force_rate)
 
 table_correlation <- tibble(correlation_results_male_mort, correlation_results_female_mort, correlation_results_birth_rate) %>%
-  kable(caption = "The correlation between the percentage results, per 1000 people, of the response variables and the ratio of female to male labor force participation rate (%)") %>%
+  kable(caption = "The figure displays the relationship between the percentage results of female mortality rates and labor force participation rate") %>%
   kable_styling(bootstrap_options = c("hover", "striped"),
                 latex_options = "hold_position") 
 table_correlation

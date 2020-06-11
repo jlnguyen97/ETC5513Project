@@ -45,7 +45,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
 ```{r libraries, include=FALSE}
@@ -53,6 +53,7 @@ library(tidyverse)
 library(kableExtra)
 library(bookdown)
 library(lubridate)
+library(simputation)
 ```
 
 
@@ -105,26 +106,11 @@ data_education <- data_education %>% mutate(decade = floor(Year/10)*10)
 
 ```
 
-```{r ratio-plot-decade, fig.cap="Ratio of female to male labor force participation rate (%) (national estimate) by decades"}
-
-data_education %>% filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
-  group_by(decade) %>% 
-  summarise(average = mean(value, na.rm = TRUE)) %>% 
-  ggplot(aes(x = decade,
-             y = average)) +
-  geom_col()
-```
-
-In the past 50 years, women's participation in the work force has increased steadily [@stier2000women].
-
-It is believed that gender inequality in education is a major contributing factor in gender inequalities in adulthood, especially in the labour market [@marks2008accounting].
-
-In this section, the report is going to examine the state of education in Israel and whether there is an association between education and the increase of women's employment in Israel.
+In the past 50 years, women's participation in the work force has increased steadily [@stier2000women]. It is believed that gender inequality in education is a major contributing factor in gender inequalities in adulthood, especially in the labour market [@marks2008accounting]. In this section, the report is going to examine the state of education in Israel and whether there is an association between education and the increase of women's employment in Israel.
 
 \subsection*{Education Spending in Israel}
 
 ```{r read-edu-pop}
-library(simputation)
 
 read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% 
   rename(location = `ï..LOCATION`)
@@ -181,20 +167,18 @@ data_edu_spending_long_imp <- data_edu_spending_wide_imp %>%
                values_to = "value")
 ```
 
-```{r total-edu-spending, fig.cap="Yearly Average Education Expenditure (US$) in Israel by Decades"}
+```{r total-edu-spending, fig.cap="Average Education Expenditure in Israel by Decades"}
 data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
   #summarising education expenditure by decades
   group_by(decade) %>%
   summarise(avg_spending = mean(value, na.rm = TRUE)) %>% 
   ggplot(aes(x = decade,
              y = avg_spending)) +
-  geom_col()
+  geom_col() +
+  labs(x = "Decades", y = "Average Spending (US$)")
 ```
-The education spending spent by the Israeli government is shown in figure \@ref(fig:total-edu-spending).
 
-The average of funds invested by the government doubled the size almost every decade.
-
-It started with yearly average of 834 million US dollars in 1970s, and it reached 15 billion US dollars in 2010s.
+The education spending spent by the Israeli government is shown in figure \@ref(fig:total-edu-spending). The average of funds invested by the government doubled the size almost every decade. It started with average of 834 million US dollars in 1970s, and it reached 15 billion US dollars in 2010s.
 
 ```{r data-edu-spend, fig.cap="Education Spending in Israel"}
 data_edu_spending_long_imp %>%
@@ -208,13 +192,9 @@ data_edu_spending_long_imp %>%
   labs(x = "Year", y = "Spending (US$)")
 ```
 
-Figure \@ref(fig:data-edu-spend) reflects how the Israeli government invested the education spending from 2008 to 2015.
+Figure \@ref(fig:data-edu-spend) reflects how the Israeli government invested the education spending from 2008 to 2015. The figure shows that the government spent the majority of the funds on tertiary educations. It is then followed by primary to post secondary (non-tertiary) and early childhood education respectively.
 
-The figure shows that the government spent the majority of the funds on tertiary educations.
-
-It is then followed by primary to post secondary (non-teritary) and early childhood education respectively.
-
-```{r edu-pop-female, fig.cap= "Female Adult Education Level of 25-64 Year-olds in Israel"}
+```{r edu-pop-female, fig.cap= "Female Adult Education Level in Israel"}
 data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
                                        "upper_secondary_women")) %>% 
   ggplot(aes(x = TIME,
@@ -227,38 +207,36 @@ data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
 ```
 \subsection*{Adult Education Level in Israel}
 
-
+The percentage of adult female education level in Israel is reflected in figure \@ref(fig:edu-pop-female). The figure shows that the percentage of women with tertiary education in Israel increases over the years. Conversely, the percentage of women with upper secondary education in Israel decreases over the years.
 
 \subsection*{Education and Female Participation in Labour Force}
 
-OECD 2016:
-* Tertiary education has a strong impact in the labour market
+```{r join-data}
+#filtering to female ratio only
+fem_ratio <- data_education %>% 
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>% 
+  rename(ratio = value) %>% 
+  select(-decade)
 
-* Tertiary-educated adults in Israel have a relatively high employment rate (86%), which reaches its peak of 92%
-among those who attained a doctoral or equivalent degree.
+#joining the OECD dataset and World Bank dataset
+# World Bank data set doesn't have adult women education level
+data_edu_pop_comp <- data_edu_pop %>% 
+  filter(SUBJECT == "tertiary") %>% 
+  left_join(fem_ratio, by = c("TIME" = "Year"))
+```
 
-* Most of those enrolled in tertiary programmes in the academic year 2013/14 attend private institutions (83%),
-the third highest private enrolment rate of all OECD countries. Most are enrolled in government-dependent
-private institutions (66%); 17% are enrolled in independent private institutions. 
-
-
-
-We also note the synergetic interaction between higher education and increased labor force participation: A major reason for this rise is that employment opportunities increase with higher education and that these offer potentially higher financial remuneration, increasing the incentives to enter the labor market. Furthermore, the higher wages that accompany higher education levels make it increasingly possible to afford the costs of domestic help and childcare, thus making entry into the work force more economically feasible and attractive.
-
-```{r labor-edu-scatterplot, fig.cap = "Scatter Plot between Ratio of Female to Male Labour Force Participation Rate and Education Expenditure"}
-
-data_education %>% filter(Series %in% (c("Adjusted savings: education expenditure (current US$)",
-                                        "Ratio of female to male labor force participation rate (%) (national estimate)"))) %>%
-  pivot_wider(names_from = Series,
-              values_from = value) %>% 
-  ggplot(aes(x = `Adjusted savings: education expenditure (current US$)`,
-             y = `Ratio of female to male labor force participation rate (%) (national estimate)`,
-             label = Year)) +
+```{r scatterplot, fig.cap="Scatterplot of Female Labour Participation Ratio and Adult Women Education Level"}
+data_edu_pop_comp %>% 
+  ggplot(aes(x = Value,
+             y = ratio)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
-  theme(aspect.ratio = 1)
-
+  theme(aspect.ratio = 1) +
+  labs(x = "Percentage of Adult Women with Tertiary Education",
+       y = "Ratio of female to male labor force participation rate (%) (national estimate)")
 ```
+
+The scatter plot in figure \@ref(fig:scatterplot) shows the relationship between the ratio of female to male labour force participation rate in Israel and the percentage of women between 25 -64 years old with tertiary education in Israel. It is reflected in the figure that there is a positive relationship between percentage of adult women with higher education and female participation in labour force. In other words, the ratio of female to male labour force participation rate in Israel tend to increase on average when the percentage of adult female with tertiary education increases. With the increases of the ratio of female to male labour force participation rate in Israel, the trend shown in figure \@ref(fig:scatterplot) is well expected. It was found that tertiary education strongly influences the labour market as adults with tertiary education in Israel have relatively high employment rate at 86% [@oecd2016]. The main factor that explains labour force involvement for women is education [@Stier2013]. This is due to the fact that people with higher educations have better employment opportunities and these opportunities usually comes with higher remuneration [@pm2014]. As primary providers for childcare, women weigh the costs of alternative care for children and home against the benefits of paid work [@Stier2013]. The higher remunerations came with higher education assist people to afford domestic costs, making the entry to the work force economically more attractive [@pm2014].
 
 \section*{}
 

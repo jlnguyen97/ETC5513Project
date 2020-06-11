@@ -91,7 +91,9 @@ data_long = data %>%
 
 \section*{Male and Female Mortality Rates and Birth Rate}
 
-This section will be analysing the relationship between birth rate, female and male mortality rates with the ratio of females to males in the labor force.
+With Israel as our chosen country, this section will be analysing the relationship between our reponse variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators: _Birth rate, crude (per 1,000 people)_, _Mortality rate, adult, female (per 1,000 female adults)_ and _Mortality rate, adult, male (per 1,000 male adults)_ to see how what their impact is on the change of the female to male labor force ratio. 
+
+Across history, the traditional stereotype on gender roles has been one that depicts males roles as the provider and women as the caretaker and child bearer resulting in the notion that a woman's role is at home and leading to less occuptional opportunities and asspirations\GenderRoles. These stereotypes are futher perpetuated through religon, as seen by the two most present religion in Israel - Judaism and Islam where the traditional identity for involves leadership for men and domesticity for females \Woodhead in all facets of life from private, in public and in the army (https://en.idi.org.il/articles/24554). However, it does seem as though this traditional view is being confronted and dismantled over time with more religous and non religous Israeli woman taking up education and being accepted in a range of occupational opportunites and army duties\Levy2006, as such birth rate and male and female mortality rates are a prime variablea to potentially explain the change in the labor force ratio, as a higher birth rate would indicate less opporunity for female participation in the work force as well as, being as combat roles have a higher presence of males and given the greater risk involved could show to be an indicator of change in labor ratio (https://en.idi.org.il/articles/24554).  
 
 The chosen variables are isolated into their own dataset in both long and wide form.
 ```{r create-long-wide-objects-with-required-variables}
@@ -222,9 +224,9 @@ percentage_results_wider <- percentage_results_all_variables %>%
 ```
 
 ```{r correlation-between-response-explanatory}
-correlation_results_male_mort <- cor(percentage_results_wider$Male_mortality_rate, percentage_results_wider$Labor_force_rate)
-correlation_results_female_mort <- cor(percentage_results_wider$Female_mortality_rate, percentage_results_wider$Labor_force_rate) 
-correlation_results_birth_rate <- cor(percentage_results_wider$Birth_rate, percentage_results_wider$Labor_force_rate)
+correlation_results_male_mort <- cor(percentage_results_wider$Pct_male_mortality_rate_per_1000_male_adults, percentage_results_wider$Labor_force_rate)
+correlation_results_female_mort <- cor(percentage_results_wider$Pct_Female_mortality_rate_1000_female_adults, percentage_results_wider$Labor_force_rate) 
+correlation_results_birth_rate <- cor(percentage_results_wider$Pct_Birth_rate_per_1000_people, percentage_results_wider$Labor_force_rate)
 
 table_correlation <- tibble(correlation_results_male_mort, correlation_results_female_mort, correlation_results_birth_rate) %>%
   kable(caption = "The correlation between the percentage results, per 1000 people, of the response variables and the ratio of female to male labor force participation rate (%)") %>%

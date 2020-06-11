@@ -93,7 +93,7 @@ Gender inequality is an issue that is recognised globally. A large factor in the
 
 ## Data source
 
-The data used has been retrieved from the World Development Indicators dataset from the World Bank @TheWorldBank2018 and the OECD @#CITE which licened under Creative Commons Attribtions 4.0. The variables used in each section with their offical definition off of their respective websites, are as follows:
+The data used has been retrieved from the World Development Indicators dataset from the World Bank @TheWorldBank2018 and the OECD which licened under Creative Commons Attribtions 4.0. The variables used in each section with their offical definition off of their respective websites, are as follows:
 
 _Reponse variable_
   - *Ratio of female to male labor force participation rate (national estimate):  Labor force participation rate is the proportion of the population ages 15 and older that is economically active: all people who supply labor for the production of goods and services during a specified period. Ratio of female to male labor force participation rate is calculated by dividing female labor force participation rate by male labor force participation rate and multiplying by 100.
@@ -400,7 +400,7 @@ To conclude this section, we can use renewable electricity output ratio to direc
 
 \section*{Male and Female Mortality Rates and Birth Rate}
 
-With Israel as our chosen country, this section will be analyzing the relationship between our response variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators: 
+With Israel as our chosen country, this section will be analyzing the relationship between our response variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators which have been sourced from The World Bank (@TheWorldBank2018): 
   - Mortality rate, adult, female (per 1,000 female adults): Adult mortality rate, female, is the probability of dying between the ages of 15 and 60--that is, the probability of a 15-year-old female dying before reaching age 60, if subject to age-specific mortality rates of the specified year between those ages (@TheWorldBank2018)
   - Mortality rate, adult, male (per 1,000 male adults): Adult mortality rate, male, is the probability of dying between the ages of 15 and 60--that is, the probability of a 15-year-old male dying before reaching age 60, if subject to age-specific mortality rates of the specified year between those ages @TheWorldBank2018). 
   - Birth rate, crude (per 1,000 people): Crude birth rate indicates the number of live births occurring during the year, per 1,000 population estimated at midyear. Subtracting the crude death rate from the crude birth rate provides the rate of natural increase, which is equal to the rate of population change in the absence of migration (@TheWorldBank2018).
@@ -738,7 +738,7 @@ Interestingly noted is the weaker signficance of the variable `Self-employed, fe
 
 \section*{Conclusion}
 
-To conclude our report, we can observe the gender stereotype lessening to some degree. The individual variables which we have selected can explain why this is the case to a certain degree, however to obtain meaningful results, further research must be conducted. It is also important to note that only recently has gender equality been an issue so widely recognised. More data may be required to explore how different variables interact with equality in today's world.
+From the analysis conducted in this report it is evident that the view of gender stereotypes in Israel have improved to a more contemporary view to some degree, as explained by the individual variables that were analysed. However, to obtain more meaningful results, further research must be conducted. It is also important to note that only recently has gender equality been an issue that has been widely recognised and addressed. More data may be required to explore how different variables interact with equality and the continued dismantling of stereotypes in today's world.
 
 
 References

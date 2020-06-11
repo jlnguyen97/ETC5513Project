@@ -193,6 +193,69 @@ pct_change_mortality_variables <- mortality_birth_rate_long %>%
 pct_change_mortality_variables    
 ```
 
+### Correlation comparison
+
+The explanatory variables are presented as ratios and in order for their results to be relative to the explantory variable to allow for analysis to take place, they are turned into percentages, to show the percentage of birth rate and female and male mortality for every 1000 people, from which a new dataset will be created showing the percentage results for all the variables in this section.
+
+```{r ratios-turned-into-percentages, include = FALSE}
+variables_turned_into_percentage <- mortality_birth_rate_long %>%
+  filter(!Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  mutate(percent_value = ((value/1000)*100))
+```
+
+```{r combine-percent-results-response-variable-and-explanatory}
+labor_force_ratio <- mortality_birth_rate_long %>%
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  mutate(percent_value = value)
+percentage_results_all_variables <- rbind(variables_turned_into_percentage, labor_force_ratio)
+```
+
+```{r pivot-wider-percentage-results}
+percentage_results_wider <- percentage_results_all_variables %>% 
+  select(Series, Year, percent_value) %>%
+  pivot_wider(names_from = Series,
+              values_from = percent_value) %>%  
+  rename(Pct_male_mortality_rate_per_1000_male_adults = "Mortality rate, adult, male (per 1,000 male adults)",
+         Pct_Female_mortality_rate_1000_female_adults = "Mortality rate, adult, female (per 1,000 female adults)",
+         Pct_Birth_rate_per_1000_people = "Birth rate, crude (per 1,000 people)",
+         Labor_force_rate = "Ratio of female to male labor force participation rate (%) (national estimate)")
+```
+
+```{r correlation-between-response-explanatory}
+correlation_results_male_mort <- cor(percentage_results_wider$Male_mortality_rate, percentage_results_wider$Labor_force_rate)
+correlation_results_female_mort <- cor(percentage_results_wider$Female_mortality_rate, percentage_results_wider$Labor_force_rate) 
+correlation_results_birth_rate <- cor(percentage_results_wider$Birth_rate, percentage_results_wider$Labor_force_rate)
+
+table_correlation <- tibble(correlation_results_male_mort, correlation_results_female_mort, correlation_results_birth_rate) %>%
+  kable(caption = "The correlation between the percentage results, per 1000 people, of the response variables and the ratio of female to male labor force participation rate (%)") %>%
+  kable_styling(bootstrap_options = c("hover", "striped"),
+                latex_options = "hold_position") 
+table_correlation
+```
+
+```{r figure-correlation-female-mort-labor-force, fig.cap = "The figure displays the relationship between the percentage results of female mortality rates per 1000 adult females and the Ratio of female to male labor force participation rate (%) (national estimate)"}
+correlation_pct_results_female_mort <- percentage_results_wider %>%
+  ggplot(aes(x = Labor_force_rate, 
+             y = Pct_Female_mortality_rate_1000_female_adults)) +
+  geom_smooth(alpha = 0.5, se = FALSE)
+```
+
+```{r figure-correlation-male-mort-labor-force, fig.cap = "The figure displays the relationship between the percentage results of male mortality rates per 1000 adult females and the Ratio of female to male labor force participation rate (%) (national estimate)"}
+correlation_pct_results_male_mort <- percentage_results_wider %>%
+  ggplot(aes(x = Labor_force_rate, 
+             y = Pct_male_mortality_rate_per_1000_male_adults)) +
+  geom_smooth(alpha = 0.5, se = FALSE)
+correlation_pct_results_male_mort
+```
+
+```{r figure-correlation-birth-rate-labor-force, fig.cap = "The figure displays the relationship between the percentage results of birth rates per 1000 adult females and the Ratio of female to male labor force participation rate (%) (national estimate)"}
+correlation_pct_results_birth_rate <- percentage_results_wider %>%
+  ggplot(aes(x = Labor_force_rate, 
+             y = Pct_Birth_rate_per_1000_people)) +
+  geom_smooth(alpha = 0.5, se = FALSE)
+correlation_pct_results_birth_rate
+```
+
 ### Year on end percent change comparison
 
 A function was created to calculate the year on end percentage change of each variable in order to run a comparison and assess the correlation with the reponse variable, female to male labor force participation ratio. The starting point is zero and then the percentage change is calculated by the division of the value from the following year over the previous year and then a subtraction of 1 to only display the change from year to year.
@@ -251,7 +314,6 @@ function_plot_pct_change_against_labor_force_ratio <- function(x){
 }
 ```
 
-
 ```{r figure-pct-change-female-mort-against-labor-ratio-pct-change, fig.cap = "Figure displaying the year on end percentage change of female mortality rate against the female to male labor force particiaption ratio", fig.widith = 10, fig.height = 8, include = FALSE}
 figure_pct_change_female_mortality_rate_labor_force <- function_plot_pct_change_against_labor_force_ratio("Mortality rate, adult, female (per 1,000 female adults)")
 figure_pct_change_female_mortality_rate_labor_force
@@ -272,21 +334,6 @@ figure_pct_change_birth_rate_labor_force
 figure_pct_change_against_labor_force_ratio <- grid.arrange(figure_pct_change_birth_rate_labor_force, figure_pct_change_male_mortality_rate_labor_force, figure_pct_change_female_mortality_rate_labor_force)
 figure_pct_change_against_labor_force_ratio
 ```
-
-### Visualising the correlation between the response variables and the explanatory variable 
-
-```{r pct-change-into-wide-form, include = FALSE}
-pct_change_variables_wider <- pct_change_combined %>%
-  select(-value) %>%
-  group_by(Year) %>%
-  pivot_wider(names_from = Series,
-              values_from = pct_change) %>%
-  rename(Male_mortality_rate = "Mortality rate, adult, male (per 1,000 male adults)",
-         Female_mortality_rate = "Mortality rate, adult, female (per 1,000 female adults)",
-         Birth_rate = "Birth rate, crude (per 1,000 people)",
-         Labor_force_rate = "Ratio of female to male labor force participation rate (%) (national estimate)")
-```
-
 
 
 \section*{}

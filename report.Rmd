@@ -1,23 +1,23 @@
 ---
-title: "Gender stereotypes in Israel"
+title: "ETC5513 Project"
 author:
 - familyname: Nguyen
   othernames: James Louis
   address: Monash University
   email: jlngu6@student.monash.edu
   correspondingauthor: true
-  qualifications:  B.Com
+  qualifications:  XXX
 - familyname: Lyubic
   othernames: Samuel
   address: Monash University
   email: slyu0007@student.monash.edu
   correspondingauthor: true
-  qualifications:  B.Com
+  qualifications:  XXX
 - familyname: Tirodkar
   othernames: Siddhant
   address: Monash University
   correspondingauthor: true
-  qualifications:  B.Com
+  qualifications:  XXX
 - familyname: Effendy
   othernames: Jimmy
   address: Monash University
@@ -84,13 +84,16 @@ data_long = data %>%
 
 
 \section*{Introduction}
+Gender inequality is an issue that is recognised globally. *Something to describe the discrimination*. Israeli law rules that discrimination related to gender in workplaces and wages, yet when observing actual ratios of females to males in the labour force, the number of female to male workers is not equal. *add something about gender stereotypes in religion*. 
+
+This report aims to establish possible reasons as to how views towards gender stereotypes have changed over time. To do this, we have selected variables to investigate and establish some relationship with changes in gender stereotypes. The data used has been retrieved from the World Development Indicators dataset from the World Bank @TheWorldBank2020. Each section will explore the respective variable, and a linear regression model has been developed to determine impact of each investigated variable.
+
 
 Gender inequality is an issue that is recognised globally. A large factor in the inequality that exists stems from the traditional stereotypes that have surrounded each gender across history, with males being considered as the leaders and providers and females the caretakers with a role of domesticity (@Woodhead). These stereotypes are further perpetuated through the presence of religion as the traditional views for male and female roles are embedded in their history and literature, as such many religions fight back against secularisation and the evolving contemporary views (@VoicuM2009) which is often has a direct relation with pushing back against the advancements of women in society and the deconstruction of the gender stereotypes that exist for the roles of males and females. Israeli law rules that discrimination related to gender in workplaces and wages, yet when observing actual ratios of females to males in the labour force, the number of female to male workers is not equal. As such, this report aims to establish possible reasons as to how views towards gender stereotypes have changed over time. To do this, we have selected variables to investigate and establish some relationship with changes in gender stereotypes with the use of the ratio of female to male labor force particiaption rate as our proxy for the change in the gender stereotype views, with each section exploring the respective variable in depth to ultimately produce a linear regression model to understand the relationship that may exist to assess the chagne in the view of gender stereotypes.
 
 ## Data source
 
-The data used has been retrieved from the World Development Indicators dataset from the World Bank @TheWorldBank2020 which is licened under Creative Commons Attribtions 4.0. The variables used in each section with their offical definition off of their respective websites, are as follows:
-
+The data used has been retrieved from the World Development Indicators dataset from the World Bank @TheWorldBank2018 and the OECD which licened under Creative Commons Attribtions 4.0. The variables used in each section with their offical definition off of their respective websites, are as follows:
 
 _Reponse variable_
   - *Ratio of female to male labor force participation rate (national estimate):  Labor force participation rate is the proportion of the population ages 15 and older that is economically active: all people who supply labor for the production of goods and services during a specified period. Ratio of female to male labor force participation rate is calculated by dividing female labor force participation rate by male labor force participation rate and multiplying by 100.
@@ -136,8 +139,6 @@ data_education <- data_education %>% mutate(decade = floor(Year/10)*10)
 ```
 
 In the past 50 years, women's participation in the work force has increased steadily [@stier2000women]. It is believed that gender inequality in education is a major contributing factor in gender inequalities in adulthood, especially in the labour market [@marks2008accounting]. In this section, the report is going to examine the state of education in Israel and whether there is an association between education and the increase of women's employment in Israel.
-
-In addition to the World Bank dataset, this section also uses dataset from OECD in relation to adult education level [@edulevel] and education spending [@eduspend].
 
 \subsection*{Education Spending in Israel}
 
@@ -223,8 +224,6 @@ data_edu_spending_long_imp %>%
 
 Figure \@ref(fig:data-edu-spend) reflects how the Israeli government invested the education spending from 2008 to 2015. The figure shows that the government spent the majority of the funds on tertiary educations. It is then followed by primary to post secondary (non-tertiary) and early childhood education respectively.
 
-\subsection*{Adult Education Level in Israel}
-
 ```{r edu-pop-female, fig.cap= "Female Adult Education Level in Israel"}
 data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
                                        "upper_secondary_women")) %>% 
@@ -236,6 +235,7 @@ data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
   theme(legend.position = "bottom") +
   labs(x = "Year", y = "% of 25-64 year-olds")
 ```
+\subsection*{Adult Education Level in Israel}
 
 The percentage of adult female education level in Israel is reflected in figure \@ref(fig:edu-pop-female). The figure shows that the percentage of women with tertiary education in Israel increases over the years. Conversely, the percentage of women with upper secondary education in Israel decreases over the years.
 
@@ -400,7 +400,8 @@ To conclude this section, we can use renewable electricity output ratio to direc
 
 \section*{Male and Female Mortality Rates and Birth Rate}
 
-With Israel as our chosen country, this section will be analyzing the relationship between our response variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators which have been sourced from The World Bank (@TheWorldBank2018): 
+With Israel as the chosen country, this section will be analyzing the relationship between the response variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators which have been sourced from The World Bank (@TheWorldBank2018): 
+
   - Mortality rate, adult, female (per 1,000 female adults): Adult mortality rate, female, is the probability of dying between the ages of 15 and 60--that is, the probability of a 15-year-old female dying before reaching age 60, if subject to age-specific mortality rates of the specified year between those ages (@TheWorldBank2018)
   - Mortality rate, adult, male (per 1,000 male adults): Adult mortality rate, male, is the probability of dying between the ages of 15 and 60--that is, the probability of a 15-year-old male dying before reaching age 60, if subject to age-specific mortality rates of the specified year between those ages @TheWorldBank2018). 
   - Birth rate, crude (per 1,000 people): Crude birth rate indicates the number of live births occurring during the year, per 1,000 population estimated at midyear. Subtracting the crude death rate from the crude birth rate provides the rate of natural increase, which is equal to the rate of population change in the absence of migration (@TheWorldBank2018).
@@ -483,17 +484,16 @@ pct_change_mortality_variables <- mortality_birth_rate_long %>%
   mutate(percent_change_1986_to_2016 = ((`2016`-`1986`)/`1986`)*100) %>%
   kable(caption = "The total percentage change from 1986 to 2016, per each variable") %>%
   kable_styling(bootstrap_options = c("hover", "striped"),
-                latex_options = "hold_position",
-                font_size = 7) 
+                latex_options = "hold_position") 
 pct_change_mortality_variables    
 ```
 
 Figure \@ref(fig:combining-the-variable-figures) visualizes the change over time for each of the chosen variables in this section, with the selected variable on the y axis and year along the x axis. 
 
 Key takeaways:
-  - The labor force participation figure shows that the ratio of female to male labor force participation rate has increased from 1986 to 2016, by 41.01% as shown by Table \@ref(tab:percent-change-over-the-observed-time-period).
-  - The birth rate figure shows the birth rate per 1000 people overall shows a reduction in the birth rate has increased from 1986 to 2016, by -8.23% as shown by Table \@ref(tab:percent-change-over-the-observed-time-period).
-  - The mortality rate table shows the mortality rate for females per 1000 female adults in orange and the mortality rate for males per 1000 males in blue. Both indicators have reduced from 1986 to 2016 at a relatively even rate, with female mortality reducing by -48.94% and male mortality reducing by -45.80%, as shown by Table \@ref(tab:percent-change-over-the-observed-time-period).
+  - The labor force participation figure shows that the ratio of female to male labor force participation rate has increased from 1986 to 2016, by 41.01% as shown by Table \@ref(tab:pct_change_mortality_variables).
+  - The birth rate figure shows the birth rate per 1000 people overall shows a reduction in the birth rate has increased from 1986 to 2016, by -8.23% as shown by Table \@ref(tab:pct_change_mortality_variables).
+  - The mortality rate table shows the mortality rate for females per 1000 female adults in orange and the mortality rate for males per 1000 males in blue. Both indicators have reduced from 1986 to 2016 at a relatively even rate, with female mortality reducing by -48.94% and male mortality reducing by -45.80%, as shown by Table \@ref(tab:pct_change_mortality_variables).
 
 ### Correlation comparison
 
@@ -534,7 +534,7 @@ table_correlation <- tibble(correlation_results_male_mort, correlation_results_f
 table_correlation
 ```
 
-```{r figure-correlation-female-mort-labor-force, fig.cap = "The figure displays the relationship between the percentage results of female mortality rates per 1000 adult females and the Ratio of female to male labor force participation rate (%) (national estimate)"}
+```{r figure-correlation-female-mort-labor-force, fig.cap = "The figure displays the relationship between the percentage results of female mortality rates labor force participation rate"}
 correlation_pct_results_female_mort <- percentage_results_wider %>%
   ggplot(aes(x = Labor_force_rate, 
              y = Pct_Female_mortality_rate_1000_female_adults)) +
@@ -547,7 +547,7 @@ correlation_pct_results_female_mort <- percentage_results_wider %>%
 correlation_pct_results_female_mort
 ```
 
-```{r figure-correlation-male-mort-labor-force, fig.cap = "The figure displays the relationship between the percentage results of male mortality rates per 1000 adult females and the Ratio of female to male labor force participation rate (%) (national estimate)"}
+```{r figure-correlation-male-mort-labor-force, fig.cap = "The relationship between the percentage results of male mortality rates  and the ratio of female to male labor force participation rate"}
 correlation_pct_results_male_mort <- percentage_results_wider %>%
   ggplot(aes(x = Labor_force_rate, 
              y = Pct_male_mortality_rate_per_1000_male_adults)) +
@@ -691,12 +691,12 @@ Figure \@ref(fig:graph5) verifies that the percentage of females in the total la
 \section*{Model}
 
 A linear regression model was developed to explore the impact of the variables we have researched in the previous sections on our target variable `Ratio of female to male labor force participation rate (%) (national estimate)`. The variables chosen were:
-
-* Birth rate, crude (per 1,000 people)
-* Self-employed, female (% of female employment) (modeled ILO estimate)
-* Adjusted savings: education expenditure (current US$)
-* Total final energy consumption (TFEC) (TJ)
-
+\begin{itemize}
+  \item Birth rate, crude (per 1,000 people)
+  \item Self-employed, female (% of female employment) (modeled ILO estimate)
+  \item Adjusted savings: education expenditure (current US$)
+  \item Total final energy consumption (TFEC) (TJ)
+\end{itemize}
 
 To match the series, and avoid imputing missing values, we have selected a time range between 1991 and 2015 to conduct our regression.
 
@@ -729,7 +729,7 @@ model = lm(`Ratio of female to male labor force participation rate (%) (national
 ```{r model-summary, echo=FALSE}
 kable(tidy(model), booktabs = TRUE,
       caption = "Linear regression summary") %>%
-  kable_styling(full_width = FALSE, "striped", position = "center", font_size = 7,
+  kable_styling(full_width = FALSE, "striped", position = "center", font_size = 10,
                 latex_options = "hold_position")
 ```
 
@@ -741,4 +741,5 @@ Interestingly noted is the weaker signficance of the variable `Self-employed, fe
 
 From the analysis conducted in this report it is evident that the view of gender stereotypes in Israel have improved to a more contemporary view to some degree, as explained by the individual variables that were analysed. However, to obtain more meaningful results, further research must be conducted. It is also important to note that only recently has gender equality been an issue that has been widely recognised and addressed. More data may be required to explore how different variables interact with equality and the continued dismantling of stereotypes in today's world.
 
-\pagebreak
+
+References

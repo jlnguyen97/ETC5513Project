@@ -116,8 +116,6 @@ read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>%
   rename(location = `ï..LOCATION`)
 read_edu_spending <- read.csv("data/edu_spending.csv") %>%
   rename(location = `ï..LOCATION`)
-read_pop_tert <- read.csv("data/pop_tert_edu.csv") %>% 
-  rename(location = `ï..LOCATION`)
 
 #wrangling read_edu_pop dataset
 data_edu_pop <- read_edu_pop %>% 

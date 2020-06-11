@@ -590,7 +590,7 @@ plot_1 <- israel_labour %>% dplyr::filter(Series == "Labor force, female (% of t
 plot_1
 ```
 
-Figure \@ref(fig:graph1) depicts the gentle rise in the female labour force which was around 40% of the total labour force in 1990 to around 47% around 2020. One of the main reasons behind the surge in female participation is due to the educational attainment of women in Israel. Also, in 2006 and 2007 numerous amendments were made to women employment law to protect the rights of women at workplace and provide equal employment opportunities which has proved to be pivotal in increasing female participation in the labour force. [Source](https://mfa.gov.il/MFA/AboutIsrael/State/Law/Pages/Ensuring-equal-rights-for-women-in-Israel.aspx)
+Figure \@ref(fig:graph1) depicts the gentle rise in the female labour force which was around 40% of the total labour force in 1990 to around 47% around 2020. One of the main reasons behind the surge in female participation is due to the educational attainment of women in Israel. Also, in 2006 and 2007 numerous amendments were made to women employment law to protect the rights of women at workplace and provide equal employment opportunities which has proved to be pivotal in increasing female participation in the labour force [@israelministryofforeignaffairs2013].
 
 # Self-employed v/s wage & salaried women
 

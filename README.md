@@ -3,8 +3,11 @@
 Members:
 
 Samuel Lyubic
+
 Siddhant Tirodkar
+
 Jimmy Effendy
+
 James Louis Nguyen
 
 
@@ -12,8 +15,11 @@ This report analyses the impact of different variables on gender stereotypes in 
 A renv.lock file has been provided to ensure reproducibility. The data is included within the data folder in the repo. Authors of sections have been listed below:
 
 Education - Jimmy Effendy
+
 Energy consumption - James Louis Nguyen
+
 Mortality and birth rates - Samuel Lyubic
+
 Labour force analysis - Siddhant Tirodkar
 
 

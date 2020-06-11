@@ -109,7 +109,7 @@ _Reponse variable_
     - Total final energy consumption (TFEC) (TJ)
     - Renewable electricity output (GWh):
     - Renewable energy share of TFEC (%):
-  - _Mortality and Birth Rate_ 
+  - _Female and Male Mortality and Birth Rate Analysis_ 
     - Mortality rate, adult, female (per 1,000 female adults)
     - Mortality rate, adult, male (per 1,000 male adults)
     - Birth rate, crude (per 1,000 people)
@@ -398,7 +398,7 @@ We can see a similar trend between series in Figure \@ref(fig:energy-ftm). We co
 
 To conclude this section, we can use renewable electricity output ratio to directly model some government/market influence, and indirectly people. It may also be more reasonable to use total energy consumption to model changing attitudes.
 
-\section*{Male and Female Mortality Rates and Birth Rate}
+\section*{Female and Male mortality and Birth Rate Analysis}
 
 With Israel as the chosen country, this section will be analyzing the relationship between the response variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators which have been sourced from The World Bank (@TheWorldBank2018): 
 

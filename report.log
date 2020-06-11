@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.21)  11 JUN 2020 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.21)  11 JUN 2020 23:41
 entering extended mode
 **./report.tex
 (report.tex
@@ -1417,7 +1417,7 @@ ction with package mdbch, on input line 311.
 Package mathdesign/mdbch Warning: Package 'amsfonts' shouldn't be used in conjo
 nction with package mdbch, on input line 311.
 
-<logo.jpg, id=27, 4015.0pt x 6022.5pt>
+<logo.jpg, id=31, 4015.0pt x 6022.5pt>
 File: logo.jpg Graphic file (type jpg)
 <use logo.jpg>
 Package pdftex.def Info: logo.jpg  used on input line 312.
@@ -1696,232 +1696,238 @@ Overfull \hbox (56.23262pt too wide) detected at line 312
 {C:/Users/James Nguyen/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./lo
 go.jpg>]
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
-(Font)              scaled to size 10.51207pt on input line 317.
-<report_files/figure-latex/total-edu-spending-1.pdf, id=39, 578.16pt x 361.35pt
+(Font)              scaled to size 10.51207pt on input line 349.
+[2]
+<report_files/figure-latex/total-edu-spending-1.pdf, id=54, 578.16pt x 361.35pt
 >
 File: report_files/figure-latex/total-edu-spending-1.pdf Graphic file (type pdf
 )
 <use report_files/figure-latex/total-edu-spending-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/total-edu-spending-1.pdf  us
-ed on input line 347.
+ed on input line 392.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 349.
-[2]
-<report_files/figure-latex/data-edu-spend-1.pdf, id=50, 578.16pt x 361.35pt>
+(Font)              scaled to size 10.51207pt on input line 394.
+<report_files/figure-latex/data-edu-spend-1.pdf, id=56, 578.16pt x 361.35pt>
 File: report_files/figure-latex/data-edu-spend-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/data-edu-spend-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/data-edu-spend-1.pdf  used o
-n input line 360.
+n input line 405.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 [3 <./report_files/figure-latex/total-edu-spending-1.pdf>]
-<report_files/figure-latex/edu-pop-female-1.pdf, id=63, 578.16pt x 361.35pt>
+<report_files/figure-latex/edu-pop-female-1.pdf, id=71, 578.16pt x 361.35pt>
 File: report_files/figure-latex/edu-pop-female-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/edu-pop-female-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/edu-pop-female-1.pdf  used o
-n input line 370.
+n input line 415.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
+[4 <./report_files/figure-latex/data-edu-spend-1.pdf>]
 
-LaTeX Warning: Reference `fig:edu-pop-female' on page 4 undefined on input line
- 374.
+LaTeX Warning: Reference `fig:edu-pop-female' on page 5 undefined on input line
+ 419.
 
-[4 <./report_files/figure-latex/data-edu-spend-1.pdf> <./report_files/figure-la
-tex/edu-pop-female-1.pdf>]
-<report_files/figure-latex/scatterplot-1.pdf, id=79, 578.16pt x 361.35pt>
+<report_files/figure-latex/scatterplot-1.pdf, id=82, 578.16pt x 361.35pt>
 File: report_files/figure-latex/scatterplot-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/scatterplot-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/scatterplot-1.pdf  used on i
-nput line 383.
+nput line 428.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[5 <./report_files/figure-latex/scatterplot-1.pdf>]
-<report_files/figure-latex/compare-renewable-ftm-1.pdf, id=100, 578.16pt x 361.
+[5 <./report_files/figure-latex/edu-pop-female-1.pdf>] [6 <./report_files/figur
+e-latex/scatterplot-1.pdf>]
+<report_files/figure-latex/compare-renewable-ftm-1.pdf, id=113, 578.16pt x 361.
 35pt>
 File: report_files/figure-latex/compare-renewable-ftm-1.pdf Graphic file (type 
 pdf)
 <use report_files/figure-latex/compare-renewable-ftm-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/compare-renewable-ftm-1.pdf 
- used on input line 428.
+ used on input line 473.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[6 <./report_files/figure-latex/compare-renewable-ftm-1.pdf>]
-<report_files/figure-latex/renewable-compare-1.pdf, id=116, 578.16pt x 361.35pt
+<report_files/figure-latex/renewable-compare-1.pdf, id=117, 578.16pt x 361.35pt
 >
 File: report_files/figure-latex/renewable-compare-1.pdf Graphic file (type pdf)
 
 <use report_files/figure-latex/renewable-compare-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/renewable-compare-1.pdf  use
-d on input line 450.
+d on input line 495.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[7 <./report_files/figure-latex/renewable-compare-1.pdf>]
+[7 <./report_files/figure-latex/compare-renewable-ftm-1.pdf>] [8 <./report_file
+s/figure-latex/renewable-compare-1.pdf>]
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 466.
-<report_files/figure-latex/energy-ftm-1.pdf, id=135, 578.16pt x 361.35pt>
+(Font)              scaled to size 9.60007pt on input line 511.
+<report_files/figure-latex/energy-ftm-1.pdf, id=147, 578.16pt x 361.35pt>
 File: report_files/figure-latex/energy-ftm-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/energy-ftm-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/energy-ftm-1.pdf  used on in
-put line 501.
+put line 546.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[8 <./report_files/figure-latex/energy-ftm-1.pdf>]
+[9 <./report_files/figure-latex/energy-ftm-1.pdf>] [10]
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 9.24173pt on input line 553.
-<report_files/figure-latex/combining-the-variable-figures-1.pdf, id=155, 722.7p
+(Font)              scaled to size 9.24173pt on input line 614.
+<report_files/figure-latex/combining-the-variable-figures-1.pdf, id=176, 722.7p
 t x 578.16pt>
 File: report_files/figure-latex/combining-the-variable-figures-1.pdf Graphic fi
 le (type pdf)
 <use report_files/figure-latex/combining-the-variable-figures-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/combining-the-variable-figur
-es-1.pdf  used on input line 557.
+es-1.pdf  used on input line 618.
 (pdftex.def)             Requested size: 455.24826pt x 364.19861pt.
-[9]
-Overfull \hbox (185.69582pt too wide) in paragraph at lines 566--579
- [][] 
- []
-
-[10 <./report_files/figure-latex/combining-the-variable-figures-1.pdf>]
-Overfull \hbox (6.5728pt too wide) in paragraph at lines 615--622
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 627.
+[11 <./report_files/figure-latex/combining-the-variable-figures-1.pdf>]
+Overfull \hbox (6.5728pt too wide) in paragraph at lines 678--685
  [][] 
  []
 
 <report_files/figure-latex/figure-correlation-female-mort-labor-force-1.pdf, id
-=177, 578.16pt x 361.35pt>
+=194, 578.16pt x 361.35pt>
 File: report_files/figure-latex/figure-correlation-female-mort-labor-force-1.pd
 f Graphic file (type pdf)
 <use report_files/figure-latex/figure-correlation-female-mort-labor-force-1.pdf
 >
 Package pdftex.def Info: report_files/figure-latex/figure-correlation-female-mo
-rt-labor-force-1.pdf  used on input line 627.
+rt-labor-force-1.pdf  used on input line 690.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[11]
+[12]
 <report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf, id=1
-82, 578.16pt x 361.35pt>
+99, 578.16pt x 361.35pt>
 File: report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf 
 Graphic file (type pdf)
 <use report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/figure-correlation-male-mort
--labor-force-1.pdf  used on input line 636.
+-labor-force-1.pdf  used on input line 699.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[12 <./report_files/figure-latex/figure-correlation-female-mort-labor-force-1.p
+[13 <./report_files/figure-latex/figure-correlation-female-mort-labor-force-1.p
 df>]
 <report_files/figure-latex/figure-correlation-birth-rate-labor-force-1.pdf, id=
-193, 578.16pt x 361.35pt>
+211, 578.16pt x 361.35pt>
 File: report_files/figure-latex/figure-correlation-birth-rate-labor-force-1.pdf
  Graphic file (type pdf)
 <use report_files/figure-latex/figure-correlation-birth-rate-labor-force-1.pdf>
 
 Package pdftex.def Info: report_files/figure-latex/figure-correlation-birth-rat
-e-labor-force-1.pdf  used on input line 645.
+e-labor-force-1.pdf  used on input line 708.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[13 <./report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf
->] [14 <./report_files/figure-latex/figure-correlation-birth-rate-labor-force-1
+[14 <./report_files/figure-latex/figure-correlation-male-mort-labor-force-1.pdf
+>] [15 <./report_files/figure-latex/figure-correlation-birth-rate-labor-force-1
 .pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 685--685
+Underfull \hbox (badness 10000) in paragraph at lines 751--751
 |\T1/fvs/b/n/14.4 Labour Force Anal-y-sis|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 687--687
+Underfull \hbox (badness 10000) in paragraph at lines 753--753
 |[]\T1/fvs/b/n/14.4 Overview|
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 705--705
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 771--771
 []|\T1/mdbch/m/n/10.95 (-20) 1991|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 707--707
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 773--773
 []|\T1/mdbch/m/n/10.95 (-20) 1992|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 709--709
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 775--775
 []|\T1/mdbch/m/n/10.95 (-20) 1993|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 711--711
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 777--777
 []|\T1/mdbch/m/n/10.95 (-20) 1994|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 713--713
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 779--779
 []|\T1/mdbch/m/n/10.95 (-20) 1995|  
  []
 
 
-Overfull \hbox (1.88705pt too wide) in paragraph at lines 715--715
+Overfull \hbox (1.88705pt too wide) in paragraph at lines 781--781
 []|\T1/mdbch/m/n/10.95 (-20) 1996|  
  []
 
-<report_files/figure-latex/graph1-1.pdf, id=222, 578.16pt x 361.35pt>
+<report_files/figure-latex/graph1-1.pdf, id=239, 578.16pt x 361.35pt>
 File: report_files/figure-latex/graph1-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/graph1-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/graph1-1.pdf  used on input 
-line 729.
+line 795.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 744--744
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 810--810
 |[]\T1/fvs/b/n/14.4 Self-employed v/s wage & salaried women|
  []
 
-<report_files/figure-latex/graph2-1.pdf, id=230, 578.16pt x 361.35pt>
+<report_files/figure-latex/graph2-1.pdf, id=247, 578.16pt x 361.35pt>
 File: report_files/figure-latex/graph2-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/graph2-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/graph2-1.pdf  used on input 
-line 748.
+line 814.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[16 <./report_files/figure-latex/graph1-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 766--766
+[17 <./report_files/figure-latex/graph1-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 832--832
 |[]\T1/fvs/b/n/14.4 Female v/s Male labour force par-tic-i-pa-tion|
  []
 
-<report_files/figure-latex/graph3-1.pdf, id=244, 578.16pt x 361.35pt>
+<report_files/figure-latex/graph3-1.pdf, id=261, 578.16pt x 361.35pt>
 File: report_files/figure-latex/graph3-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/graph3-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/graph3-1.pdf  used on input 
-line 770.
+line 836.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[17 <./report_files/figure-latex/graph2-1.pdf>]
-Underfull \hbox (badness 5878) in paragraph at lines 786--786
+[18 <./report_files/figure-latex/graph2-1.pdf>]
+Underfull \hbox (badness 5878) in paragraph at lines 852--852
 |[]\T1/fvs/b/n/14.4 Female labour force v/s female-male par-tic-i-pa-tion rate|
 
  []
 
-<report_files/figure-latex/graph5-1.pdf, id=258, 578.16pt x 361.35pt>
+<report_files/figure-latex/graph5-1.pdf, id=275, 578.16pt x 361.35pt>
 File: report_files/figure-latex/graph5-1.pdf Graphic file (type pdf)
 <use report_files/figure-latex/graph5-1.pdf>
 Package pdftex.def Info: report_files/figure-latex/graph5-1.pdf  used on input 
-line 790.
+line 856.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[18 <./report_files/figure-latex/graph3-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 800--800
+[19 <./report_files/figure-latex/graph3-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 866--866
 |\T1/fvs/b/n/14.4 Model|
  []
 
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 9.24173pt on input line 871.
+LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line
+ 877.
 
-Underfull \hbox (badness 10000) in paragraph at lines 802--802
+("C:\Users\James Nguyen\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathdesign/
+mdbch\ts1mdbch.fd"
+File: ts1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdbch.
+)
+LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 877.
+[20 <./report_files/figure-latex/graph5-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 927--927
 |\T1/fvs/b/n/14.4 Conclusion|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 807--807
+Underfull \hbox (badness 10000) in paragraph at lines 940--940
 |\T1/fvs/b/n/14.4 References|
  []
 
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.24173pt on input line 806.
-[19 <./report_files/figure-latex/graph5-1.pdf>]
+[21]
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 806.
+(biblatex)                Using fallback driver on input line 939.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 808.
-[20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 808.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 941.
+[22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 941.
 (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 808.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 808.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 941.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 941.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: B14B5393F677E048699902C856CBFCC2;1418.
+(rerunfilecheck)             Checksum: 3F77945E4F9A3F5E528B0E7AF71A8E85;1574.
 
 LaTeX Warning: There were undefined references.
 
@@ -1932,14 +1938,14 @@ Package biblatex Warning: Please rerun LaTeX.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 808.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 941.
  ) 
 Here is how much of TeX's memory you used:
- 26899 strings out of 480765
- 451366 string characters out of 2890819
- 1106751 words of memory out of 3000000
- 42150 multiletter control sequences out of 15000+200000
- 642041 words of font info for 295 fonts, out of 3000000 for 9000
+ 26966 strings out of 480765
+ 452480 string characters out of 2890819
+ 1106974 words of memory out of 3000000
+ 42181 multiletter control sequences out of 15000+200000
+ 646854 words of font info for 318 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,14n,91p,2366b,1852s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/James Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base
@@ -1957,9 +1963,9 @@ ta/Local/Programs/MiKTeX 2.9/fonts/type1/bera/fvsb8a.pfb><C:/Users/James Nguyen
 Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/mathdesign/mdbch/md-chr8t.
 pfb><C:/Users/James Nguyen/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/mathde
 sign/mdbch/md-chri8t.pfb>
-Output written on report.pdf (20 pages, 7672579 bytes).
+Output written on report.pdf (22 pages, 7683747 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 36993 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 362 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
+ 37001 words of extra memory for PDF output out of 42996 (max. 10000000)
 

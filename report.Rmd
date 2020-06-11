@@ -1,5 +1,5 @@
 ---
-title: "ETC5513 Project"
+title: "Gender stereotypes in Israel"
 author:
 - familyname: Nguyen
   othernames: James Louis
@@ -395,6 +395,745 @@ We can see a similar trend between series in Figure \@ref(fig:energy-ftm). We co
 To conclude this section, we can use renewable electricity output ratio to directly model some government/market influence, and indirectly people. It may also be more reasonable to use total energy consumption to model changing attitudes.
 
 \section*{Female and Male mortality and Birth Rate Analysis}
+
+With Israel as the chosen country, this section will be analyzing the relationship between the response variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators which have been sourced from The World Bank (@TheWorldBank2018): 
+
+  - Mortality rate, adult, female (per 1,000 female adults): Adult mortality rate, female, is the probability of dying between the ages of 15 and 60--that is, the probability of a 15-year-old female dying before reaching age 60, if subject to age-specific mortality rates of the specified year between those ages (@TheWorldBank2018)
+  - Mortality rate, adult, male (per 1,000 male adults): Adult mortality rate, male, is the probability of dying between the ages of 15 and 60--that is, the probability of a 15-year-old male dying before reaching age 60, if subject to age-specific mortality rates of the specified year between those ages @TheWorldBank2018). 
+  - Birth rate, crude (per 1,000 people): Crude birth rate indicates the number of live births occurring during the year, per 1,000 population estimated at midyear. Subtracting the crude death rate from the crude birth rate provides the rate of natural increase, which is equal to the rate of population change in the absence of migration (@TheWorldBank2018).
+
+In order to assess their impact on the change of the female to male labor force ratio to ultimately assess the potential change in how the gender stereotype is percieved in Israel. 
+
+Across history, the traditional stereotype on gender roles has been one that depicts males roles as the provider and women as the caretaker and child bearer resulting in the notion that a woman's role is at home which has led to less occupational opportunities and aspirations @DickeAL2019. These stereotypes are further perpetuated through religion, as seen by the two most present religion in Israel - Judaism and Islam where the traditional identity for involves leadership for men and domesticity for females @Woodhead in all facets of life from work, private, public and in the army (@GittlemenSI2020). However, it does seem as though this traditional view is being confronted and dismantled over time with more religious and non religious Israeli woman taking up education and being accepted in a range of occupational opportunities and army duties @Levy2006, as such birth rate and male and female mortality rates are prime variables to potentially explain the change in the labor force ratio thus indicating the potential change in how gender stereotypes are viewed. 
+
+The variables for this section are isolated into their own data set in both long and wide form.
+```{r create-long-wide-objects-with-required-variables}
+mortality_birth_rate_long <- data_long %>%
+  filter(Series %in% c("Ratio of female to male labor force participation rate (%) (national estimate)", 
+                       "Mortality rate, adult, female (per 1,000 female adults)", 
+                       "Mortality rate, adult, male (per 1,000 male adults)", 
+                       "Birth rate, crude (per 1,000 people)")) %>%
+  arrange(Year) %>%
+  slice(65:188)
+```
+
+### The variable change overtime
+
+```{r figure-female-and-male-mortality-and-birth-rate-and-labor-force-ratio, include = FALSE}
+figure_female_male_mortality <- mortality_birth_rate_long %>%
+  filter(Series %in% c("Mortality rate, adult, female (per 1,000 female adults)", 
+                       "Mortality rate, adult, male (per 1,000 male adults)")) %>%
+  ggplot(aes(x = Year,
+             y = value,
+             group = Series,
+             color = Series)) +
+  geom_line() +
+  geom_point() +
+  theme(legend.position = "right") +
+  theme_bw() +
+  labs(title = "Male and female mortality rate, per 1000 adults",
+       y = "Mortality rate per 1000 people",
+       x = "Year") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
+
+figure_birth_rate <- mortality_birth_rate_long %>%
+  filter(Series == "Birth rate, crude (per 1,000 people)") %>%
+  ggplot(aes(x = Year,
+             y = value,
+             group = Series,
+             color = Series)) +
+  geom_line() +
+  geom_point() +
+  theme(legend.position = "right") +
+  theme_bw() +
+  labs(title = "Birth rate per 1000 people",
+       y = "Birth rate, crude (per 1,000 people)",
+       x = "Year") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+figure_labor_force_ratio <- mortality_birth_rate_long %>%
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  ggplot(aes(x = Year,
+             y = value,
+             group = Series,
+             color = Series)) +
+  geom_line() +
+  geom_point() +
+  theme(legend.position = "right") +
+  theme_bw() +
+  labs(title = "Ratio female to male labor force participation",
+       y = "Female to male ratio %",
+       x = "Year") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
+  
+```
+
+```{r combining-the-variable-figures, fig.cap = "Each figure visualises the chosen variables", fig.width = 10, fig.height = 8}
+figure_combined_birth_ratio_mortality <- grid.arrange(figure_labor_force_ratio, figure_birth_rate, figure_female_male_mortality)
+```
+
+```{r percent-change-over-the-observed-time-period, fig.cap = "Figure showing the percentage chance in each of the chosen variables"}
+pct_change_mortality_variables <- mortality_birth_rate_long %>%
+  filter(Year %in% c("1986", "2016")) %>% 
+  pivot_wider(names_from = Year,
+              values_from = value) %>%
+  mutate(percent_change_1986_to_2016 = ((`2016`-`1986`)/`1986`)*100) %>%
+  kable(caption = "The total percentage change from 1986 to 2016, per each variable") %>%
+  kable_styling(bootstrap_options = c("hover", "striped"),
+                latex_options = "hold_position", font_size= 7) 
+pct_change_mortality_variables    
+```
+
+Figure \@ref(fig:combining-the-variable-figures) visualizes the change over time for each of the chosen variables in this section, with the selected variable on the y axis and year along the x axis. 
+
+Key takeaways:
+  - The labor force participation figure shows that the ratio of female to male labor force participation rate has increased from 1986 to 2016, by 41.01% as shown by Table \@ref(tab:percent-change-over-the-observed-time-period).
+  - The birth rate figure shows the birth rate per 1000 people overall shows a reduction in the birth rate has increased from 1986 to 2016, by -8.23% as shown by Table \@ref(tab:percent-change-over-the-observed-time-period).
+  - The mortality rate table shows the mortality rate for females per 1000 female adults in orange and the mortality rate for males per 1000 males in blue. Both indicators have reduced from 1986 to 2016 at a relatively even rate, with female mortality reducing by -48.94% and male mortality reducing by -45.80%, as shown by Table \@ref(tab:percent-change-over-the-observed-time-period).
+
+### Correlation comparison
+
+The explanatory variables are presented as ratios and in order for their results to be relative to the explanatory variable and to allow for analysis to take place, they are turned into percentages. The new column percent_value shows the percentage of birth rate and female and male mortality rates for every 1000 people, from which a new data set will be created showing the percentage results for all the variables in this section.
+```{r ratios-turned-into-percentages, include = FALSE}
+variables_turned_into_percentage <- mortality_birth_rate_long %>%
+  filter(!Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  mutate(percent_value = ((value/1000)*100))
+```
+
+```{r combine-percent-results-response-variable-and-explanatory, include = FALSE}
+labor_force_ratio <- mortality_birth_rate_long %>%
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>%
+  mutate(percent_value = value)
+percentage_results_all_variables <- rbind(variables_turned_into_percentage, labor_force_ratio)
+```
+
+```{r pivot-wider-percentage-results, include = FALSE}
+percentage_results_wider <- percentage_results_all_variables %>% 
+  select(Series, Year, percent_value) %>%
+  pivot_wider(names_from = Series,
+              values_from = percent_value) %>%  
+  rename(Pct_male_mortality_rate_per_1000_male_adults = "Mortality rate, adult, male (per 1,000 male adults)",
+         Pct_Female_mortality_rate_1000_female_adults = "Mortality rate, adult, female (per 1,000 female adults)",
+         Pct_Birth_rate_per_1000_people = "Birth rate, crude (per 1,000 people)",
+         Labor_force_rate = "Ratio of female to male labor force participation rate (%) (national estimate)")
+```
+
+```{r correlation-between-response-explanatory, fig.cap = "The table shows the correlation coefficient between each explanatory variable and the response variable"}
+correlation_results_male_mort <- cor(percentage_results_wider$Pct_male_mortality_rate_per_1000_male_adults, percentage_results_wider$Labor_force_rate)
+correlation_results_female_mort <- cor(percentage_results_wider$Pct_Female_mortality_rate_1000_female_adults, percentage_results_wider$Labor_force_rate) 
+correlation_results_birth_rate <- cor(percentage_results_wider$Pct_Birth_rate_per_1000_people, percentage_results_wider$Labor_force_rate)
+
+table_correlation <- tibble(correlation_results_male_mort, correlation_results_female_mort, correlation_results_birth_rate) %>%
+  kable(caption = "The figure displays the relationship between the percentage results of female mortality rates and labor force participation rate") %>%
+  kable_styling(bootstrap_options = c("hover", "striped"),
+                latex_options = "hold_position") 
+table_correlation
+```
+
+```{r figure-correlation-female-mort-labor-force, fig.cap = "The figure displays the relationship between the percentage results of female mortality rates labor force participation rate"}
+correlation_pct_results_female_mort <- percentage_results_wider %>%
+  ggplot(aes(x = Labor_force_rate, 
+             y = Pct_Female_mortality_rate_1000_female_adults)) +
+  geom_point() +
+  geom_smooth(method = lm, se = FALSE) +
+  labs(title = "Correlation between the female mortality 
+                rate and labor force ratio",
+       y = "Female mortality per 1000 adult females, as a percentage",
+       x = "Ratio female to male labor force participation")
+correlation_pct_results_female_mort
+```
+
+```{r figure-correlation-male-mort-labor-force, fig.cap = "The relationship between the percentage results of male mortality rates  and the ratio of female to male labor force participation rate"}
+correlation_pct_results_male_mort <- percentage_results_wider %>%
+  ggplot(aes(x = Labor_force_rate, 
+             y = Pct_male_mortality_rate_per_1000_male_adults)) +
+  geom_point() +
+  geom_smooth(method = lm, se = FALSE) +
+  labs(title = "Correlation between the male mortality 
+                rate and labor force ratio",
+       y = "Male mortality per 1000 adult males, as a percentage",
+       x = "Ratio female to male labor force participation")
+correlation_pct_results_male_mort
+```
+
+```{r figure-correlation-birth-rate-labor-force, fig.cap = "The figure displays the relationship between the percentage results of birth rates per 1000 adult females and the Ratio of female to male labor force participation rate (%) (national estimate)", echo = FALSE}
+correlation_pct_results_birth_rate <- percentage_results_wider %>%
+  ggplot(aes(x = Labor_force_rate, 
+             y = Pct_Birth_rate_per_1000_people)) +
+  geom_point() +
+  geom_smooth(method = lm, se = FALSE) +
+  labs(title = "Correlation between birth rate and labor force ratio",
+       y = "Birth rate per 1000 people, as a percentage",
+       x = "Ratio female to male labor force participation")
+correlation_pct_results_birth_rate
+```
+
+Figure \@ref(fig:figure-correlation-birth-rate-labor-force) visualizes the correlation between birth rate and the female to male labor force ratio, with birth rate, crude (per 1,000 people) on the y axis and the ratio of female to male labor force participation rate on the x axis. The figure shows a negative correlation between the two variables however, there are some scattered results where both birth rate and female to male labor force ratio are both relatively low which is depicted by the correlation coefficient of -0.60 as shown by Table \@ref(tab:correlation-between-response-explanatory).
+
+
+Figure \@ref(fig:figure-correlation-male-mort-labor-force) visualizes the correlation between male mortality rate and the female to male labor force ratio, with male mortality rate per 1,000 male adults on the y axis and the ratio of female to male labor force participation rate on the x axis. The figure displays a strong negative correlation between the two variables which is backed up by the correlation coefficient of -.96 in Table \@ref(tab:correlation-between-response-explanatory). 
+
+Figure \@ref(fig:figure-correlation-female-mort-labor-force) visualizes the correlation between female mortality rate and the female to male labor force ratio, with female mortality rate per 1,000 female adults on the y axis and the ratio of female to male labor force participation rate on the x axis. The figure displays a strong negative correlation between the two variables which is backed up by the correlation coefficient of -.99 in Table \@ref(tab:correlation-between-response-explanatory).
+
+As evident by the analysis conducted in this section, there is a clear positive correlation between the three explanatory variables and the the ratio of female to male labor force participation rate. However, the causality and the significance of the relationship between the explanatory variables and the response variable is yet to be determined so despite seeing a consistent correlation between the variables, further analysis is required to determine how significant the relationship is.
+
+
+
+\section*{Labour Force Analysis}
+
+# Overview
+
+This section of the report will focus on analysing various aspects of the Israeli labour force with respect to the research question that we have chosen which is "How have the views towards gender stereotypes changed over time in Israel?". The Israeli labour force has come a long way from being male dominated to being almost equally divided between men and women. The transition of the Israeli labour force shall be explored through the years 1991-2019 in this section of the report.
+```{r labour-data}
+israel_labour <- data_long %>% dplyr::filter(Series %in% c("Labor force, female (% of total labor force)",
+                                                      "Ratio of female to male labor force participation rate (%) (national estimate)", "Self-employed, female (% of female employment) (modeled ILO estimate)" , "Wage and salaried workers, female (% of female employment) (modeled ILO estimate)",
+                                                      "Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)","Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)"),
+                                        Year %in% c(1991:2019))
+
+```
+
+```{r showcase}
+israel_display <- israel_labour %>% pivot_wider(names_from = Series, values_from = value)
+
+  kable(head(israel_display), caption = "Variables Summary") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                latex_options = "hold_position") %>%
+    column_spec(1, width = "2em") %>%
+    column_spec(2, width = "5em") %>%
+    column_spec(3, width = "5em") %>%
+    column_spec(4, width = "5em") %>%
+    column_spec(5, width = "5em") %>%
+    column_spec(6, width = "5em") %>%
+    column_spec(7, width = "5em")
+    
+  
+
+```
+
+Table \@ref(tab:showcase) exhibits the variables that have been used in this section of the report and displays the first 5 rows. The ratio of self-employed females is the explanatory variable and the ratio of female to male participation rate is the response variable.The table gives a brief overview of how the variables change from the period 1991-1996.
+
+```{r change}
+israel_labour$Year <-  as.numeric(as.character(israel_labour$Year))
+
+```
+
+```{r graph1,fig.cap="% Female labour force out of total labour force"}
+
+plot_1 <- israel_labour %>% dplyr::filter(Series == "Labor force, female (% of total labor force)") %>%
+  ggplot(aes(x = Year, y = value, color = Series))+
+  geom_line()+
+  xlab("Year")+
+  ylab("Total Labour force(%)")+
+  theme(legend.position="bottom")
+  
+
+plot_1
+```
+
+Figure \@ref(fig:graph1) depicts the gentle rise in the female labour force which was around 40% of the total labour force in 1990 to around 47% around 2020. One of the main reasons behind the surge in female participation is due to the educational attainment of women in Israel. Also, in 2006 and 2007 numerous amendments were made to women employment law to protect the rights of women at workplace and provide equal employment opportunities which has proved to be pivotal in increasing female participation in the labour force [@israelministryofforeignaffairs2013].
+
+# Self-employed v/s wage & salaried women
+
+```{r graph2,fig.cap="Self-employed v/s Wage & salaried female workers"}
+
+plot_2 <- israel_labour %>% dplyr::filter(Series %in% c("Self-employed, female (% of female employment) (modeled ILO estimate)" , "Wage and salaried workers, female (% of female employment) (modeled ILO estimate)")) %>% 
+  ggplot(aes(x = Year, y = value, fill = Series))+
+  geom_col()+
+  xlab("Year")+
+  ylab("Total female employment (%)")+
+  theme(legend.position="bottom")
+  
+
+plot_2
+```
+
+Figure \@ref(fig:graph2) shows the slow but gradual increase in the percentage of self-employed females in the female labour workforce. The female labour workforce comprises of self-employed women and wage and salaried women. The percentage of self-employed women in Israel has increased from 5.9 to 9.2 in 3 decades. The gradual change can be attributed to strong family orientation present in the Israeli culture and the fact that a working mother has to always give priorities to family responsibilities. But the main contributing factor to the increase was achievement motivations and economic necessities more than educational attainment or previous entrepreneurial experience. @lerner1997israeli
+
+# Female v/s Male labour force participation
+
+```{r graph3,fig.cap="Female v/s Male labour force participation"}
+
+plot_3 <- israel_labour %>% dplyr::filter(Series %in% c("Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)","Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)")) %>%
+  ggplot(aes(x=Year,y=value, color = Series))+
+  geom_line()+
+  xlab("Year")+
+  ylab("Labour force participation rate")+
+  theme(legend.position="bottom")
+
+plot_3
+```
+
+Figure \@ref(fig:graph3) compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the female population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20% in the past 30 years which authenticates that views towards gender stereotypes are changing over time in Israel. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were. 
+
+# Female labour force v/s female-male participation rate
+```{r graph4}
+plot_4 <- israel_labour %>% dplyr::filter(Series %in% c("Ratio of female to male labor force participation rate (%) (national estimate)")) %>%
+  ggplot(aes(x=Year,y=value, color = Series))+
+  geom_line()+
+  xlab("Year")+
+  ylab("Female to male Partcipation rate(% of total)")+
+  theme(legend.position="bottom")
+                                         
+```
+
+```{r graph5,fig.cap="Comparing female labour force with female-male participation rate"}
+
+grid.arrange(plot_1,plot_4, ncol=2)
+
+```
+
+Figure \@ref(fig:graph5) verifies that the percentage of females in the total labour force is positively correlated with the female to male labour force participation rate as both show a positive trend over time and have increased significantly since 1991 to 2019.
+
+\section*{Model}
+
+A linear regression model was developed to explore the impact of the variables we have researched in the previous sections on our target variable `Ratio of female to male labor force participation rate (%) (national estimate)`. The variables chosen were:
+
+* Birth rate, crude (per 1,000 people)
+* Self-employed, female (% of female employment) (modeled ILO estimate)
+* Adjusted savings: education expenditure (current US$)
+* Total final energy consumption (TFEC) (TJ)
+
+To match the series, and avoid imputing missing values, we have selected a time range between 1991 and 2015 to conduct our regression.
+
+A summary of the model has detailed in Table \@ref(tab:model-summary)
+
+```{r model-dataclean, include=FALSE}
+data_model = data_long %>% 
+  filter(Series %in% c("Birth rate, crude (per 1,000 people)",
+                                                "Self-employed, female (% of female employment) (modeled ILO estimate)",
+                                                "Adjusted savings: education expenditure (current US$)",
+                                                "Ratio of female to male labor force participation rate (%) (national estimate)")) %>%
+  mutate(Year = as.character(Year)) %>%
+  mutate(Year = as.numeric(Year))
+
+data_sea_model = data_sea_long %>%
+  filter(Series %in% c("Total final energy consumption (TFEC) (TJ)")) %>% 
+  select(Series, Year, value)
+
+data_model = rbind(data_model,data_sea_model)
+
+data_model = data_model %>%
+  filter(Year %in% c(1991:2015)) %>%
+  spread(Series,value)
+  
+model = lm(`Ratio of female to male labor force participation rate (%) (national estimate)` ~
+                   `Birth rate, crude (per 1,000 people)` + `Adjusted savings: education expenditure (current US$)` +
+                    `Self-employed, female (% of female employment) (modeled ILO estimate)`  + `Total final energy consumption (TFEC) (TJ)`, data_model)
+```
+
+```{r model-summary, echo=FALSE}
+kable(tidy(model), booktabs = TRUE,
+      caption = "Linear regression summary") %>%
+  kable_styling(full_width = FALSE, "striped", position = "center", font_size = 7,
+                latex_options = "hold_position")
+```
+
+From this result, we find that `Total final energy consumption (TFEC) (TJ)` is statistically significant at all levels. One possible reason is the relationship between electricity usage and changing attitudes. As previously discussed, one cause of greater energy usage is the increasing use of communications and information technology. With wider access to a different range of opinions, newer generations are less likely to share the same values with previous generation, hence justifying the change in attitude.
+
+Interestingly noted is the weaker signficance of the variable `Self-employed, female (% of female employment) (modeled ILO estimate)`. As noted previously, there is a strong correlation between this and the target variable. One reason this may be the case is that family orientation is emphasised in Israeli culure. Working mothers prioritise family repsonsibilities hence are less inclined to self-employ themselves.
+
+\section*{Conclusion}
+
+From the analysis conducted in this report it is evident that the view of gender stereotypes in Israel have improved to a more contemporary view to some degree, as explained by the individual variables that were analysed. However, to obtain more meaningful results, further research must be conducted. It is also important to note that only recently has gender equality been an issue that has been widely recognised and addressed. More data may be required to explore how different variables interact with equality and the continued dismantling of stereotypes in today's world.
+
+
+\pagebreak---
+title: "ETC5513 Project"
+author:
+- familyname: Nguyen
+  othernames: James Louis
+  address: Monash University
+  email: jlngu6@student.monash.edu
+  correspondingauthor: true
+  qualifications:  B.Com
+- familyname: Lyubic
+  othernames: Samuel
+  address: Monash University
+  email: slyu0007@student.monash.edu
+  correspondingauthor: true
+  qualifications:  B.Com
+- familyname: Tirodkar
+  othernames: Siddhant
+  address: Monash University
+  correspondingauthor: true
+  qualifications:  B.Com
+- familyname: Effendy
+  othernames: Jimmy
+  address: Monash University
+  email: jeff0001@student.monash.edu
+  correspondingauthor: true
+  qualifications:  B.Com
+department: Econometrics and Business Statistics
+organization: Monash University
+bibliography: references.bib
+biblio-style: authoryear-comp
+linestretch: 1.5
+output:
+  bookdown::pdf_document2:
+    template: monashreport2.tex
+    fig_caption: yes
+    fig_height: 5
+    fig_width: 8
+    includes:
+      in_header: preamble.tex
+    keep_tex: yes
+    number_sections: yes
+    citation_package: biblatex
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+```{r libraries, include=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(bookdown)
+library(knitr)
+library(gridExtra)
+library(grid)
+library(simputation)
+library(broom)
+```
+
+
+```{r data-read, include=FALSE}
+data = read.csv("data/wdi_data.csv")
+data = data[1:36,]
+
+names(data)[5:54] = c(1970:2019)
+names(data)[3] = c("Series")
+
+data_value = data %>%
+  select('1970':'2019')
+
+data_value = data.frame(lapply(data_value, as.character), stringsAsFactors =FALSE)
+data_value = data.frame(lapply(data_value, as.numeric))
+
+data = data.frame(Series = data$Series, data_value)
+names(data)[2:51] = c(1970:2019)
+
+data_long = data %>%
+  pivot_longer(`1970`:`2019`, names_to = "Year") %>%
+  mutate(Year = as.factor(Year))
+
+#use data_long for analysis.
+```
+
+
+\section*{Introduction}
+
+Gender inequality is an issue that is recognised globally. A large factor in the inequality that exists stems from the traditional stereotypes that have surrounded each gender across history, with males being considered as the leaders and providers and females the caretakers with a role of domesticity (@Woodhead). These stereotypes are further perpetuated through the presence of religion as the traditional views for male and female roles are embedded in their history and literature, as such many religions fight back against secularisation and the evolving contemporary views (@VoicuM2009) which is often has a direct relation with pushing back against the advancements of women in society and the deconstruction of the gender stereotypes that exist for the roles of males and females. Israeli law rules that discrimination related to gender in workplaces and wages, yet when observing actual ratios of females to males in the labour force, the number of female to male workers is not equal. As such, this report aims to establish possible reasons as to how views towards gender stereotypes have changed over time. To do this, we have selected variables to investigate and establish some relationship with changes in gender stereotypes with the use of the ratio of female to male labor force particiaption rate as our proxy for the change in the gender stereotype views, with each section exploring the respective variable in depth to ultimately produce a linear regression model to understand the relationship that may exist to assess the chagne in the view of gender stereotypes.
+
+## Data source
+
+The data used has been retrieved from the World Development Indicators dataset from the World Bank @TheWorldBank2018 and the OECD which licened under Creative Commons Attribtions 4.0. The variables used in each section with their offical definition off of their respective websites, are as follows:
+
+_Reponse variable_
+  - *Ratio of female to male labor force participation rate (national estimate):  Labor force participation rate is the proportion of the population ages 15 and older that is economically active: all people who supply labor for the production of goods and services during a specified period. Ratio of female to male labor force participation rate is calculated by dividing female labor force participation rate by male labor force participation rate and multiplying by 100.
+
+*Section name and subsequent explanatory variables that will be explored*
+  - _Education_ 
+    - Adjusted savings - education expenditure (current US$)
+    - Government expenditure on education, total (% of GDP) 
+    - Adjusted savings: education expenditure (% of GNI)
+  - _Analysing energy consumption and renewable sources_
+    - Renewable electricity share of total electricity output (%)
+    - Renewable energy consumption (TJ)
+    - Total final energy consumption (TFEC) (TJ)
+    - Renewable electricity output (GWh):
+    - Renewable energy share of TFEC (%):
+  - _Mortality and Birth Rate_ 
+    - Mortality rate, adult, female (per 1,000 female adults)
+    - Mortality rate, adult, male (per 1,000 male adults)
+    - Birth rate, crude (per 1,000 people)
+  - _Labor Force Rate_
+    - Labor force, female (% of total labor force)
+    - Ratio of female to male labor force participation rate (%) (national estimate)", "Self-employed, female (% of female employment) (modeled ILO estimate)
+    - Wage and salaried workers, female (% of female employment) (modeled ILO estimate)
+    - Labor force participation rate, female (% of female population ages 15-64) (modeled ILO estimate)
+    - Labor force participation rate, male (% of male population ages 15-64) (modeled ILO estimate)
+
+
+\section*{Education}
+
+```{r education-expenditure}
+data_education <- data_long %>% 
+  filter(Series %in% (c("Ratio of female to male labor force participation rate (%) (national estimate)",
+                        "Adjusted savings: education expenditure (current US$)",
+                        "Government expenditure on education, total (% of GDP)",
+                        "Adjusted savings: education expenditure (% of GNI)")))
+
+#adding decades information to the dataframe
+data_education$Year <- as.character(data_education$Year)
+data_education$Year <- as.numeric(data_education$Year)
+
+data_education <- data_education %>% mutate(decade = floor(Year/10)*10)
+
+```
+
+In the past 50 years, women's participation in the work force has increased steadily [@stier2000women]. It is believed that gender inequality in education is a major contributing factor in gender inequalities in adulthood, especially in the labour market [@marks2008accounting]. In this section, the report is going to examine the state of education in Israel and whether there is an association between education and the increase of women's employment in Israel.
+
+\subsection*{Education Spending in Israel}
+
+```{r read-edu-pop}
+
+read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% 
+  rename(location = `ï..LOCATION`)
+read_edu_spending <- read.csv("data/edu_spending.csv") %>%
+  rename(location = `ï..LOCATION`)
+
+#wrangling read_edu_pop dataset
+data_edu_pop <- read_edu_pop %>% 
+  filter(location == "ISR") %>% 
+  mutate(SUBJECT = case_when(
+    SUBJECT == "BUPPSRY" ~ "below_upper_secondary",
+    SUBJECT == "TRY" ~ "tertiary",
+    SUBJECT == "UPPSRY" ~ "upper_secondary",
+    SUBJECT == "TRY_MEN" ~ "tertiary_men",
+    SUBJECT == "TRY_WOMEN" ~ "tertiary_women",
+    SUBJECT == "UPPSRY_MEN" ~ "upper_secondary_men",
+    SUBJECT == "UPPSRY_WOMEN" ~ "upper_secondary_women",
+    TRUE ~ as.character(SUBJECT)
+  ))
+
+#wrangling read_edu_spending dataset
+data_edu_spending <- read_edu_spending %>%
+  filter(location == "ISR",
+         MEASURE == "USD_STUDENT") %>%
+  select(TIME, SUBJECT, Value) %>% 
+  mutate(SUBJECT = case_when(
+    SUBJECT == "SRY" ~ "secondary",
+    SUBJECT == "TRY" ~ "tertiary",
+    SUBJECT == "PRY_NTRY" ~ "primary_to_post_secondary_non_tertiary",
+    SUBJECT == "EARLYCHILDEDU" ~ "early_childhood_education",
+    SUBJECT == "PRY" ~ "primary",
+    TRUE ~ as.character(SUBJECT)
+  )) %>% 
+  filter(TIME >= 2008)
+
+#impute missing data in data_edu_spending
+data_edu_spending_wide <- data_edu_spending %>% 
+  pivot_wider(names_from = SUBJECT,
+              values_from = Value) %>% 
+  select(-secondary) %>% 
+  filter(TIME != 2016) %>% 
+  rename(time = TIME)
+
+data_edu_spending_wide_imp <- data_edu_spending_wide %>% 
+  as.data.frame() %>% 
+  impute_lm(formula = primary_to_post_secondary_non_tertiary ~ time) %>% 
+  impute_lm(formula = early_childhood_education ~ time)
+
+data_edu_spending_long_imp <- data_edu_spending_wide_imp %>% 
+  pivot_longer(cols = -time,
+               names_to = "subject",
+               values_to = "value")
+```
+
+```{r total-edu-spending, fig.cap="Average Education Expenditure in Israel by Decades"}
+data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
+  #summarising education expenditure by decades
+  group_by(decade) %>%
+  summarise(avg_spending = mean(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = decade,
+             y = avg_spending)) +
+  geom_col() +
+  labs(x = "Decades", y = "Average Spending (US$)")
+```
+
+The education spending spent by the Israeli government is shown in figure \@ref(fig:total-edu-spending). The average of funds invested by the government doubled the size almost every decade. It started with average of 834 million US dollars in 1970s, and it reached 15 billion US dollars in 2010s.
+
+```{r data-edu-spend, fig.cap="Education Spending in Israel"}
+data_edu_spending_long_imp %>%
+  filter(subject != "primary") %>% 
+  ggplot(aes(x = time,
+             y = value,
+             color = subject)) +
+  geom_point() +
+  geom_line() +
+  theme(legend.position = "bottom") +
+  labs(x = "Year", y = "Spending (US$)")
+```
+
+Figure \@ref(fig:data-edu-spend) reflects how the Israeli government invested the education spending from 2008 to 2015. The figure shows that the government spent the majority of the funds on tertiary educations. It is then followed by primary to post secondary (non-tertiary) and early childhood education respectively.
+
+```{r edu-pop-female, fig.cap= "Female Adult Education Level in Israel"}
+data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
+                                       "upper_secondary_women")) %>% 
+  ggplot(aes(x = TIME,
+             y = Value,
+             color = SUBJECT)) +
+  geom_point() +
+  geom_line() +
+  theme(legend.position = "bottom") +
+  labs(x = "Year", y = "% of 25-64 year-olds")
+```
+\subsection*{Adult Education Level in Israel}
+
+The percentage of adult female education level in Israel is reflected in figure \@ref(fig:edu-pop-female). The figure shows that the percentage of women with tertiary education in Israel increases over the years. Conversely, the percentage of women with upper secondary education in Israel decreases over the years.
+
+\subsection*{Education and Female Participation in Labour Force}
+
+```{r join-data}
+#filtering to female ratio only
+fem_ratio <- data_education %>% 
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>% 
+  rename(ratio = value) %>% 
+  select(-decade)
+
+#joining the OECD dataset and World Bank dataset
+# World Bank data set doesn't have adult women education level
+data_edu_pop_comp <- data_edu_pop %>% 
+  filter(SUBJECT == "tertiary") %>% 
+  left_join(fem_ratio, by = c("TIME" = "Year"))
+```
+
+```{r scatterplot, fig.cap="Scatterplot of Female Labour Participation Ratio and Adult Women Education Level"}
+data_edu_pop_comp %>% 
+  ggplot(aes(x = Value,
+             y = ratio)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme(aspect.ratio = 1) +
+  labs(x = "Percentage of Adult Women with Tertiary Education",
+       y = "Ratio of female to male labor force participation rate (%)")
+```
+
+The scatter plot in figure \@ref(fig:scatterplot) shows the relationship between the ratio of female to male labour force participation rate in Israel and the percentage of women between 25 - 64 years old with tertiary education in Israel. It is reflected in the figure that there is a positive relationship between percentage of adult women with higher education and female participation in labour force. In other words, the ratio of female to male labour force participation rate in Israel tend to increase on average when the percentage of adult female with tertiary education increases. With the increases of the ratio of female to male labour force participation rate in Israel, the trend shown in figure \@ref(fig:scatterplot) is well expected. It was found that tertiary education strongly influences the labour market as adults with tertiary education in Israel have relatively high employment rate at 86% [@oecd2016]. The main factor that explains labour force involvement for women is education [@Stier2013]. This is due to the fact that people with higher educations have better employment opportunities and these opportunities usually comes with higher remuneration [@pm2014]. As primary providers for childcare, women weigh the costs of alternative care for children and home against the benefits of paid work [@Stier2013]. The higher remunerations came with higher education assist women to afford domestic costs, making the entry to the work force economically more attractive [@pm2014].
+
+\section*{Analysing energy consumption and renewable sources}
+
+Israel has seen significant changes in the distribution of genders in the labour force. Though many direct effects can be explored, this section looks at changes in attitude by analysing Israel's move to more renewable sources of energy. There may be a link between the a transition to change in political thinking in priority. This may also be attributed to a general change in attitude, and could provide a reasonable proxy for our model.
+
+For this section of the report, we will be looking at World Bank Sustainable for All data (@TheWorldBank2018). This data set comprises of electricity data between 1990 and 2015. 
+```{r include=FALSE}
+data_sea = read.csv("data/SEA_data.csv")
+names(data_sea)=c("Country Name", "Country Code", "Year", "Year Code",
+                  "Renewable electricity share of total electricity output (%)",
+                  "Renewable energy consumption (TJ)",
+                  "Total final energy consumption (TFEC) (TJ)",
+                  "Renewable electricity output (GWh)",
+                  "Renewable energy share of TFEC (%)")
+data_sea = data_sea[1:26,]
+
+data_sea_long = data_sea %>%
+  pivot_longer(`Renewable electricity share of total electricity output (%)`:`Renewable energy share of TFEC (%)`,names_to = "Series") %>%
+  mutate(value = as.character(value)) %>%
+  mutate(value = as.numeric(value))
+```
+
+
+```{r compare-renewable-ftm, fig.cap="Comparing female to male ratio to renewable electricity output share", echo=FALSE}
+p1 = data_sea_long %>% 
+  filter(Series == "Renewable electricity share of total electricity output (%)") %>%
+  ggplot(aes(x = Year, y = value)) + 
+  geom_line(aes(group = 1)) + 
+    theme(axis.text.x = element_text(angle = 90),
+        axis.title.x = element_blank()) + 
+  ylab("Renewable electricity ratio (%)") 
+
+p2 = data_long %>%
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)",
+         Year %in% c(1990:2015)) %>%
+  mutate(Year = as.character(Year)) %>%
+  mutate(Year = as.numeric(Year)) %>%
+  ggplot(aes(x = Year, y=value)) + 
+  geom_line(aes(group=1)) + 
+  theme(axis.text.x = element_text(angle = 90),
+        axis.title.x = element_blank()) + 
+  ylab("Female to male labor force (%)")
+
+grid.arrange(p1,p2, ncol=2,
+             top=textGrob("Comparing female to male (%) and Renewable electricity share output (%)",gp=gpar(fontsize=10,font=1)),
+             bottom=textGrob("Year",gp=gpar(fontsize=10,font=1)))
+```
+
+Comparing the ratio of female to male labor force participation rates to renewable electricity share in Figure \@ref(fig:compare-renewable-ftm), we note a more consistent growth of the ratio over time, whereas the renewable electricity ratio stays consistent until 2007, after which we observe a sharp increase. To understand this increase, we must delve more into the renewables future plan for Israel. Established in 2016 were steps to reach a target of 17% Renewable Energy production by 2030, with interim targets of 10% and 13% by 2020/2023 respectively (@IEA2019). Unfortunately, the data set used for this analysis does not have data past 2015, and as a result, we cannot identify the effect which the announcement could have made.
+
+Looking at the change in electricity share in Figure \@ref(fig:renewable-compare):
+
+```{r renewable-compare, fig.cap="Looking at Renewable electricity share, and difference change", echo=FALSE}
+data_sea_long_1 = data_sea_long %>%
+  filter(Series == "Renewable electricity share of total electricity output (%)")
+
+data_sea_long_1 = cbind(data_sea_long_1, difference = c(NA, diff(data_sea_long_1$value))) %>%
+  drop_na()
+
+
+p3 = data_sea_long %>% 
+  filter(Series == "Renewable electricity share of total electricity output (%)") %>%
+  ggplot(aes(x = Year, y = value)) + 
+  geom_line(aes(group = 1)) + 
+    theme(axis.text.x = element_text(angle = 90),
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank()) + 
+  ylab("Renewable electricity share of total electricity output (%)")
+
+
+p4 = data_sea_long_1 %>% 
+  drop_na() %>%
+  ggplot(aes(x=Year, y=difference)) +
+  geom_line(aes(group=1)) + ylab("Difference change (%)")
+
+grid.arrange(p3,p4, top=textGrob("Renewable electricity share of total electricity output (%)",gp=gpar(fontsize=15,font=1)))
+```
+
+We can see that the difference seems to centre around zero prior to 2007, as was noted previously, however no clear perfect correlation can be seen when comparing the differences in Figure \@ref(fig:renewable-compare) and Figure \@ref(fig:compare-renewable-ftm). 
+
+
+
+```{r table-setup, include=FALSE}
+mean_difference = mean(data_sea_long_1[["difference"]])
+
+table_forecast = data.frame(Year = data_sea_long_1$Year, 
+                            Value = data_sea_long_1$value)
+
+val = c(table_forecast$Value[25] + seq(1:5)*mean_difference)
+
+fc = data.frame(Year = c(2016:2020), 
+                Value = val)
+
+table_forecast = rbind(table_forecast, fc)
+
+names(table_forecast)[2] = c("Renewable electricity share of total electricity output (%)")
+```
+
+\pagebreak
+
+```{r fcrenew, echo=FALSE}
+kable(tail(table_forecast,5), booktabs = TRUE,
+      caption = "Forecast of renewable electricity share") %>%
+  kable_styling(full_width = FALSE, "striped", position = "center", font_size = 10,
+                latex_options = "hold_position")
+```
+
+Table \@ref(tab:fcrenew) shows a forecast of the renewable electricity share of total electricity output in the next five years. This was conducted using a mean forecasting method. If current policies were followed, the target set in 2016 may not be met.
+
+Perhaps, renewable energy is not exactly suitable in representing some change in attitude, Burke (@Burke2018) and Sung (@Sung2018)  finds that renewable transition for the energy industry has been promoted by governments and markets, whereas traditional energy companies tend to hamper this progress. they also find that the general public do not have directly influence the transition, but indirectly affects it through the markets and governments. It may be suitable for the ratio of renewable energy output to proxy the strength of effect that the government/market has, and by extension, how the public affects decision making in the government.
+
+Let's look at total energy consumed in relation to the female to male labour force ratio: 
+
+```{r energy-ftm, fig.cap = "Comparing total energy consumption and female to male ratio.", echo=FALSE}
+p5 = data_sea_long %>% 
+  filter(Series %in% c("Total final energy consumption (TFEC) (TJ)")) %>%
+  ggplot(aes(x = Year, y = value)) + 
+  geom_line() + 
+    theme(axis.text.x = element_text(angle = 90),
+          axis.title.x = element_blank()) +
+  ylab("Total final energy consumption (TFEC) (TJ)")
+
+grid.arrange(p5,p2, ncol=2,
+             top=textGrob("Comparing total energy consumed (TJ) and female to male (%)",gp=gpar(fontsize=10,font=1)),
+             bottom=textGrob("Year",gp=gpar(fontsize=10,font=1)))
+```
+
+We can see a similar trend between series in Figure \@ref(fig:energy-ftm). We could use total energy consumption as a way to proxy general changes in attitudes. Andrae (@Andrae2015) discusses the general increase in electricity usage due to evolving communication technologies, including consumer devices. Here we note a significant increase in energy consumption over time, most likely attributable to an increased reliance on technology, including information technology. With a access to wider information, it is reasonable to expect some sort of changing attiude. 
+
+To conclude this section, we can use renewable electricity output ratio to directly model some government/market influence, and indirectly people. It may also be more reasonable to use total energy consumption to model changing attitudes.
+
+\section*{Male and Female Mortality Rates and Birth Rate}
 
 With Israel as the chosen country, this section will be analyzing the relationship between the response variable, _Ratio of female to male labor force participation rate (%) (national estimate)_, and the following economic indicators which have been sourced from The World Bank (@TheWorldBank2018): 
 

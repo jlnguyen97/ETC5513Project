@@ -94,6 +94,8 @@ data_long = data %>%
 
 \section*{Labour Force Analysis}
 
+# Overview
+
 This section of the report will focus on analysing various aspects of the Israeli labour force with respect to the research question that we have chosen which is "How have the views towards gender stereotypes changed over time in Israel?". The Israeli labour force has come a long way from being male dominated to being almost equally divided between men and women. The transition of the Israeli labour force shall be explored through the years 1991-2019 in this section of the report.
 ```{r labour-data}
 israel_labour <- data_long %>% dplyr::filter(Series %in% c("Labor force, female (% of total labor force)",
@@ -107,8 +109,17 @@ israel_labour <- data_long %>% dplyr::filter(Series %in% c("Labor force, female 
 israel_display <- israel_labour %>% pivot_wider(names_from = Series, values_from = value)
 
   kable(head(israel_display), caption = "Variables Summary") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", full_width = F)) %>%
-    row_spec(0, angle = -90)
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                latex_options = "hold_position") %>%
+    column_spec(1, width = "2em") %>%
+    column_spec(2, width = "5em") %>%
+    column_spec(3, width = "5em") %>%
+    column_spec(4, width = "5em") %>%
+    column_spec(5, width = "5em") %>%
+    column_spec(6, width = "5em") %>%
+    column_spec(7, width = "5em")
+    
+  
 
 ```
 
@@ -119,7 +130,6 @@ israel_labour$Year <-  as.numeric(as.character(israel_labour$Year))
 
 ```
 
-# Overview
 ```{r graph1,fig.cap="% Female labour force out of total labour force"}
 
 plot_1 <- israel_labour %>% dplyr::filter(Series == "Labor force, female (% of total labor force)") %>%

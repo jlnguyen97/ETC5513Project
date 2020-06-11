@@ -363,7 +363,10 @@
 
 \section*{Labour Force Analysis}
 
-This section of the report will focus on analysing various aspects of the Israeli labour force. The Israeli labour force has come a long way from being male dominated to being almost equally divided between men and women. The transition of the Israeli labour force shall be explored through the years 1991-2019 in this section of the report.
+\hypertarget{overview}{%
+\section{Overview}\label{overview}}
+
+This section of the report will focus on analysing various aspects of the Israeli labour force with respect to the research question that we have chosen which is ``How have the views towards gender stereotypes changed over time in Israel?''. The Israeli labour force has come a long way from being male dominated to being almost equally divided between men and women. The transition of the Israeli labour force shall be explored through the years 1991-2019 in this section of the report.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -379,18 +382,25 @@ This section of the report will focus on analysing various aspects of the Israel
 \NormalTok{israel_display <-}\StringTok{ }\NormalTok{israel_labour }\OperatorTok{%>%}\StringTok{ }\KeywordTok{pivot_wider}\NormalTok{(}\DataTypeTok{names_from =}\NormalTok{ Series, }\DataTypeTok{values_from =}\NormalTok{ value)}
 
   \KeywordTok{kable}\NormalTok{(}\KeywordTok{head}\NormalTok{(israel_display), }\DataTypeTok{caption =} \StringTok{"Variables Summary"}\NormalTok{) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\DataTypeTok{full_width =}\NormalTok{ F)) }\OperatorTok{%>%}
-\StringTok{    }\KeywordTok{row_spec}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{angle =} \DecValTok{-90}\NormalTok{)}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{),}
+                \DataTypeTok{latex_options =} \StringTok{"hold_position"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{width =} \StringTok{"2em"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{width =} \StringTok{"5em"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DataTypeTok{width =} \StringTok{"5em"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DataTypeTok{width =} \StringTok{"5em"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DataTypeTok{width =} \StringTok{"5em"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DataTypeTok{width =} \StringTok{"5em"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DataTypeTok{width =} \StringTok{"5em"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}
+\begin{table}[!h]
 
 \caption{\label{tab:showcase}Variables Summary}
 \centering
-\begin{tabular}[t]{l|r|r|r|r|r|r}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2em}|>{\raggedleft\arraybackslash}p{5em}|>{\raggedleft\arraybackslash}p{5em}|>{\raggedleft\arraybackslash}p{5em}|>{\raggedleft\arraybackslash}p{5em}|>{\raggedleft\arraybackslash}p{5em}|>{\raggedleft\arraybackslash}p{5em}}
 \hline
-\rotatebox{-90}{Year} & \rotatebox{-90}{Labor force, female (\% of total labor force)} & \rotatebox{-90}{Ratio of female to male labor force participation rate (\%) (national estimate)} & \rotatebox{-90}{Self-employed, female (\% of female employment) (modeled ILO estimate)} & \rotatebox{-90}{Wage and salaried workers, female (\% of female employment) (modeled ILO estimate)} & \rotatebox{-90}{Labor force participation rate, male (\% of male population ages 15-64) (modeled ILO estimate)} & \rotatebox{-90}{Labor force participation rate, female (\% of female population ages 15-64) (modeled ILO estimate)}\\
+Year & Labor force, female (\% of total labor force) & Ratio of female to male labor force participation rate (\%) (national estimate) & Self-employed, female (\% of female employment) (modeled ILO estimate) & Wage and salaried workers, female (\% of female employment) (modeled ILO estimate) & Labor force participation rate, male (\% of male population ages 15-64) (modeled ILO estimate) & Labor force participation rate, female (\% of female population ages 15-64) (modeled ILO estimate)\\
 \hline
 1991 & 40.15476 & 64.92514 & 5.907 & 94.093 & 78.995 & 53.404\\
 \hline
@@ -414,9 +424,6 @@ Table \ref{tab:showcase} exhibits the variables that have been used in this sect
 \NormalTok{israel_labour}\OperatorTok{$}\NormalTok{Year <-}\StringTok{  }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{as.character}\NormalTok{(israel_labour}\OperatorTok{$}\NormalTok{Year))}
 \end{Highlighting}
 \end{Shaded}
-
-\hypertarget{overview}{%
-\section{Overview}\label{overview}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -463,7 +470,7 @@ Figure \ref{fig:graph1} depicts the gentle rise in the female labour force which
 \caption{\label{fig:graph2}Self-employed v/s Wage \& salaried female workers}
 \end{figure}
 
-Figure \ref{fig:graph2} shows the slow but gradual increase in the percentage of self-employed females in the female labour workforce. The female labour workforce comprises of self-employed women and wage and salaried women. The percentage of self-employed women in Israel has increased from 5.9 to 9.2 in 3 decades. The gradual change can be attributed to strong family orientation present in the Israeli culture and the fact that a working mother has to always give priorities to family responsibilities. But the main contributing factor to the increase was achievement motivations and economic necessities more than educational attainment or previous entrepreneurial experience.
+Figure \ref{fig:graph2} shows the slow but gradual increase in the percentage of self-employed females in the female labour workforce. The female labour workforce comprises of self-employed women and wage and salaried women. The percentage of self-employed women in Israel has increased from 5.9 to 9.2 in 3 decades. The gradual change can be attributed to strong family orientation present in the Israeli culture and the fact that a working mother has to always give priorities to family responsibilities. But the main contributing factor to the increase was achievement motivations and economic necessities more than educational attainment or previous entrepreneurial experience. \textcite{lerner1997israeli}
 
 \hypertarget{female-vs-male-labour-force-participation}{%
 \section{Female v/s Male labour force participation}\label{female-vs-male-labour-force-participation}}
@@ -487,7 +494,7 @@ Figure \ref{fig:graph2} shows the slow but gradual increase in the percentage of
 \caption{\label{fig:graph3}Female v/s Male labour force participation}
 \end{figure}
 
-Figure \ref{fig:graph3} compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the female population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20\% in the past 30 years. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were.
+Figure \ref{fig:graph3} compares the female v/s male labour force participation amongst the total population in the age group of 15-64 females and males respectively. It depicts the percentage of the female population that is engaged in the labour force in the working age population. This is a very good representation of the increased number of participation of women in the labour force which has increased almost 20\% in the past 30 years which authenticates that views towards gender stereotypes are changing over time in Israel. This shows that Israeli women are more willing and motivated to be involved in the labour force than they ever were.
 
 \hypertarget{female-labour-force-vs-female-male-participation-rate}{%
 \section{Female labour force v/s female-male participation rate}\label{female-labour-force-vs-female-male-participation-rate}}

@@ -3,6 +3,14 @@
 .RData
 .Ruserdata
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ETC5513Project.Rproj
 >>>>>>> samuel_lyubic
+=======
+.Rprofile
+report.log
+report.pdf
+report.tex
+report_files/
+>>>>>>> jeffendy

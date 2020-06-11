@@ -1,12 +1,6 @@
 ---
 title: "ETC5513 Project"
 author:
-- familyname: XXX
-  othernames: XXX
-  address: Monash University
-  email: XXX
-  correspondingauthor: true
-  qualifications:  XXX
 - familyname: Nguyen
   othernames: James Louis
   address: Monash University
@@ -21,10 +15,12 @@ author:
   qualifications:  XXX
 - familyname: Tirodkar
   othernames: Siddhant
+- familyname: Effendy
+  othernames: Jimmy
   address: Monash University
-  email: stir0003@student.monash.edu
+  email: jeff0001@student.monash.edu
   correspondingauthor: true
-  qualifications:  XXX
+  qualifications:  B.Com
 department: Econometrics and Business Statistics \newline add names &\newline add names
 organization: Monash University
 bibliography: references.bib
@@ -45,7 +41,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
 ```{r libraries, include=FALSE}
@@ -58,6 +54,7 @@ library(gridExtra)
 library(imputeTS)
 library(gridExtra)
 library(grid)
+library(simputation)
 ```
 
 
@@ -89,7 +86,154 @@ data_long = data %>%
 
 \section*{Motivation}
 
-\section*{}
+\section*{Education}
+
+```{r education-expenditure}
+data_education <- data_long %>% 
+  filter(Series %in% (c("Ratio of female to male labor force participation rate (%) (national estimate)",
+                        "Adjusted savings: education expenditure (current US$)",
+                        "Government expenditure on education, total (% of GDP)",
+                        "Adjusted savings: education expenditure (% of GNI)")))
+
+#adding decades information to the dataframe
+data_education$Year <- as.character(data_education$Year)
+data_education$Year <- as.numeric(data_education$Year)
+
+data_education <- data_education %>% mutate(decade = floor(Year/10)*10)
+
+```
+
+In the past 50 years, women's participation in the work force has increased steadily [@stier2000women]. It is believed that gender inequality in education is a major contributing factor in gender inequalities in adulthood, especially in the labour market [@marks2008accounting]. In this section, the report is going to examine the state of education in Israel and whether there is an association between education and the increase of women's employment in Israel.
+
+\subsection*{Education Spending in Israel}
+
+```{r read-edu-pop}
+
+read_edu_pop <- read.csv("data/adult_edu_pop.csv") %>% 
+  rename(location = `ï..LOCATION`)
+read_edu_spending <- read.csv("data/edu_spending.csv") %>%
+  rename(location = `ï..LOCATION`)
+read_pop_tert <- read.csv("data/pop_tert_edu.csv") %>% 
+  rename(location = `ï..LOCATION`)
+
+#wrangling read_edu_pop dataset
+data_edu_pop <- read_edu_pop %>% 
+  filter(location == "ISR") %>% 
+  mutate(SUBJECT = case_when(
+    SUBJECT == "BUPPSRY" ~ "below_upper_secondary",
+    SUBJECT == "TRY" ~ "tertiary",
+    SUBJECT == "UPPSRY" ~ "upper_secondary",
+    SUBJECT == "TRY_MEN" ~ "tertiary_men",
+    SUBJECT == "TRY_WOMEN" ~ "tertiary_women",
+    SUBJECT == "UPPSRY_MEN" ~ "upper_secondary_men",
+    SUBJECT == "UPPSRY_WOMEN" ~ "upper_secondary_women",
+    TRUE ~ as.character(SUBJECT)
+  ))
+
+#wrangling read_edu_spending dataset
+data_edu_spending <- read_edu_spending %>%
+  filter(location == "ISR",
+         MEASURE == "USD_STUDENT") %>%
+  select(TIME, SUBJECT, Value) %>% 
+  mutate(SUBJECT = case_when(
+    SUBJECT == "SRY" ~ "secondary",
+    SUBJECT == "TRY" ~ "tertiary",
+    SUBJECT == "PRY_NTRY" ~ "primary_to_post_secondary_non_tertiary",
+    SUBJECT == "EARLYCHILDEDU" ~ "early_childhood_education",
+    SUBJECT == "PRY" ~ "primary",
+    TRUE ~ as.character(SUBJECT)
+  )) %>% 
+  filter(TIME >= 2008)
+
+#impute missing data in data_edu_spending
+data_edu_spending_wide <- data_edu_spending %>% 
+  pivot_wider(names_from = SUBJECT,
+              values_from = Value) %>% 
+  select(-secondary) %>% 
+  filter(TIME != 2016) %>% 
+  rename(time = TIME)
+
+data_edu_spending_wide_imp <- data_edu_spending_wide %>% 
+  as.data.frame() %>% 
+  impute_lm(formula = primary_to_post_secondary_non_tertiary ~ time) %>% 
+  impute_lm(formula = early_childhood_education ~ time)
+
+data_edu_spending_long_imp <- data_edu_spending_wide_imp %>% 
+  pivot_longer(cols = -time,
+               names_to = "subject",
+               values_to = "value")
+```
+
+```{r total-edu-spending, fig.cap="Average Education Expenditure in Israel by Decades"}
+data_education %>% filter(Series == "Adjusted savings: education expenditure (current US$)") %>%
+  #summarising education expenditure by decades
+  group_by(decade) %>%
+  summarise(avg_spending = mean(value, na.rm = TRUE)) %>% 
+  ggplot(aes(x = decade,
+             y = avg_spending)) +
+  geom_col() +
+  labs(x = "Decades", y = "Average Spending (US$)")
+```
+
+The education spending spent by the Israeli government is shown in figure \@ref(fig:total-edu-spending). The average of funds invested by the government doubled the size almost every decade. It started with average of 834 million US dollars in 1970s, and it reached 15 billion US dollars in 2010s.
+
+```{r data-edu-spend, fig.cap="Education Spending in Israel"}
+data_edu_spending_long_imp %>%
+  filter(subject != "primary") %>% 
+  ggplot(aes(x = time,
+             y = value,
+             color = subject)) +
+  geom_point() +
+  geom_line() +
+  theme(legend.position = "bottom") +
+  labs(x = "Year", y = "Spending (US$)")
+```
+
+Figure \@ref(fig:data-edu-spend) reflects how the Israeli government invested the education spending from 2008 to 2015. The figure shows that the government spent the majority of the funds on tertiary educations. It is then followed by primary to post secondary (non-tertiary) and early childhood education respectively.
+
+```{r edu-pop-female, fig.cap= "Female Adult Education Level in Israel"}
+data_edu_pop %>% filter(SUBJECT %in% c("tertiary_women",
+                                       "upper_secondary_women")) %>% 
+  ggplot(aes(x = TIME,
+             y = Value,
+             color = SUBJECT)) +
+  geom_point() +
+  geom_line() +
+  theme(legend.position = "bottom") +
+  labs(x = "Year", y = "% of 25-64 year-olds")
+```
+\subsection*{Adult Education Level in Israel}
+
+The percentage of adult female education level in Israel is reflected in figure \@ref(fig:edu-pop-female). The figure shows that the percentage of women with tertiary education in Israel increases over the years. Conversely, the percentage of women with upper secondary education in Israel decreases over the years.
+
+\subsection*{Education and Female Participation in Labour Force}
+
+```{r join-data}
+#filtering to female ratio only
+fem_ratio <- data_education %>% 
+  filter(Series == "Ratio of female to male labor force participation rate (%) (national estimate)") %>% 
+  rename(ratio = value) %>% 
+  select(-decade)
+
+#joining the OECD dataset and World Bank dataset
+# World Bank data set doesn't have adult women education level
+data_edu_pop_comp <- data_edu_pop %>% 
+  filter(SUBJECT == "tertiary") %>% 
+  left_join(fem_ratio, by = c("TIME" = "Year"))
+```
+
+```{r scatterplot, fig.cap="Scatterplot of Female Labour Participation Ratio and Adult Women Education Level"}
+data_edu_pop_comp %>% 
+  ggplot(aes(x = Value,
+             y = ratio)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme(aspect.ratio = 1) +
+  labs(x = "Percentage of Adult Women with Tertiary Education",
+       y = "Ratio of female to male labor force participation rate (%)")
+```
+
+The scatter plot in figure \@ref(fig:scatterplot) shows the relationship between the ratio of female to male labour force participation rate in Israel and the percentage of women between 25 - 64 years old with tertiary education in Israel. It is reflected in the figure that there is a positive relationship between percentage of adult women with higher education and female participation in labour force. In other words, the ratio of female to male labour force participation rate in Israel tend to increase on average when the percentage of adult female with tertiary education increases. With the increases of the ratio of female to male labour force participation rate in Israel, the trend shown in figure \@ref(fig:scatterplot) is well expected. It was found that tertiary education strongly influences the labour market as adults with tertiary education in Israel have relatively high employment rate at 86% [@oecd2016]. The main factor that explains labour force involvement for women is education [@Stier2013]. This is due to the fact that people with higher educations have better employment opportunities and these opportunities usually comes with higher remuneration [@pm2014]. As primary providers for childcare, women weigh the costs of alternative care for children and home against the benefits of paid work [@Stier2013]. The higher remunerations came with higher education assist women to afford domestic costs, making the entry to the work force economically more attractive [@pm2014].
 
 \section*{Analysing energy consumption and renewable sources}
 
